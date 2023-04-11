@@ -1,0 +1,16 @@
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="icon-arrow-right" viewBox="0 0 32 32">
+<path  d="M6.666 16h18.668M16 25.334l9.332-9.334-9.332-9.334"></path>
+</symbol>
+<symbol id="icon-arrow-left" viewBox="0 0 32 32">
+<path d="M25.334 16h-18.668M16 25.334l-9.334-9.334 9.334-9.334"></path>
+</symbol>
+<symbol id="icon-search" viewBox="0 0 32 32">
+<path d="M14.666 25.334c5.891 0 10.667-4.776 10.667-10.667s-4.776-10.667-10.667-10.667v0c-5.891 0-10.667 4.776-10.667 10.667s4.776 10.667 10.667 10.667v0zM28 28l-5.8-5.8"></path>
+</symbol>
+<symbol id="icon-logo" viewBox="0 0 32 32">
+<path d="M26.427 2.667h-20.853c-1.605 0-2.907 1.301-2.907 2.907v20.853c0 1.605 1.302 2.907 2.907 2.907h20.853c1.605 0 2.907-1.302 2.907-2.907v-20.853c0-1.605-1.302-2.907-2.907-2.907zM9.334 2.667v26.666M22.666 2.667v26.666M2.667 16h26.666M2.667 9.334h6.666M2.667 22.666h6.666M22.666 22.666h6.667M22.666 9.334h6.667"></path>
+</symbol>
+</defs>
+</svg>

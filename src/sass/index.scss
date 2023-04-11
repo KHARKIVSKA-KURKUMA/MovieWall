@@ -1,2 +1,13 @@
-@import './common';
-@import './example';
+/* ---------------------------------- utils --------------------------------- */
+@import './utils/vars';
+@import './utils/hidden';
+@import './utils/mixin';
+/* ---------------------------------- base ---------------------------------- */
+@import './base/reset';
+@import './base/common';
+/* ------------------------------- components ------------------------------- */
+@import './components/container';
+/* --------------------------------- layouts -------------------------------- */
+@import './layouts/header';
+//
+@import './layouts/footer';
