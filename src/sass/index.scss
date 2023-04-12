@@ -8,6 +8,14 @@
 /* ------------------------------- components ------------------------------- */
 @import './components/container';
 /* --------------------------------- layouts -------------------------------- */
-@import './layouts/header';
-//
+@import './layouts/header-home';
+@import './layouts/header-lib';
+@import './layouts/gallery-home';
+@import './layouts/gallery-lib';
+@import './layouts/pagination';
 @import './layouts/footer';
+/* ---------------------------------- modal --------------------------------- */
+@import './modal/movie-modal';
+@import './modal/team-modal';
+@import './modal/sign-in';
+@import './modal/sign-up';
