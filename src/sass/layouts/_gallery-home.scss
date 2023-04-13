@@ -26,4 +26,65 @@
   //       margin-bottom: 20px;
   //     }
   //   }
+
+.filmcard {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 20px;
+
+  @include tablet {
+    margin-bottom: 0;
+  }
+
+  &__img {
+  border-radius: 5px;
+  margin-bottom: 12px;
+  height: 398px;
+  width: 100%;
+  object-fit: cover;
+
+  @include tablet {
+    height: 455px;
+  }
+  @include desktop {
+    height: 574px;
+  }
+}
+
+&__name {
+  color: $blackColor;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  @include desktop {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+
+&__genre {
+  color:$accentColor;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.2;
+
+  @include desktop {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+&__description {
+  display: flex;
+}
+
+}
+
+
 }
