@@ -1,4 +1,6 @@
-.img-container {
+.header {
+    margin: 32px;
+    min-height: 460px;
     padding: 14px;
     background-color: $accentColor;
     background-image: url(../images/favicon/hero-background/hero-bg-mob.jpg);
@@ -6,21 +8,19 @@
     background-position: center;
     background-size: cover;
     border-radius: 10px;
-
+    display: flex;
+    flex-direction: column;
     @include tablet {
+        flex-direction: row;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        min-height: 222px;
         padding: 14px;
         background-image: url(../images/favicon/hero-background/hero-bg-tab.jpg);
     }
-}
 
-.header__container {
-    @include tablet {
+    &__headline {
         display: flex;
-        flex-direction: row-reverse;
-        gap: 4px;
-    }
-    @mixin desktop {
-        gap: 8px;
     }
 }
 
@@ -29,14 +29,13 @@
     text-align: center;
     gap: 4px;
     margin-bottom: 8px;
-    margin-right: auto;
     @include tablet {
         margin-bottom: 0;
+        order: 2;
     }
     @mixin desktop {
         gap: 8px;
     }
-    
 }
 
 .nav-list__button {
@@ -44,7 +43,6 @@
     padding: 10px 22px;
     min-width: 87px;
     border: none;
-
 }
 
 .nav-list__button--active {
@@ -55,36 +53,39 @@
 .logo {
     width: 27px;
     height: 27px;
-
+    animation: rotate 3s infinite;
     @include tablet {
         width: 40px;
         height: 40px;
     }
 }
 
-.hero__container {
-    display: flex;
-    padding-top: 318px;
-    align-items: center;
-    justify-content: center;
-   
-    
-    @include tablet {
-        justify-content: start;
-        padding-top: 112px;
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
 
 .search {
     position: relative;
-    display: inline-block;
+    max-width: 252px;
+    width: 100%;
+
+    @include tablet {
+        order: 1;
+        margin-right: 4px;
+    }
 }
 
 .search__input {
     border-radius: 100px;
     padding: 10px 14px;
-    min-width: 252px;
+    width: 100%;
     border: none;
+    
 }
 
 .search__btn {
@@ -111,7 +112,19 @@
     }
 }
 
-.hero__title {
+.header__headline {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    @include tablet {
+        justify-content: flex-start;
+        order: 4;
+    }
+}
+
+.header__title {
     color: $whiteColor;
     font-size: 32px;
     line-height: 1.2;
@@ -122,8 +135,13 @@
 }
 
 .library {
-   justify-content: center;
+    width: 100%;
+    justify-content: center;
+    display: none;
     @include tablet {
-    justify-content: start;
+        margin-left: auto;
+        width: auto;
+        order: 3;
+        justify-content: start;
     }
 }

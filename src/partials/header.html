@@ -1,44 +1,32 @@
-<div class="img-container">
-  <header class="header">
-    <div class="header__container">
-      <ul class="nav-list list">
-        <li class="nav-list__item">
-          <a class="nav-list__link" href="#"><button class="nav-list__button nav-list__button--active"
-              type="button">HOME</button></a>
-        </li>
-        <li class="nav-list__item">
-          <a class="nav-list__link" href="#"><button class="nav-list__button" type="button">MY LIBRARY</button></a>
-        </li>
-      </ul>
-      <form class="search" action="#">
-        <input class="search__input" type="search" name="film-name" placeholder="Movie Search">
-        <button type="submit" class="search__btn">
-          <svg class="search__svg">
-            <use class="serch__icon" href="/src/images/icons.svg#icon-search"></use>
-          </svg>
-
-        </button>
-      </form>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="hero__container">
-      <svg class="logo">
-        <use href="/src/images/icons.svg#icon-logo"></use>
+<header class="header">
+  <ul class="nav-list list js-btn-list">
+    <li class="nav-list__item">
+      <button class="nav-list__button nav-list__button--active" data-target="home" type="button">HOME</button>
+    </li>
+    <li class="nav-list__item">
+      <button class="nav-list__button" data-target="library" type="button">MY LIBRARY</button>
+    </li>
+  </ul>
+  <form class="search" action="#">
+    <input class="search__input" type="search" name="film-name" placeholder="Movie Search">
+    <button type="submit" class="search__btn">
+      <svg class="search__svg">
+        <use class="serch__icon" href="/src/images/icons.svg#icon-search"></use>
       </svg>
-      <h1 class="hero__title">Filmoteka</h1>
-    </div>
-    <ul class="nav-list list library">
-      <li class="nav-list__item">
-        <a class="nav-list__link" href="#"><button class="nav-list__button nav-list__button--active"
-            type="button">WATCHED</button></a>
-      </li>
-      <li class="nav-list__item">
-        <a class="nav-list__link" href="#"><button class="nav-list__button" type="button">QUEUE</button></a>
-      </li>
-    </ul>
-
-
-  </section>
-</div>
+    </button>
+  </form>
+  <div class="header__headline">
+    <svg class="logo">
+      <use href="/src/images/icons.svg#icon-logo"></use>
+    </svg>
+    <h1 class="header__title">Filmoteka</h1>
+  </div>
+  <ul class="nav-list list library js-btn-list">
+    <li class="nav-list__item">
+      <button class="nav-list__button nav-list__button--active" data-target="watched" type="button">WATCHED</button>
+    </li>
+    <li class="nav-list__item">
+      <button class="nav-list__button" data-target="queue" type="button">QUEUE</button>
+    </li>
+  </ul>
+  </headser>
