@@ -9,10 +9,20 @@ async function getPopularFilms() {
   try {
     const url = `${BASE_URL}movie/popular?api_key=${API_KEY}&language=en`;
     const response = await axios.get(url);
-    // console.log(response.data); //я просто перевірила чи працює запит.
     return response.data;
   } catch (error) {
     Notify.failure('Oops, an error occurred');
   }
 }
 export { getPopularFilms };
+
+async function getDetailAboutMovie(id) {
+  try {
+    const url = `${BASE_URL}/movie/${id}?api_key=${API_KEY}&language=en`;
+    const response = await axios.get(url);
+    return response.data;
+  } catch (error) {
+    Notify.failure('Oops, an error occurred');
+  }
+}
+export { getDetailAboutMovie };
