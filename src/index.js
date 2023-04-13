@@ -1,3 +1,2 @@
-import { getPopularFilms } from './js/fetch-poster';
-
-// getPopularFilms();
+import { renderPopularMovies } from './js/renderPopularPoster';
+renderPopularMovies();

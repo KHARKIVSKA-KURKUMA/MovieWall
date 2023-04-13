@@ -1,5 +1,5 @@
 .gallery {
-  &_container {
+  &-container {
     padding-top: 10px;
     padding-bottom: 20px;
     @include mobile {
@@ -7,11 +7,12 @@
       padding-bottom: 30px;
     }
   }
-  &_list {
+  &-list {
     @include mobile {
       display: flex;
       flex-wrap: wrap;
       gap: 32px;
+      justify-content: center;
     }
     @include desktop {
       gap: 32px 16px;
