@@ -1,0 +1,28 @@
+.gallery {
+  &_container {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    @include mobile {
+      padding-top: 16px;
+      padding-bottom: 30px;
+    }
+  }
+  &_list {
+    @include mobile {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+    @include desktop {
+      gap: 32px 16px;
+    }
+  }
+
+  //   &_item {
+  //     width: 280px;
+  //     height: 440px;
+  //     &:not(:last-child) {
+  //       margin-bottom: 20px;
+  //     }
+  //   }
+}
