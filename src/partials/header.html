@@ -1,3 +1,57 @@
 <header class="header">
-  <div class="container header-container"></div>
+  <div class="header-container">
+    <ul class="nav-list list">
+      <li class="nav-list-item">
+        <a class="nav-list-link" href="#"
+          ><button
+            class="nav-list-button nav-list-button--active"
+            type="button"
+          >
+            HOME
+          </button></a
+        >
+      </li>
+      <li class="nav-list-item">
+        <a class="nav-list-link" href="#"
+          ><button class="nav-list-button" type="button">MY LIBRARY</button></a
+        >
+      </li>
+    </ul>
+    <form class="search" action="#">
+      <input
+        class="search-input"
+        type="search"
+        name="film-name"
+        placeholder="Movie Search"
+      />
+      <button type="submit" class="search-btn">
+        <svg class="search-svg">
+          <use
+            class="serch-icon"
+            href="/src/images/icons.svg#icon-search"
+          ></use>
+        </svg>
+      </button>
+    </form>
+  </div>
+  <div class="hero-container">
+    <svg class="logo">
+      <use href="/src/images/icons.svg#icon-logo"></use>
+    </svg>
+    <h1 class="hero-title">Filmoteka</h1>
+  </div>
+  <ul class="nav-list list library">
+    <li class="nav-list-item">
+      <a class="nav-list-link" href="#"
+        ><button class="nav-list-button nav-list-button--active" type="button">
+          WATCHED
+        </button></a
+      >
+    </li>
+    <li class="nav-list-item">
+      <a class="nav-list-link" href="#"
+        ><button class="nav-list-button" type="button">QUEUE</button></a
+      >
+    </li>
+  </ul>
 </header>

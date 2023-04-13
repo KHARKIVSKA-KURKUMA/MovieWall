@@ -1,0 +1,137 @@
+.header {
+  padding: 14px;
+  background-color: $accentColor;
+  background-image: url(../images/hero-background/hero-bg-mob.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  @include retina {
+    background-image: url(../images/hero-background/hero-bg-mob-@2x.jpg);
+  }
+  @include tablet {
+    padding: 14px;
+    background-image: url(../images/hero-background/hero-bg-tab.jpg);
+    @include retina {
+      background-image: url(../images/hero-background/hero-bg-tab-@2x.jpg);
+    }
+  }
+  @include desktop {
+    background-image: url(../images/hero-background/hero-bg-desktop.jpg);
+    @include retina {
+      background-image: url(../images/hero-background/hero-bg-desktop-@2x.jpg);
+    }
+  }
+}
+.header-container {
+  @include tablet {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 4px;
+  }
+  @mixin desktop {
+    gap: 8px;
+  }
+}
+
+.nav-list {
+  display: flex;
+  text-align: center;
+  gap: 4px;
+  margin-bottom: 8px;
+  margin-right: auto;
+  @include tablet {
+    margin-bottom: 0;
+  }
+  @mixin desktop {
+    gap: 8px;
+  }
+}
+
+.nav-list-button {
+  border-radius: 100px;
+  padding: 10px 22px;
+  min-width: 87px;
+  border: none;
+}
+
+.nav-list-button--active {
+  background: $blackColor;
+  color: $whiteColor;
+}
+
+.logo {
+  width: 27px;
+  height: 27px;
+  fill: none;
+  stroke: $whiteColor;
+  @include tablet {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.hero-container {
+  display: flex;
+  padding-top: 318px;
+  align-items: center;
+  justify-content: center;
+
+  @include tablet {
+    justify-content: start;
+    padding-top: 112px;
+  }
+}
+
+.search {
+  position: relative;
+  display: inline-block;
+}
+
+.search-input {
+  border-radius: 100px;
+  padding: 10px 14px;
+  min-width: 252px;
+  border: none;
+}
+
+.search-btn {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  transform: translateY(-50%);
+  @include tablet {
+    right: 16px;
+  }
+}
+
+.search-svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: #000;
+  @include tablet {
+    width: 16px;
+    height: 16px;
+  }
+}
+.hero-title {
+  color: $whiteColor;
+  font-size: 32px;
+  line-height: 1.2;
+  @include tablet {
+    font-size: 40px;
+    line-height: 1.17;
+  }
+}
+
+.library {
+  justify-content: center;
+  @include tablet {
+    justify-content: start;
+  }
+}
