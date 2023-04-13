@@ -1,4 +1,5 @@
 import { genresGalleryEditor } from './genresFormatEditor';
+import { refs } from './refs';
 
 function createDetailMovieMarkUp(movie) {
   if (!movie) {
@@ -7,15 +8,14 @@ function createDetailMovieMarkUp(movie) {
   const posterSrc = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
     : 'Haven`t poster';
-  return `<img
-    class="modal__img"
+  const markup = `<img
+    class="modal-img"
     src="${posterSrc}"
-    alt=""
-    width="240"
-    height="357"
+    alt="Movie-Poster"
   />
   <div>
-    <h2 class="modal__title">${movie.title}</h2>
+    <h2 class="modal-title">${movie.title}</h2>
   </div>`;
+  refs.movieModalContainer.innerHTML = markup;
 }
 export { createDetailMovieMarkUp };

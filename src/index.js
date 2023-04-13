@@ -5,6 +5,7 @@ import { renderDetailInfoPoster } from './js/renderDetailInfoPoster';
 renderPopularMovies();
 
 refs.homeGalleryList.addEventListener('click', onOpenModal);
+refs.closeModalBtn.addEventListener('click', onCloseModal);
 
 function onOpenModal(e) {
   const getCard = e.target.closest('.movie-card');
@@ -15,6 +16,7 @@ function onOpenModal(e) {
   renderDetailInfoPoster(id);
   refs.movieModal.classList.remove('is-hidden');
   window.addEventListener('keydown', onEscPress);
+  refs.body.classList.add('no-scroll');
 }
 
 function onEscPress(e) {
@@ -25,6 +27,7 @@ function onEscPress(e) {
   onCloseModal();
 }
 function onCloseModal() {
-  refs.movieModal.classList.add('is-hidden');
+  refs.modal.classList.add('is-hidden');
   refs.movieModalContainer.innerHTML = '';
+  refs.body.classList.remove('no-scroll');
 }

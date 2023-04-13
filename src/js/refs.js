@@ -3,4 +3,7 @@ export const refs = {
   headerContainer: document.querySelector('.header-container'),
   movieModal: document.querySelector('[data-modal]'),
   movieModalContainer: document.querySelector('.js-modal-wrap'),
+  closeModalBtn: document.querySelector('[data-modal-close]'),
+  modal: document.querySelector('[data-modal]'),
+  body: document.querySelector('[data-no-scroll]'),
 };
