@@ -8,7 +8,7 @@ refs.homeGalleryList.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);
 
 function onOpenModal(e) {
-  const getCard = e.target.closest('.movie-card');
+  const getCard = e.target.closest('.filmcard');
   if (!getCard) {
     return;
   }
