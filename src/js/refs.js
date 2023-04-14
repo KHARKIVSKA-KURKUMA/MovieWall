@@ -12,5 +12,5 @@ export const refs = {
   teamModal: document.querySelector('[data-team-modal]'),
   closeTeamModalBtn: document.querySelector('[data-team-modal-close]'),
   teamBackdrop: document.querySelector('.team-backdrop'),
-  teamModalBtn: document.querySelector('[data-mod]')
+  teamModalBtn: document.querySelector('[data-mod]'),
 };
