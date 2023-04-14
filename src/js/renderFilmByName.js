@@ -1,12 +1,13 @@
 import { getFilmByKeyWord } from './fetchMovies';
 import { createPopularMovieMarkUp } from './createPopularMovieMarkUp';
 import { refs } from './refs';
-
-let searchFilm = '';
+let searchFilm;
 
 function onSubmit(event) {
   event.preventDefault();
-  searchFilm = refs.searchQuery.value.trim();
+
+  searchFilm = event.currentTarget.searchQuery.value.trim();
+
   refs.homeGalleryList.innerHTML = '';
   renderMovieByWord(searchFilm);
 }
