@@ -1,3 +1,8 @@
+@import './src/sass/utils/vars';
+$medium-font-weight: 500;
+$common-line-height: 1.33; //16px/12px
+$common-font-size: 12px;
+
 .backdrop {
   position: fixed;
   top: 0;
@@ -6,33 +11,32 @@
   background-color: rgba(0, 0, 0, 0.2);
 }
 .modal {
-  position: absolute;
-  background-color: $whiteColor;
-  border-radius: 4px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 40px;
-  @include mobile {
-  }
-  @include desktop {
-    // видали, просто для наглядності
-    width: 600px;
-    max-width: 600px;
-    height: 500px;
-    max-height: 600px;
-  }
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 280px;
+    background-color: $whiteColor;
+    transform: translate(-50%, -50%);
+    padding: 8px 8px 40px 20px;
+  
+    @include tablet {
+        width: 704px;
+    }
+    
+    @include desktop {
+        width: 806px;
+    }
+
   .modal-img {
-    //delete
-    max-width: 300px;
-    max-height: 300px;
+    display: block;
+    max-width: 280px;
+    max-height: auto;
   }
 }
 .modal-close {
   position: absolute;
-  right: 9px;
-  top: 9px;
-  padding: 0;
+  right: 8px;
+  top: 8px;
   border: transparent;
   width: 30px;
   height: 30px;
@@ -40,4 +44,136 @@
 }
 .modal-close-icon {
   stroke: $blackColor;
+}
+
+.js-modal-wrap{
+    margin-top: 48px;
+    margin-right: 12px;
+}
+.params{
+    margin-top: 20px;
+
+    &__title{
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        font-weight: $medium-font-weight;
+    }
+
+    &__wrap{
+        width: 215px;
+        display: flex;
+        margin-bottom: 20px;
+    }
+    
+    &__key{
+        width: 108px;
+    }
+
+    &__key__text{
+        color: #8C8C8C;
+        font-weight: $medium-font-weight;
+        font-size: $common-font-size;
+        line-height: $common-line-height;
+    }
+
+    &__text-retreat {
+        margin-bottom: 8px;
+    }
+
+    &__vote{
+        display: inline-block;
+        padding: 1px 9px;
+        background-color: #B92F2C;
+        color: #FFFFFF;
+        border-radius: 5px;
+        font-size: $common-font-size;
+        line-height: 1.17; //14px/12px
+        font-weight: $medium-font-weight;
+    }
+
+    &__slash {
+        color: #8C8C8C;
+        font-weight: $medium-font-weight;
+    }
+
+    &__vote_count{
+        display: inline-block;
+        padding: 1px 4px;
+        background-color: #F7F7F7; //тут має бути змінна %greyColor
+        color: #000000;
+        border-radius: 5px;
+        font-size: $common-font-size;
+        line-height: 1.17; //14px/12px
+        font-weight: $medium-font-weight;
+    }
+
+    &__popularity {
+        font-size: $common-font-size;
+        line-height: 1.17; //14px/12px
+        font-weight: $medium-font-weight;
+    }
+
+    &__text-font{
+        font-size: $common-font-size;
+        line-height: $common-line-height;
+        font-weight: $medium-font-weight;
+    }
+    
+}
+.about{
+    margin-bottom: 20px;
+
+    &__title{
+        text-transform: uppercase;
+        font-size: $common-font-size;
+        line-height: $common-line-height;   
+        font-weight: $medium-font-weight;
+    }
+
+    &__overview {
+        margin-top: 8px;
+        font-size: 12px;
+        line-height: 1.67; // 20px/12px
+        font-weight: $medium-font-weight;
+        text-align: justify;
+    }
+}
+.modal-buttons{
+    display: flex;
+    column-gap: 4px;
+    margin-bottom: 20px;
+
+    &__watched{
+        display: inline-block;
+        padding: 10px 12px;
+        background-color: #B92F2C; // $accentColor
+        box-shadow: 0px 0px 7px rgba(27, 27, 27, 0.15);
+        border-radius: 100px;
+        border-color: transparent;
+        color: #F7F7F7;  // $whiteColor
+        text-transform: uppercase;
+        font-weight: $medium-font-weight;
+        font-size: $common-font-size;
+        line-height: 1.17; // 14px/12px
+    }
+
+    &__queue{
+        display: inline-block;
+        padding: 10px 14px;
+        background-color: #FFFFFF;
+        border: 1px solid #000000;
+        border-radius: 100px;
+        color: #B92F2C;
+        text-transform: uppercase;
+        font-weight: $medium-font-weight;
+        font-size: $common-font-size;
+        line-height: 1.17; // 14px/12px
+    }
+}
+
+.trailer{
+    background: yellow;
+    width: 240px;
+    height: auto;
+    margin: 0 auto;
 }
