@@ -1,4 +1,4 @@
-import { onEscPress} from './onCloseModal';
+import { onEscPress, onTeamModalEscPress} from './onCloseModal';
 import { renderDetailInfoPoster } from './renderDetailInfoPoster';
 import { refs } from './refs';
 
@@ -12,5 +12,11 @@ export function onOpenModal(e) {
   renderDetailInfoPoster(id);
   refs.movieModal.classList.remove('is-hidden');
   window.addEventListener('keydown', onEscPress);
+  refs.body.classList.add('no-scroll');
+}
+
+export function onOpenTeamModal() {
+  refs.teamModal.classList.remove('is-hidden');
+  window.addEventListener('keydown', onTeamModalEscPress);
   refs.body.classList.add('no-scroll');
 }

@@ -8,9 +8,21 @@ export function onCloseModal() {
   window.removeEventListener('keydown', onEscPress);
 }
 
+export function onCloseTeamModal() {
+  refs.teamModal.classList.add('is-hidden');
+  refs.body.classList.remove('no-scroll');
+  window.removeEventListener('keydown', onTeamModalEscPress);
+}
+
 export function onEscPress(event) {
   if (event.code === 'Escape') {
 onCloseModal();
+}
+}
+
+export function onTeamModalEscPress(event) {
+  if (event.code === 'Escape') {
+onCloseTeamModal();
 }
 }
 
@@ -19,3 +31,9 @@ export function onBackdropClick (event) {
   onCloseModal();
   }
   }
+
+  export function onTeamBackdropClick (event) {
+    if (event.currentTarget === event.target) {
+    onCloseTeamModal();
+    }
+    }
