@@ -8,6 +8,8 @@ import {
   onOpenSignUpModal,
 } from './js/onOpenModal';
 import { onCloseModal, onCloseTeamModal } from './js/onCloseModal';
+
+import {headerFunctionality} from './js/swichBtnOnClick';
 import {
   onBackdropClick,
   onTeamBackdropClick,
@@ -15,7 +17,9 @@ import {
   onSignBackdropClick,
 } from './js/onCloseModal';
 
+
 renderPopularMovies();
+headerFunctionality();
 
 refs.homeGalleryList.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);
