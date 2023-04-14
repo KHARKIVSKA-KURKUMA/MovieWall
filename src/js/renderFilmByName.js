@@ -4,14 +4,12 @@ import { refs } from './refs';
 
 let searchFilm = '';
 
-refs.searchForm.addEventListener('submit', onSubmit);
-
 function onSubmit(event) {
   event.preventDefault();
   searchFilm = refs.searchQuery.value.trim();
   console.log(searchFilm);
-    refs.homeGalleryList.innerHTML = '';
-    renderMovieByWord();
+  refs.homeGalleryList.innerHTML = '';
+  renderMovieByWord();
 }
 
 async function renderMovieByWord(searchFilm) {
