@@ -4,8 +4,10 @@ import { onSubmit } from './js/renderFilmByName';
 import { onOpenModal, onOpenTeamModal } from './js/onOpenModal';
 import { onCloseModal, onCloseTeamModal } from './js/onCloseModal';
 import { onBackdropClick, onTeamBackdropClick } from './js/onCloseModal';
+import {headerFunctionality} from './js/swichBtnOnClick';
 
 renderPopularMovies();
+headerFunctionality();
 
 refs.homeGalleryList.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);
