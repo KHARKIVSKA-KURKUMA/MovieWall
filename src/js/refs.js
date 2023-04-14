@@ -7,5 +7,5 @@ export const refs = {
   modal: document.querySelector('[data-modal]'),
   body: document.querySelector('[data-no-scroll]'),
   searchQuery: document.querySelector('.search-input'),
-  searchForm: document.querySelector('.search'),
+  searchForm: document.getElementById('search-form'),
 };

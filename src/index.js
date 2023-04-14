@@ -1,6 +1,5 @@
 import { refs } from './js/refs';
 import { renderPopularMovies } from './js/renderPopularPoster';
-import { renderDetailInfoPoster } from './js/renderDetailInfoPoster';
 import { onSubmit } from './js/renderFilmByName';
 import { onOpenModal } from './js/onOpenModal';
 import { onCloseModal } from './js/onCloseModal';
