@@ -13,4 +13,10 @@ export const refs = {
   closeTeamModalBtn: document.querySelector('[data-team-modal-close]'),
   teamBackdrop: document.querySelector('.team-backdrop'),
   teamModalBtn: document.querySelector('[data-mod]'),
+  closeSignInModal: document.querySelector('.modal-SignIn-close'),
+  signInBackdrop: document.querySelector('.signIn'),
+  openSignInModal: document.querySelector('.js-signIn'),
+  openSignUpModal: document.querySelector('.signUp-open'),
+  signUpBackdrop: document.querySelector('.signUp'),
+  closeSignUpModal: document.querySelector('.modal-SignUp-close'),
 };

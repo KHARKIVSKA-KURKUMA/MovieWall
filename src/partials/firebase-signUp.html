@@ -1,18 +1,35 @@
-<form class="sign-up">
-  <div>
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" class="sign-up-mail" required />
+<div class="signUp backdrop is-hidden">
+  <div class="signUp-modal" data-toggle="modal">
+    <button type="button" class="modal-signUp-close" name="signUp">
+      <svg class="modal-close-icon" width="20" height="20">
+        <use href="/src/images/icons.svg#icon-close"></use>
+      </svg>
+    </button>
+    <div class="signUp-container">
+      <form class="sign-up">
+        <div>
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="sign-up-mail"
+            required
+          />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            minlength="6"
+            class="sign-up-password"
+            required
+          />
+        </div>
+        <button type="submit">Sign up</button>
+      </form>
+    </div>
   </div>
-  <div>
-    <label for="password">Password</label>
-    <input
-      type="password"
-      id="password"
-      name="password"
-      minlength="6"
-      class="sign-up-password"
-      required
-    />
-  </div>
-  <button type="submit">Sign up</button>
-</form>
+</div>
