@@ -1,20 +1,19 @@
 import { getFilmByKeyWord } from './fetchMovies';
 import { createPopularMovieMarkUp } from './createPopularMovieMarkUp';
 import { refs } from './refs';
-
-let searchFilm = '';
+let searchFilm;
 
 function onSubmit(event) {
   event.preventDefault();
-  searchFilm = refs.searchQuery.value.trim();
-  console.log(searchFilm);
+
+  searchFilm = event.currentTarget.searchQuery.value.trim();
+
   refs.homeGalleryList.innerHTML = '';
-  renderMovieByWord();
+  renderMovieByWord(searchFilm);
 }
 
 async function renderMovieByWord(searchFilm) {
   await getFilmByKeyWord(searchFilm).then(data => {
-    // console.log(searchFilm);
     refs.homeGalleryList.insertAdjacentHTML(
       'beforeend',
       createPopularMovieMarkUp(data.results)

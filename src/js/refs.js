@@ -7,5 +7,10 @@ export const refs = {
   modal: document.querySelector('[data-modal]'),
   body: document.querySelector('[data-no-scroll]'),
   searchQuery: document.querySelector('.search-input'),
-  searchForm: document.querySelector('.search'),
+  searchForm: document.getElementById('search-form'),
+  backdrop: document.querySelector('.backdrop'),
+  teamModal: document.querySelector('[data-team-modal]'),
+  closeTeamModalBtn: document.querySelector('[data-team-modal-close]'),
+  teamBackdrop: document.querySelector('.team-backdrop'),
+  teamModalBtn: document.querySelector('[data-mod]'),
 };
