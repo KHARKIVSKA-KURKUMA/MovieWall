@@ -8,4 +8,5 @@ export const refs = {
   body: document.querySelector('[data-no-scroll]'),
   searchQuery: document.querySelector('.search-input'),
   searchForm: document.getElementById('search-form'),
+  backdrop: document.querySelector('.backdrop'),
 };
