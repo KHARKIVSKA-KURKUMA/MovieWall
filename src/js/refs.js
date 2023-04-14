@@ -6,6 +6,6 @@ export const refs = {
   closeModalBtn: document.querySelector('[data-modal-close]'),
   modal: document.querySelector('[data-modal]'),
   body: document.querySelector('[data-no-scroll]'),
-  searchQuery: document.querySelector('.search-input'),
+  searchQuery: document.querySelector('.search__input'),
   searchForm: document.querySelector('.search'),
 };

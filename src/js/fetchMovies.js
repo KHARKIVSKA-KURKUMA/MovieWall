@@ -28,11 +28,9 @@ async function getDetailAboutMovie(id) {
 export { getDetailAboutMovie };
   
 async function getFilmByKeyWord(search) {
-    console.log(search)
   try {
     const url = `${BASE_URL}search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${search}`;
     const response = await axios.get(url);
-    console.log(response.data);
     return await response.data;
   } catch (error) {
     Notify.failure('Oops, an error occurred');

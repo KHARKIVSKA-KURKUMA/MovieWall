@@ -1,39 +1,36 @@
 .gallery {
   &-container {
-    padding-top: 10px;
     padding-bottom: 20px;
     @include mobile {
-      padding-top: 16px;
       padding-bottom: 30px;
     }
   }
   &-list {
-    @include mobile {
+    @include tablet {
       display: flex;
       flex-wrap: wrap;
       gap: 32px;
-      justify-content: center;
     }
     @include desktop {
       gap: 32px 16px;
     }
   }
 
-  //   &_item {
-  //     width: 280px;
-  //     height: 440px;
-  //     &:not(:last-child) {
-  //       margin-bottom: 20px;
-  //     }
-  //   }
-
   .filmcard {
     width: 100%;
     max-width: 500px;
-    margin: 0 auto 20px;
-
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
     @include tablet {
-      margin-bottom: 0;
+    &:not(:last-child) {
+        margin-bottom: 0;
+      }
+      width: 336px;
+
+      @include desktop {
+        width: 394px;
+      }
     }
     &-img {
       border-radius: 5px;

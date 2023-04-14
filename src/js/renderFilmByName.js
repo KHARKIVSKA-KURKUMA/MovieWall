@@ -7,14 +7,12 @@ let searchFilm = '';
 function onSubmit(event) {
   event.preventDefault();
   searchFilm = refs.searchQuery.value.trim();
-  console.log(searchFilm);
   refs.homeGalleryList.innerHTML = '';
-  renderMovieByWord();
+  renderMovieByWord(searchFilm);
 }
 
 async function renderMovieByWord(searchFilm) {
   await getFilmByKeyWord(searchFilm).then(data => {
-    // console.log(searchFilm);
     refs.homeGalleryList.insertAdjacentHTML(
       'beforeend',
       createPopularMovieMarkUp(data.results)
