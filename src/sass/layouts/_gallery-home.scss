@@ -6,11 +6,8 @@
     }
   }
   &-list {
-<<<<<<< Updated upstream
     @include tablet {
-=======
     @include table {
->>>>>>> Stashed changes
       display: flex;
       flex-wrap: wrap;
       gap: 32px;
@@ -26,10 +23,6 @@
     &:not(:last-child) {
       margin-bottom: 20px;
     }
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
     @include tablet {
     &:not(:last-child) {
         margin-bottom: 0;
