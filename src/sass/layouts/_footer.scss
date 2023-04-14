@@ -1,26 +1,17 @@
 .footer {
   padding: 29px 0;
   background-color: $greyColor;
-  &__container {
+  &__text {
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 5px;
-
-    @include tablet {
-      flex-direction: row;
-    }
-  }
-  &__text {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
     font-size: 14px;
     line-height: 114%;
     text-align: center;
     color: rgba(84, 84, 84, 1);
-
     @include tablet {
+      flex-direction: row;
       font-size: 16px;
       line-height: 119%;
     }
@@ -30,7 +21,7 @@
     padding: 0 10px;
     color: $accentColor;
   }
-  &__item {
+  &__button {
     text-decoration: underline;
     border: none;
     background-color: transparent;
