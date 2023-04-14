@@ -1,6 +1,12 @@
-import { onEscPress, onTeamModalEscPress} from './onCloseModal';
+import {
+  onEscPress,
+  onTeamModalEscPress,
+  onSignModalEscPress,
+  onSignUpModalEscPress,
+} from './onCloseModal';
 import { renderDetailInfoPoster } from './renderDetailInfoPoster';
 import { refs } from './refs';
+import { onCloseSign } from './onCloseModal';
 
 export function onOpenModal(e) {
   const getCard = e.target.closest('.filmcard');
@@ -19,4 +25,15 @@ export function onOpenTeamModal() {
   refs.teamModal.classList.remove('is-hidden');
   window.addEventListener('keydown', onTeamModalEscPress);
   refs.body.classList.add('no-scroll');
+}
+export function onOpenSignModal() {
+  refs.signInBackdrop.classList.remove('is-hidden');
+  window.addEventListener('keydown', onSignModalEscPress);
+  refs.body.classList.add('no-scroll');
+}
+export function onOpenSignUpModal() {
+  refs.signUpBackdrop.classList.remove('is-hidden');
+  window.addEventListener('keydown', onSignUpModalEscPress);
+  refs.body.classList.add('no-scroll');
+  onCloseSign();
 }
