@@ -19,6 +19,20 @@
     }
   }
 
+.team-modal-close {
+    position: absolute;
+    right: 16px;
+    top: 8px;
+    width: 30px;
+    height: 30px;
+    border: transparent;
+    background-color: $whiteColor;
+  }
+  
+  .team-modal-close-icon {
+    stroke: $blackColor;
+  }
+
 .teammate__header {
     margin-top: 15px;
     font-size: 20px;
@@ -128,14 +142,11 @@ font-weight: 400;
     padding: 5px;
     margin-top: 5px;
     text-align: center;
-    :hover {
-        transform: scale(1.1);
+    &:hover {
+        .teammate__icon{
+            fill: rgb(172, 17, 17);
+        }
     }
 }
 
-.teammate__icon {
-    :hover {
-        transform: scale(1.1);
-    }
-}
 
