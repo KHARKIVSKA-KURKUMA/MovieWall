@@ -44,6 +44,7 @@ export function OnFormSignIn(e) {
       onCloseSign();
       refs.openSignInModal.textContent = email;
       refs.openSignInModal.disabled = true;
+      addActiveBtn();
     })
     .catch(error => {
       const errorCode = error.code;
@@ -68,6 +69,7 @@ export function OnFormSignUp(e) {
       refs.openSignInModal.textContent = Username;
       refs.openSignInModal.disabled = true;
       onCloseSignUp();
+      addActiveBtn();
     })
     .catch(error => {
       const errorCode = error.code;
@@ -87,11 +89,15 @@ export function onGoogleClick(e) {
       const token = credential.accessToken;
       const user = result.user;
       const UserName = user.displayName;
+      Notify.success(
+        `The user has been successfully registered! Hello ${UserName}`
+      );
       refs.openSignInModal.textContent = UserName;
       localStorage.setItem(STRG_KEY, UserName);
       refs.openSignInModal.disabled = true;
       onCloseSign();
       onCloseSignUp();
+      addActiveBtn();
     })
     .catch(error => {
       const errorCode = error.code;
@@ -108,4 +114,14 @@ if (getName === null) {
 } else {
   refs.openSignInModal.textContent = getName;
   refs.openSignInModal.disabled = true;
+}
+
+function addActiveBtn() {
+  if (refs.libraryEl.style.display === 'flex') {
+    refs.library.classList.add(refs.activeClass);
+    refs.home.classList.remove(refs.activeClass);
+  } else {
+    refs.home.classList.add(refs.activeClass);
+    refs.library.classList.remove(refs.activeClass);
+  }
 }

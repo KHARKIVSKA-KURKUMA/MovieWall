@@ -25,4 +25,14 @@ export const refs = {
   formSignUp: document.querySelector('.sign-up'),
   SignInWithGoogle: document.querySelector('.google-button'),
   SignUpWithGoogle: document.querySelector('.button-google'),
+  form: document.querySelector('.search'),
+  listEl: document.querySelectorAll('.js-btn-list'),
+  libraryEl: document.querySelector('.library'),
+  library: document.querySelector('.library-btn'),
+  activeClass: 'nav-list__button--active',
+  home: document.querySelector('.home'),
+  targetsList: {
+    home: 'home',
+    library: 'library',
+  },
 };
