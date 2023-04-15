@@ -12,52 +12,98 @@
   min-width: 280px;
   background-color: $whiteColor;
   transform: translate(-50%, -50%);
-  padding: 8px 8px 40px 20px;
 
   @include tablet {
-    width: 704px;
+    min-width: 704px;
   }
 
   @include desktop {
-    width: 806px;
+    min-width: 806px;
   }
-
-  .modal-img {
-    display: block;
-    max-width: 280px;
-    max-height: auto;
-  }
-}
 .modal-close {
   position: absolute;
-  right: 8px;
+  right: 16px;
   top: 8px;
-  border: transparent;
   width: 30px;
   height: 30px;
+  border: transparent;
   background-color: $whiteColor;
 }
+
 .modal-close-icon {
   stroke: $blackColor;
 }
 
 .js-modal-wrap {
-  margin-top: 48px;
-  margin-right: 12px;
+  margin: 48px 20px 40px;
+
+  @include tablet {
+    margin-top: 40px;
+    margin-bottom: 64px;
+    margin-left: 36px;
+  }
+  
+  @include desktop {
+    margin: 40px 12px;  
+  }
 }
+.modal-wrap{
+  @include tablet {
+      display: flex;
+  }
+}
+
+.modal-img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+
+  @include tablet {
+    width: 264px;
+  }
+
+  @include desktop {
+    width: 375px;
+    }
+  }
+}
+
 .params {
+  margin: 0 auto;
   margin-top: 20px;
+
+  @include tablet {
+    margin-top: 0;
+    width: 264px;
+  }
+  @include desktop {
+    width: 391px;
+    margin-left: 16px;
+  }
 
   &__title {
     margin-bottom: 20px;
     text-transform: uppercase;
     font-weight: $medium-font-weight;
+    line-height: 1.15; // 23px/20px
+
+    @include desktop {
+      font-size: 30px;
+      line-height: 1.17; // 35px/30px
+    }
   }
 
   &__wrap {
     width: 215px;
     display: flex;
     margin-bottom: 20px;
+    @include tablet {
+      width: 264px;
+    }
+    
+    @include desktop {
+      width: 391px;
+    }
   }
 
   &__key {
@@ -78,8 +124,8 @@
   &__vote {
     display: inline-block;
     padding: 1px 9px;
-    background-color: #b92f2c;
-    color: #ffffff;
+    background-color: $accentColor;
+    color: $whiteColor;
     border-radius: 5px;
     font-size: $common-font-size;
     line-height: 1.17; //14px/12px
@@ -94,8 +140,8 @@
   &__vote_count {
     display: inline-block;
     padding: 1px 4px;
-    background-color: #f7f7f7; //тут має бути змінна %greyColor
-    color: #000000;
+    background-color: $greyColor; 
+    color: $blackColor;
     border-radius: 5px;
     font-size: $common-font-size;
     line-height: 1.17; //14px/12px
@@ -114,6 +160,7 @@
     font-weight: $medium-font-weight;
   }
 }
+
 .about {
   margin-bottom: 20px;
 
@@ -140,28 +187,43 @@
   &__watched {
     display: inline-block;
     padding: 10px 12px;
-    background-color: #b92f2c; // $accentColor
+    background-color: $accentColor; 
     box-shadow: 0px 0px 7px rgba(27, 27, 27, 0.15);
     border-radius: 100px;
     border-color: transparent;
-    color: #f7f7f7; // $whiteColor
+    color: $greyColor; 
     text-transform: uppercase;
     font-weight: $medium-font-weight;
     font-size: $common-font-size;
     line-height: 1.17; // 14px/12px
+
+    @include tablet {
+        padding: 12px 18px;
+      }
+    @include desktop {
+      padding: 14px 32px;
+    }
   }
 
   &__queue {
     display: inline-block;
     padding: 10px 14px;
-    background-color: #ffffff;
-    border: 1px solid #000000;
+    background-color: $whiteColor;
+    border: 1px solid $blackColor;
     border-radius: 100px;
-    color: #b92f2c;
+    color: $accentColor;
     text-transform: uppercase;
     font-weight: $medium-font-weight;
     font-size: $common-font-size;
     line-height: 1.17; // 14px/12px
+
+    @include tablet {
+      padding: 12px 16px;
+    }
+
+    @include desktop {
+      padding: 14px 24px;
+    }
   }
 }
 
