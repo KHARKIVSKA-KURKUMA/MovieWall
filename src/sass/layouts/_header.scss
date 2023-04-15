@@ -1,62 +1,178 @@
 .header {
-    margin: 32px;
-    min-height: 460px;
-    padding: 14px;
-    background-color: $accentColor;
-    background-image: url(../images/favicon/hero-background/hero-bg-mob.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
     @include tablet {
-        flex-direction: row;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        min-height: 222px;
+        padding: 32px 0;
+    }
+
+    &__holder {
+        min-height: 460px;
         padding: 14px;
-        background-image: url(../images/favicon/hero-background/hero-bg-tab.jpg);
+        background-color: $accentColor;
+        background-image: url(../images/hero-background/hero-bg-mob.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+
+        @media (min-resolution: 2dppx) {
+            background-image: url(../images/hero-background/hero-bg-mob-@2x.jpg);
+        }
+
+        @include tablet {
+            flex-direction: row;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            min-height: 222px;
+            padding: 14px;
+            background-image: url(../images/hero-background/hero-bg-tab.jpg);
+
+            @media (min-resolution: 2dppx) {
+                background-image: url(../images/hero-background/hero-bg-tab-@2x.jpg);
+            }
+        }
+
+        @include desktop {
+            min-height: 316px;
+            padding: 16px 32px;
+            background-image: url(../images/hero-background/hero-bg-desktop.jpg);
+
+            @media (min-resolution: 2dppx) {
+                background-image: url(../images/hero-background/hero-bg-desktop-@2x.jpg);
+            }
+        }
     }
 
     &__headline {
+        margin-top: auto;
         display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 8px;
+
+        @include tablet {
+            justify-content: flex-start;
+            order: 4;
+            gap: 16px;
+        }
+    }
+
+    &__title {
+        color: $whiteColor;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 1.19;
+
+        @include tablet {
+            font-size: 40px;
+            line-height: 1.175;
+        }
+
+        @include desktop {
+            font-size: 64px;
+            line-height: 1.17;
+        }
     }
 }
 
 .nav-list {
+    --active-bg: #000;
     display: flex;
-    text-align: center;
+    flex-wrap: wrap;
     gap: 4px;
     margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.17;
+    
     @include tablet {
         margin-bottom: 0;
         order: 2;
     }
-    @mixin desktop {
+    
+    @include desktop {
         gap: 8px;
     }
-}
+    
+    &__item {
+        gap: 4px;
+        
+        @include desktop {
+            gap: 8px;
+        }
+        
+        &--first {
+            animation: scale 3s infinite;
+            width: 100%;
+            @include tablet {
+                width: auto;
+            }
+        }
 
-.nav-list__button {
-    border-radius: 100px;
-    padding: 10px 22px;
-    min-width: 87px;
-    border: none;
-}
+    }
 
-.nav-list__button--active {
-    background: $blackColor;
-    color: $whiteColor;
+    @keyframes scale {
+        0% {
+            transform: scale(0.9);
+        }
+    
+        100% {
+            transform: scale(1.06);
+        }
+    }
+    
+    &__button {
+        text-align: center;
+        transition: scale .25s ease;
+        border-radius: 100px;
+        padding: 10px 22px;
+        min-width: 87px;
+        border: none;
+
+        @include tablet {
+            padding: 12px 20px;
+        }
+
+        @include desktop {
+            padding: 14px 24px;
+        }
+
+        &--active {
+            background: var(--active-bg);
+            color: $whiteColor;
+        }
+
+        &:hover {
+            scale: 1.06;
+            cursor: pointer;
+        }
+
+        &.js-signIn {
+            color: $accentColor;
+        }
+    }
 }
 
 .logo {
     width: 27px;
     height: 27px;
     animation: rotate 3s infinite;
+    transition: scale .25s ease;
+
     @include tablet {
         width: 40px;
         height: 40px;
+    }
+
+    @include desktop {
+        width: 59px;
+        height: 59px;
+    }
+
+    &:hover {
+        scale: 1.2;
+        cursor: pointer;
     }
 }
 
@@ -64,6 +180,7 @@
     0% {
         transform: rotate(0);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -71,73 +188,83 @@
 
 .search {
     position: relative;
-    max-width: 252px;
     width: 100%;
 
     @include tablet {
+        max-width: 165px;
         order: 1;
         margin-right: 4px;
     }
-}
 
-.search__input {
-    border-radius: 100px;
-    padding: 10px 14px;
-    width: 100%;
-    border: none;
-    
-}
-
-.search__btn {
-    position: absolute;
-    top: 50%;
-    right: 14px;
-    border: none;
-    background: none;
-    padding: 0;
-    margin: 0;
-    transform: translateY(-50%);
-    @include tablet {
-        right: 16px;
+    @include desktop {
+        max-width: 187px;
+        margin-right: 8px;
     }
-}
 
-.search__svg {
-    width: 14px;
-    height: 14px;
-    stroke: #000;
-    @include tablet {
-        width: 16px;
-        height: 16px;
-    }
-}
-
-.header__headline {
-    margin-top: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    @include tablet {
-        justify-content: flex-start;
-        order: 4;
-    }
-}
-
-.header__title {
-    color: $whiteColor;
-    font-size: 32px;
-    line-height: 1.2;
-    @include tablet {
-        font-size: 40px;
+    &__input {
+        border-radius: 100px;
+        padding: 10px 14px;
+        width: 100%;
+        border: none;
+        font-size: 12px;
         line-height: 1.17;
+        background: $whiteColor;
+
+        @include tablet {
+            height: 37px;
+            font-size: 14px;
+            line-height: 1.14;
+        }
+
+        @include desktop {
+            height: 42px;
+        }
+
+        &::-webkit-search-cancel-button {
+            -webkit-appearance: none;
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        top: 50%;
+        right: 14px;
+        border: none;
+        background: none;
+        padding: 0;
+        margin: 0;
+        transform: translateY(-50%);
+        transition: scale .25s ease;
+        transform-origin: center 0;
+
+        @include tablet {
+            right: 16px;
+        }
+
+        &:hover {
+            scale: 1.2;
+            cursor: pointer;
+        }
+    }
+
+    &__svg {
+        width: 14px;
+        height: 14px;
+        stroke: #000;
+
+        @include tablet {
+            width: 16px;
+            height: 16px;
+        }
     }
 }
 
 .library {
+    --active-bg: #B92F2C;
     width: 100%;
     justify-content: center;
     display: none;
+
     @include tablet {
         margin-left: auto;
         width: auto;

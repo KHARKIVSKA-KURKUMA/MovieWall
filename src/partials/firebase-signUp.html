@@ -1,18 +1,55 @@
-<form class="sign-up">
-  <div>
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" class="sign-up-mail" required />
+<div class="signUp backdrop is-hidden">
+  <div class="signUp-modal" data-toggle="modal">
+    <button type="button" class="modal-signUp-close" name="signUp">
+      <svg class="modal-close-icon" width="20" height="20">
+        <use href="/src/images/icons.svg#icon-close"></use>
+      </svg>
+    </button>
+    <div class="signUp-container">
+      <form class="sign-up">
+        <h2>Create an account</h2>
+        <div>
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            class="sign-up-name"
+            autocomplete="off"
+          />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            class="sign-up-mail"
+            autocomplete="off"
+            required
+          />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input
+            type="password"
+            autocomplete="off"
+            minlength="6"
+            class="sign-up-password"
+            required
+          />
+        </div>
+        <button type="submit">Sign up</button>
+      </form>
+      <button class="button-google">Sign up with Google</button>
+      <div class="signIn-box">
+        <button
+          type="button"
+          class="js-signIn signIn-open"
+          data-target="signIn"
+        >
+          Sign In
+        </button>
+        <p>with your MovieWall account</p>
+      </div>
+    </div>
   </div>
-  <div>
-    <label for="password">Password</label>
-    <input
-      type="password"
-      id="password"
-      name="password"
-      minlength="6"
-      class="sign-up-password"
-      required
-    />
-  </div>
-  <button type="submit">Sign up</button>
-</form>
+</div>
