@@ -79,31 +79,39 @@
 .nav-list {
     --active-bg: #000;
     display: flex;
-    text-align: center;
+    flex-wrap: wrap;
     gap: 4px;
     margin-bottom: 8px;
     font-weight: 500;
     font-size: 12px;
     line-height: 1.17;
-
+    
     @include tablet {
         margin-bottom: 0;
         order: 2;
     }
-
+    
     @include desktop {
         gap: 8px;
     }
-
+    
     &__item {
         gap: 4px;
-
+        
         @include desktop {
             gap: 8px;
         }
+        
+        &:first-child {
+            width: 100%;
+            @include tablet {
+                width: auto;
+            }
+        }
     }
-
+    
     &__button {
+        text-align: center;
         transition: scale .25s ease;
         border-radius: 100px;
         padding: 10px 22px;
