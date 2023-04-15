@@ -13,4 +13,5 @@ export const refs = {
   closeTeamModalBtn: document.querySelector('[data-team-modal-close]'),
   teamBackdrop: document.querySelector('.team-backdrop'),
   teamModalBtn: document.querySelector('[data-mod]'),
+  galleryBgImg: document.querySelector('.gallery-container'),
 };
