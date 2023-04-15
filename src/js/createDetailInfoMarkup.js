@@ -3,6 +3,7 @@ import { refs } from './refs';
 import { genresItems } from '../data/genres';
 import notAvailablePoster from '../images/poster-not-available.jpg';
 
+
 function createDetailMovieMarkUp(movie) {
   if (!movie) {
     return '';
@@ -45,7 +46,7 @@ function createDetailMovieMarkUp(movie) {
             <p class="about__overview">${movie.overview}</p>
           </div>
           <div class="modal-buttons">
-            <button class="modal-buttons__watched" data-modal-watched>add to Watched</button>
+            <button class="modal-buttons__watched add-to-watched-btn" data-modal-watched>add to Watched</button>
             <button class="modal-buttons__queue" data-modal-watched>add to queue</button>
           </div>
 
