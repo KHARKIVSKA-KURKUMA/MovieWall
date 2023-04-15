@@ -21,4 +21,8 @@ export const refs = {
   openSignUpModal: document.querySelector('.signUp-open'),
   signUpBackdrop: document.querySelector('.signUp'),
   closeSignUpModal: document.querySelector('.modal-signUp-close'),
+  formSignIn: document.querySelector('.sign-in'),
+  formSignUp: document.querySelector('.sign-up'),
+  SignInWithGoogle: document.querySelector('.google-button'),
+  SignUpWithGoogle: document.querySelector('.button-google'),
 };

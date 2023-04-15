@@ -14,11 +14,6 @@ import {
   signInWithEmailAndPassword,
 } from 'firebase/auth';
 
-const formSignIn = document.querySelector('.sign-in');
-const formSignUp = document.querySelector('.sign-up');
-const SignInWhithGoogle = document.querySelector('.google-button');
-const SignUpWhithGoogle = document.querySelector('.button-google');
-
 const STRG_KEY = 'UserName';
 refs.openSignInModal.textContent = `SIGN IN`;
 
@@ -36,13 +31,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 
-formSignIn.addEventListener('submit', OnFormSignIn);
-formSignUp.addEventListener('submit', OnFormSignUp);
-SignInWhithGoogle.addEventListener('click', onGoogleClick);
-SignUpWhithGoogle.addEventListener('click', onGoogleClick);
-
 /* ------------------------------- Вхід ------------------------------- */
-function OnFormSignIn(e) {
+export function OnFormSignIn(e) {
   e.preventDefault();
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
@@ -51,7 +41,6 @@ function OnFormSignIn(e) {
     .then(userCredential => {
       const user = userCredential.user;
       Notify.success(`The user has been successfully login! Hello ${email}`);
-      console.log(user);
       onCloseSign();
       refs.openSignInModal.textContent = email;
       refs.openSignInModal.disabled = true;
@@ -63,7 +52,7 @@ function OnFormSignIn(e) {
     });
 }
 /* ------------------------------- Реєстрація ------------------------------- */
-function OnFormSignUp(e) {
+export function OnFormSignUp(e) {
   e.preventDefault();
 
   const email = document.querySelector('.sign-up-mail').value;
@@ -87,7 +76,7 @@ function OnFormSignUp(e) {
     });
 }
 /* ---------------------------- Реєстрація гуглом --------------------------- */
-function onGoogleClick(e) {
+export function onGoogleClick(e) {
   e.preventDefault();
   const NameInput = document.querySelector('.sign-up-name');
   NameInput.value = localStorage.getItem('name');
@@ -114,7 +103,6 @@ function onGoogleClick(e) {
 }
 
 const getName = localStorage.getItem(STRG_KEY);
-console.log(getName);
 if (getName === null) {
   refs.openSignInModal.textContent = `SIGN IN`;
 } else {
