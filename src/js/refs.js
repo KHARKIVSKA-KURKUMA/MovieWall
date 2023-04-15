@@ -13,7 +13,7 @@ export const refs = {
   closeTeamModalBtn: document.querySelector('[data-team-modal-close]'),
   teamBackdrop: document.querySelector('.team-backdrop'),
   teamModalBtn: document.querySelector('[data-mod]'),
-  galleryBgImg: document.querySelector('.gallery-container'),
+  galleryBgImg: document.querySelector('.gallery-holder'),
   paginationEl: document.getElementById('pagination'),
   closeSignInModal: document.querySelector('.modal-SignIn-close'),
   signInBackdrop: document.querySelector('.signIn'),
