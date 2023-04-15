@@ -20,6 +20,7 @@ const SignInWhithGoogle = document.querySelector('.google-button');
 const SignUpWhithGoogle = document.querySelector('.button-google');
 
 const STRG_KEY = 'UserName';
+refs.openSignInModal.textContent = `SIGN IN`;
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAU7wH85_udF-Qb2LdQkjbDtUFIVHR9oMA',
@@ -112,7 +113,7 @@ function onGoogleClick(e) {
     });
 }
 
-getName = localStorage.getItem(STRG_KEY);
+const getName = localStorage.getItem(STRG_KEY);
 console.log(getName);
 if (getName === null) {
   refs.openSignInModal.textContent = `SIGN IN`;
