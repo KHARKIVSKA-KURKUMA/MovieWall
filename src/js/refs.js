@@ -16,7 +16,8 @@ export const refs = {
   closeSignInModal: document.querySelector('.modal-SignIn-close'),
   signInBackdrop: document.querySelector('.signIn'),
   openSignInModal: document.querySelector('.js-signIn'),
+  openSignInModalNd: document.querySelector('.signIn-open'),
   openSignUpModal: document.querySelector('.signUp-open'),
   signUpBackdrop: document.querySelector('.signUp'),
-  closeSignUpModal: document.querySelector('.modal-SignUp-close'),
+  closeSignUpModal: document.querySelector('.modal-signUp-close'),
 };
