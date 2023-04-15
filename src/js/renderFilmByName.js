@@ -5,7 +5,9 @@ let searchFilm;
 
 function onSubmit(event) {
   event.preventDefault();
+
   searchFilm = event.currentTarget.searchQuery.value.trim();
+
   refs.homeGalleryList.innerHTML = '';
   renderMovieByWord(searchFilm);
 }

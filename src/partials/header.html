@@ -1,21 +1,28 @@
 <header class="header">
-  <ul class="nav-list list js-btn-list">
-    <li class="nav-list__item">
+  <div class="container">
+    <div class="header__holder">
+      <ul class="nav-list list js-btn-list">
+        <li class="nav-list__item">
+          <button class="nav-list__button nav-list__button--active" data-target="home" type="button">
+            HOME
+          </button>
+        </li>
+        <li class="nav-list__item">
+          <button class="nav-list__button" data-target="library" type="button">
+            MY LIBRARY
+          </button>
+        </li>
+         <li class="nav-list__item">
       <button
-        class="nav-list__button nav-list__button--active"
-        data-target="home"
+        class="nav-list__button js-signIn"
+        data-target="signIn"
         type="button"
       >
-        HOME
+        SIGN IN
       </button>
     </li>
-    <li class="nav-list__item">
-      <button class="nav-list__button" data-target="library" type="button">
-        MY LIBRARY
-      </button>
-    </li>
-  </ul>
-  <form class="search-form search" id="search-form">
+      </ul>
+        <form class="search-form search" id="search-form">
     <input
       class="search__input"
       type="text"
@@ -29,26 +36,24 @@
       </svg>
     </button>
   </form>
-  <div class="header__headline">
-    <svg class="logo">
-      <use href="/src/images/icons.svg#icon-logo"></use>
-    </svg>
-    <h1 class="header__title">Filmoteka</h1>
+      <div class="header__headline">
+        <svg class="logo">
+          <use href="/src/images/icons.svg#icon-logo"></use>
+        </svg>
+        <h1 class="header__title">Filmoteka</h1>
+      </div>
+      <ul class="nav-list list library js-btn-list">
+        <li class="nav-list__item">
+          <button class="nav-list__button nav-list__button--active" data-target="watched" type="button">
+            WATCHED
+          </button>
+        </li>
+        <li class="nav-list__item">
+          <button class="nav-list__button" data-target="queue" type="button">
+            QUEUE
+          </button>
+        </li>
+      </ul>
+    </div>
   </div>
-  <ul class="nav-list list library js-btn-list">
-    <li class="nav-list__item">
-      <button
-        class="nav-list__button nav-list__button--active"
-        data-target="watched"
-        type="button"
-      >
-        WATCHED
-      </button>
-    </li>
-    <li class="nav-list__item">
-      <button class="nav-list__button" data-target="queue" type="button">
-        QUEUE
-      </button>
-    </li>
-  </ul>
 </header>
