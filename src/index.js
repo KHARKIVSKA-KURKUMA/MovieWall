@@ -16,7 +16,9 @@ import {
   onCloseSign,
   onCloseSignUp,
 } from './js/onCloseModal';
+import { createCursor } from './js/cursor';
 
+createCursor();
 renderPopularMovies();
 headerFunctionality();
 
