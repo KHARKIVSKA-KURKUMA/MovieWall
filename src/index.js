@@ -21,12 +21,12 @@ import { onGenresClick } from './js/renderFilmByGenres';
 import { onLanguageClick } from './js/renderFilmByLanguage';
 import { onUkrMovieClick } from './js/renderUkrainianFilms';
 
-// import {switcherThemeFunctionality} from './js/changeThemeOnClick';
+import {switcherThemeFunctionality} from './js/changeThemeOnClick';
 import { onUpBtn } from './js/upBtn';
 
 renderPopularMovies();
 headerFunctionality();
-// switcherThemeFunctionality();
+switcherThemeFunctionality();
 
 refs.homeGalleryList.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);
