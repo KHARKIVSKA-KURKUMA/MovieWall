@@ -95,9 +95,7 @@
     text-transform: uppercase;
   }
 }
-// .js-signIn {
-//   &:disabled {
-//     background-color: $accentColor;
-//     color: $blackColor;
-//   }
-// }
+.js-signIn {
+  background-color: black;
+  color: white;
+}
