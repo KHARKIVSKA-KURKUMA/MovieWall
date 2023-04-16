@@ -4,6 +4,7 @@
     }
 
     &__holder {
+        position: relative;
         min-height: 460px;
         padding: 14px;
         background-color: $accentColor;
@@ -25,6 +26,7 @@
             flex-wrap: wrap;
             min-height: 222px;
             padding: 14px;
+            border-radius: 16px;
             background-image: url(../images/hero-background/hero-bg-tab.jpg);
 
             @media (min-resolution: 2dppx) {
@@ -53,7 +55,7 @@
 
         @include tablet {
             justify-content: flex-start;
-            order: 4;
+            order: 5;
             gap: 16px;
         }
     }
@@ -77,14 +79,15 @@
 }
 
 .nav-list {
+    --default-bg: #fff;
+    --default-color: #000;
     --active-bg: #000;
+    --active-color: #fff;
+
     display: flex;
     flex-wrap: wrap;
     gap: 4px;
     margin-bottom: 8px;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.17;
     
     @include tablet {
         margin-bottom: 0;
@@ -101,15 +104,6 @@
         @include desktop {
             gap: 8px;
         }
-        
-        &--first {
-            animation: scale 3s infinite;
-            width: 100%;
-            @include tablet {
-                width: auto;
-            }
-        }
-
     }
 
     @keyframes scale {
@@ -129,7 +123,12 @@
         padding: 10px 22px;
         min-width: 87px;
         border: none;
-
+        background: var(--default-bg);
+        color: var(--default-color);
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.17;
+       
         @include tablet {
             padding: 12px 20px;
         }
@@ -140,21 +139,55 @@
 
         &--active {
             background: var(--active-bg);
-            color: $whiteColor;
+            color: var(--active-color);
         }
 
         &:hover {
             scale: 1.06;
             cursor: pointer;
         }
+    }
+}
 
-        &.js-signIn {
-            color: $accentColor;
-        }
+.user-bar {
+    margin-bottom: 8px;
+
+    @include tablet {
+        order: 3;
+        margin: 0 0 0 auto;
+    }
+}
+
+.js-signIn {
+    color: $whiteColor;
+    background: #8C8C8C;
+
+    &:disabled {
+        color: $whiteColor;
+        background: #8C8C8C;
+    }
+}
+
+.library {
+    --default-bg: #fff;
+    --default-color: #B92F2C;
+    --active-bg: #B92F2C;
+    --active-color: #fff;
+
+    width: 100%;
+    justify-content: center;
+    display: none;
+    
+    @include tablet {
+        margin-left: 10px;
+        width: auto;
+        order: 4;
+        justify-content: start;
     }
 }
 
 .logo {
+    stroke: $whiteColor;
     width: 27px;
     height: 27px;
     animation: rotate 3s infinite;
@@ -187,7 +220,6 @@
 }
 
 .search {
-    position: relative;
     width: 100%;
 
     @include tablet {
@@ -199,6 +231,10 @@
     @include desktop {
         max-width: 187px;
         margin-right: 8px;
+    }
+
+    &__field {
+        position: relative;
     }
 
     &__input {
@@ -259,16 +295,36 @@
     }
 }
 
-.library {
-    --active-bg: #B92F2C;
-    width: 100%;
-    justify-content: center;
+.theme {
+    &__button {
+        background: none;
+        border: none;
+    }
+}
+
+.theme__svg {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    filter: drop-shadow(0 0 8px #EFD478);
+}
+
+.change-theme[data-theme="light"] {
     display: none;
+}
+
+.theme {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    margin-left: auto;
+    // fill:#EFD478;
 
     @include tablet {
-        margin-left: auto;
-        width: auto;
-        order: 3;
-        justify-content: start;
+        position: static;
+    }
+
+    &__icon {
+        fill: #EFD478;
     }
 }
