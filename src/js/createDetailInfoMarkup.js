@@ -3,7 +3,10 @@ import notAvailablePoster from '../images/poster-not-available.jpg';
 import { getMovieTrailer } from './fetchMovies';
 
 function cutTitleMovie(movieTitle) {
-  return  movieTitle = movieTitle.length <= 15 ? movieTitle : movieTitle.slice(movieTitle, 15) + "..."; 
+  return (movieTitle =
+    movieTitle.length <= 15
+      ? movieTitle
+      : movieTitle.slice(movieTitle, 15) + '...');
 }
 
 function genresDetail(array) {
@@ -14,20 +17,19 @@ export function clearModal(movie) {
   refs.movieModalContainer.innerHTML = '';
 }
 
-
 function createDetailMovieMarkUp(movie) {
   if (!movie) {
     return '';
   }
-  
+
   const cutTitle = cutTitleMovie(movie.original_title);
   const genres = genresDetail(movie.genres);
 
   const posterSrc = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
     : notAvailablePoster;
-    
-   const markup = `
+
+  const markup = `
       <div class="modal-wrap">
         <img
             class="modal-img"
@@ -47,10 +49,14 @@ function createDetailMovieMarkUp(movie) {
 
             <div class="params__value">
               <p class="params__text-common">
-                <span class="params__vote">${movie.vote_average.toFixed(2)} </span> 
+                <span class="params__vote">${movie.vote_average.toFixed(
+                  2
+                )} </span> 
                 <span class="params__slash">/</span>
                 <span class="params__vote_count">${movie.vote_count}</span></p>
-              <p class="params__popularity params__text-common">${movie.popularity.toFixed(1)}</p>
+              <p class="params__popularity params__text-common">${movie.popularity.toFixed(
+                1
+              )}</p>
               <p class="params__text-font params__text-common">${cutTitle}</p>
               <p class="params__text-font params__text-common">${genres}</p>
             </div>
@@ -71,45 +77,41 @@ function createDetailMovieMarkUp(movie) {
 
 export { createDetailMovieMarkUp };
 
-export function showtTrailer(id) {
-  getMovieTrailer(id).then(({ results }) => {
-
-    if (results.length === 0) {
-      console.log("results are empty");
-      const message =
-        `<h3 class="trailer-missing"> There is no trailer for this movie 
-        </h3>`;
-      refs.movieModalContainer.insertAdjacentHTML('beforeend', message);
-
-    } else if (results.length >= 1) {
-        const keyTrailer = results[0].key ;
-        markupTrailer(keyTrailer);
-    }
-  });
-};
-
-function markupTrailer(key) {
-        const trailerMarkup = `
-          <button class="button-trailer" type="button"> 
-              <a
-                href="https://www.youtube.com/watch?v=${key}
-                target="_blank"
-                rel="noreferrer noopener nofollow"
-                > 
-                  <span class="trailer-message">Watch a trailer</span>
-              </a>
-          </button>
-
+export async function showtTrailer(id) {
+  const data = await getMovieTrailer(id)
+    .then(({ results }) =>
+      results.map(item => {
+        if (item.site === 'YouTube') {
+          return `https://www.youtube.com/embed/${item.key}`;
+        }
+      })
+    )
+    .catch(err => console.log(err));
+  const urlTrailer = data[0];
+  markupTrailer(urlTrailer);
+}
+function markupTrailer(url) {
+  const trailerMarkup = `
           <div class="trailer__wrapper">
             <iframe 
               width="240" 
               height="120"
               class="trailer__video"
-              src="https://www.youtube.com/watch?v=${key}"
+              src="${url}?rel=0&showinfo=0&autoplay=1"
               allow="autoplay" 
               loading="lazy"
-              rel="noopener noreferrer nofollow"> 
             </iframe>
         </div>`;
-        refs.movieModalContainer.insertAdjacentHTML('beforeend', trailerMarkup);
+  refs.movieModalContainer.insertAdjacentHTML('beforeend', trailerMarkup);
+}
+{
+  /* <button class="button-trailer" type="button"> 
+<a
+  href="https://www.youtube.com/watch?v=${key}
+  target="_blank"
+  rel="noreferrer noopener nofollow"
+  > 
+    <span class="trailer-message">Watch a trailer</span>
+</a>
+</button> */
 }

@@ -7,6 +7,7 @@ import { refs } from './refs';
 import { GoogleAuthProvider } from 'firebase/auth';
 const provider = new GoogleAuthProvider();
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { headerFunctionality } from './swichBtnOnClick';
 
 import {
   getAuth,
@@ -45,6 +46,7 @@ export function OnFormSignIn(e) {
       refs.openSignInModal.textContent = email;
       refs.openSignInModal.disabled = true;
       addActiveBtn();
+      headerFunctionality();
     })
     .catch(error => {
       const errorCode = error.code;
@@ -70,6 +72,7 @@ export function OnFormSignUp(e) {
       refs.openSignInModal.disabled = true;
       onCloseSignUp();
       addActiveBtn();
+      headerFunctionality();
     })
     .catch(error => {
       const errorCode = error.code;
@@ -96,8 +99,8 @@ export function onGoogleClick(e) {
       localStorage.setItem(STRG_KEY, UserName);
       refs.openSignInModal.disabled = true;
       onCloseSign();
-      onCloseSignUp();
       addActiveBtn();
+      headerFunctionality();
     })
     .catch(error => {
       const errorCode = error.code;

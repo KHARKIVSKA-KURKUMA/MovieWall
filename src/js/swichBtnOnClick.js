@@ -6,7 +6,6 @@ export function headerFunctionality() {
     btn.classList.add(refs.activeClass);
     return btn;
   };
-
   refs.libraryEl.hidden = true;
 
   refs.listEl.forEach(list => {
@@ -20,14 +19,23 @@ export function headerFunctionality() {
         e.preventDefault();
         activeBtn = switchBtn(activeBtn, btn);
 
-        if (e.target.dataset.target == refs.targetsList.library) {
-          refs.form.hidden = true;
-          refs.libraryEl.style.display = 'flex';
-        }
-        if (e.target.dataset.target == refs.targetsList.home) {
-          refs.form.hidden = false;
-          refs.libraryEl.style.display = 'none';
-        }
+        btns.forEach(btn => {
+          if (btn.classList.contains(refs.activeClass)) activeBtn = btn;
+
+          btn.addEventListener('click', e => {
+            e.preventDefault();
+            activeBtn = switchBtn(activeBtn, btn);
+
+            if (e.target.dataset.target == refs.targetsList.library) {
+              refs.form.hidden = true;
+              refs.libraryEl.style.display = 'flex';
+            }
+            if (e.target.dataset.target == refs.targetsList.home) {
+              refs.form.hidden = false;
+              refs.libraryEl.style.display = 'none';
+            }
+          });
+        });
       });
     });
   });

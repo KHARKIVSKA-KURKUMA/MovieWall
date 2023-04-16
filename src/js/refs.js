@@ -1,4 +1,5 @@
 export const refs = {
+  upBtn: document.querySelector('.btn-up'),
   homeGalleryList: document.querySelector('.gallery-list'),
   headerContainer: document.querySelector('.header-container'),
   movieModal: document.querySelector('[data-modal]'),
