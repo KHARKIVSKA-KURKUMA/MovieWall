@@ -17,6 +17,7 @@ import {
   onCloseSign,
   onCloseSignUp,
 } from './js/onCloseModal';
+import { onUpBtn } from './js/upBtn';
 
 renderPopularMovies();
 headerFunctionality();
@@ -37,3 +38,4 @@ refs.formSignIn.addEventListener('submit', OnFormSignIn);
 refs.formSignUp.addEventListener('submit', OnFormSignUp);
 refs.SignInWithGoogle.addEventListener('click', onGoogleClick);
 refs.SignUpWithGoogle.addEventListener('click', onGoogleClick);
+window.addEventListener('scroll', onUpBtn);
