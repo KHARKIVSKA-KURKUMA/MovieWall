@@ -10,8 +10,8 @@ export function renderDetailInfoPoster(id) {
   getDetailAboutMovie(id).then(data => {
     clearModal(data);
     createDetailMovieMarkUp(data);
-    showtTrailer(data.id);
+    showtTrailer(id);
     addLocalStorage(data);
-    addQueueLocalStorage(data)
+    addQueueLocalStorage(data);
   });
 }
