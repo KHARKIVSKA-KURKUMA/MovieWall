@@ -24,7 +24,6 @@ import { onUkrMovieClick } from './js/renderUkrainianFilms';
 // import {switcherThemeFunctionality} from './js/changeThemeOnClick';
 import { onUpBtn } from './js/upBtn';
 
-
 renderPopularMovies();
 headerFunctionality();
 // switcherThemeFunctionality();
@@ -44,9 +43,7 @@ refs.openSignUpModal.addEventListener('click', onOpenSignUpModal);
 refs.formSignIn.addEventListener('submit', OnFormSignIn);
 refs.formSignUp.addEventListener('submit', OnFormSignUp);
 refs.SignInWithGoogle.addEventListener('click', onGoogleClick);
-refs.SignUpWithGoogle.addEventListener('click', onGoogleClick);
 refs.filterByGenres.addEventListener('click', onGenresClick);
 refs.filterByLanguage.addEventListener('click', onLanguageClick);
 refs.filterUkrMovie.addEventListener('click', onUkrMovieClick);
 window.addEventListener('scroll', onUpBtn);
-
