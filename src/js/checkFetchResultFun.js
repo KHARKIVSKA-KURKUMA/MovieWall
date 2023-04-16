@@ -4,7 +4,7 @@ import notAvailableResult from '../images/not-available-result.png';
 function eventActions() {
   refs.homeGalleryList.innerHTML = '';
   refs.galleryBgImg.style = 'none';
-  text = refs.searchForm.querySelector('.search-notification');
+  const text = refs.searchForm.querySelector('.search-notification');
   if (text) {
     text.remove();
   }
@@ -30,7 +30,7 @@ function createNotification() {
   return `<p class='search-notification'>Search result not successful. Enter the correct movie name.</p>`;
 }
 
- //  async function stopNotification() { setTimeout(await text.remove(), 1000); }
-      //   stopNotification();
+//  async function stopNotification() { setTimeout(await text.remove(), 1000); }
+//   stopNotification();
 
 export { eventActions, checkResultActions };
