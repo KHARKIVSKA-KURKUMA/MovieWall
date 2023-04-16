@@ -81,7 +81,6 @@ export async function showtTrailer(id) {
   const data = await getMovieTrailer(id)
     .then(({ results }) =>
       results.map(item => {
-        console.log(item.type);
         if (item.site === 'YouTube') {
           return `https://www.youtube.com/embed/${item.key}`;
         }
@@ -98,10 +97,9 @@ function markupTrailer(url) {
               width="240" 
               height="120"
               class="trailer__video"
-              src="${url}"
+              src="${url}?rel=0&showinfo=0&autoplay=1"
               allow="autoplay" 
               loading="lazy"
-              rel="noopener noreferrer nofollow"> 
             </iframe>
         </div>`;
   refs.movieModalContainer.insertAdjacentHTML('beforeend', trailerMarkup);
