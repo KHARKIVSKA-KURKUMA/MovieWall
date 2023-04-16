@@ -55,13 +55,3 @@ export function onTeamBackdropClick(event) {
     onCloseTeamModal();
   }
 }
-export function onSignBackdropClick(event) {
-  if (event.currentTarget === event.target) {
-    onCloseSign();
-  }
-}
-export function onSignUpBackdropClick(event) {
-  if (event.currentTarget === event.target) {
-    onCloseSignUp();
-  }
-}

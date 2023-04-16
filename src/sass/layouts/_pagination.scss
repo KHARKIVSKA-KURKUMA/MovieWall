@@ -1,1 +1,14 @@
 //Документація  https://github.com/nhn/tui.pagination/blob/production/docs/getting-started.md
+
+.load-more {
+    border-radius: 100px;
+    padding: 10px 22px;
+    min-width: 100px;
+    border: none;
+    background-color: $accentColor;
+    color: $whiteColor;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    margin: 0px auto;
+}

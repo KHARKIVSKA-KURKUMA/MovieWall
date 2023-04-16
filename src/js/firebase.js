@@ -2,6 +2,11 @@ import { initializeApp } from 'firebase/app';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { onCloseSignUp, onCloseSign } from './onCloseModal';
+import { refs } from './refs';
+import { GoogleAuthProvider } from 'firebase/auth';
+const provider = new GoogleAuthProvider();
+import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 
 import {
   getAuth,
@@ -9,8 +14,8 @@ import {
   signInWithEmailAndPassword,
 } from 'firebase/auth';
 
-const formSignIn = document.querySelector('.sign-in');
-const formSignUp = document.querySelector('.sign-up');
+const STRG_KEY = 'UserName';
+refs.openSignInModal.textContent = `SIGN IN`;
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAU7wH85_udF-Qb2LdQkjbDtUFIVHR9oMA',
@@ -26,10 +31,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 
-formSignIn.addEventListener('submit', OnFormSignIn);
-formSignUp.addEventListener('submit', OnFormSignUp);
-
-function OnFormSignIn(e) {
+/* ------------------------------- Вхід ------------------------------- */
+export function OnFormSignIn(e) {
   e.preventDefault();
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
@@ -37,28 +40,88 @@ function OnFormSignIn(e) {
   signInWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
       const user = userCredential.user;
-      console.log('Користувач авторизований:', user);
+      Notify.success(`The user has been successfully login! Hello ${email}`);
+      onCloseSign();
+      refs.openSignInModal.textContent = email;
+      refs.openSignInModal.disabled = true;
+      addActiveBtn();
     })
     .catch(error => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.error('Помилка авторизації:', errorCode, errorMessage);
+      Notify.failure(`User login error! ${errorCode} Please try again`);
     });
 }
-function OnFormSignUp(e) {
+/* ------------------------------- Реєстрація ------------------------------- */
+export function OnFormSignUp(e) {
   e.preventDefault();
+
   const email = document.querySelector('.sign-up-mail').value;
   const password = document.querySelector('.sign-up-password').value;
+  const Username = document.querySelector('.sign-up-name').value;
   const auth = getAuth();
-  createUserWithEmailAndPassword(auth, email, password)
+  createUserWithEmailAndPassword(auth, email, password, Username)
     .then(userCredential => {
       const user = userCredential.user;
-      console.log('Користувача успішно зареєстровано:', user);
-      // Тут можна додати додаткові дії, наприклад, перенаправлення на іншу сторінку або збереження інформації про користувача в базі даних.
+      Notify.success(
+        `The user has been successfully registered! Hello ${Username}`
+      );
+      refs.openSignInModal.textContent = Username;
+      refs.openSignInModal.disabled = true;
+      onCloseSignUp();
+      addActiveBtn();
     })
     .catch(error => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      Notify.failure(`Помилка реєстрації користувача: ${errorMessage}`);
+      Notify.failure(`User registration error! ${errorCode} Please try again`);
     });
+}
+/* ---------------------------- Реєстрація гуглом --------------------------- */
+export function onGoogleClick(e) {
+  e.preventDefault();
+  const NameInput = document.querySelector('.sign-up-name');
+  NameInput.value = localStorage.getItem('name');
+  auth;
+  signInWithPopup(auth, provider)
+    .then(result => {
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      const user = result.user;
+      const UserName = user.displayName;
+      Notify.success(
+        `The user has been successfully registered! Hello ${UserName}`
+      );
+      refs.openSignInModal.textContent = UserName;
+      localStorage.setItem(STRG_KEY, UserName);
+      refs.openSignInModal.disabled = true;
+      onCloseSign();
+      onCloseSignUp();
+      addActiveBtn();
+    })
+    .catch(error => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      const email = error.customData.email;
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      Notify.failure(`User registration error! ${errorCode} Please try again`);
+    });
+}
+
+const getName = localStorage.getItem(STRG_KEY);
+if (getName === null) {
+  refs.openSignInModal.textContent = `SIGN IN`;
+} else {
+  refs.openSignInModal.textContent = getName;
+  refs.openSignInModal.disabled = true;
+}
+
+function addActiveBtn() {
+  if (refs.libraryEl.style.display === 'flex') {
+    refs.library.classList.add(refs.activeClass);
+    refs.home.classList.remove(refs.activeClass);
+  } else {
+    refs.home.classList.add(refs.activeClass);
+    refs.library.classList.remove(refs.activeClass);
+  }
 }
