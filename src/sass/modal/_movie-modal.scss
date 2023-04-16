@@ -5,6 +5,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
 }
+
 .modal {
   position: absolute;
   top: 50%;
@@ -20,50 +21,53 @@
   @include desktop {
     min-width: 806px;
   }
-.modal-close {
-  position: absolute;
-  right: 16px;
-  top: 8px;
-  width: 30px;
-  height: 30px;
-  border: transparent;
-  background-color: $whiteColor;
-}
 
-.modal-close-icon {
-  stroke: $blackColor;
-}
-
-.js-modal-wrap {
-  margin: 48px 20px 40px;
-
-  @include tablet {
-    margin-top: 40px;
-    margin-bottom: 64px;
-    margin-left: 36px;
+  .modal-close {
+    position: absolute;
+    right: 16px;
+    top: 8px;
+    width: 30px;
+    height: 30px;
+    border: transparent;
+    background-color: $whiteColor;
   }
-  
-  @include desktop {
-    margin: 40px 12px;  
+
+  .modal-close-icon {
+    stroke: $blackColor;
+    stroke-width: 3px;
   }
-}
-.modal-wrap{
-  @include tablet {
+
+  .js-modal-wrap {
+    margin: 48px 20px 40px;
+
+    @include tablet {
+      margin-top: 40px;
+      margin-bottom: 64px;
+      margin-left: 36px;
+    }
+
+    @include desktop {
+      margin: 40px 12px;
+    }
+  }
+
+  .modal-wrap {
+    @include tablet {
       display: flex;
-  }
-}
-
-.modal-img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-
-  @include tablet {
-    width: 264px;
+    }
   }
 
-  @include desktop {
-    width: 375px;
+  .modal-img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+
+    @include tablet {
+      width: 264px;
+    }
+
+    @include desktop {
+      width: 375px;
     }
   }
 }
@@ -76,6 +80,7 @@
     margin-top: 0;
     width: 264px;
   }
+
   @include desktop {
     width: 391px;
     margin-left: 16px;
@@ -97,10 +102,11 @@
     width: 215px;
     display: flex;
     margin-bottom: 20px;
+
     @include tablet {
       width: 264px;
     }
-    
+
     @include desktop {
       width: 391px;
     }
@@ -140,7 +146,7 @@
   &__vote_count {
     display: inline-block;
     padding: 1px 4px;
-    background-color: $greyColor; 
+    background-color: $greyColor;
     color: $blackColor;
     border-radius: 5px;
     font-size: $common-font-size;
@@ -179,6 +185,7 @@
     text-align: justify;
   }
 }
+
 .modal-buttons {
   display: flex;
   column-gap: 4px;
@@ -187,19 +194,20 @@
   &__watched {
     display: inline-block;
     padding: 10px 12px;
-    background-color: $accentColor; 
+    background-color: $accentColor;
     box-shadow: 0px 0px 7px rgba(27, 27, 27, 0.15);
     border-radius: 100px;
     border-color: transparent;
-    color: $greyColor; 
+    color: $greyColor;
     text-transform: uppercase;
     font-weight: $medium-font-weight;
     font-size: $common-font-size;
     line-height: 1.17; // 14px/12px
 
     @include tablet {
-        padding: 12px 18px;
-      }
+      padding: 12px 18px;
+    }
+
     @include desktop {
       padding: 14px 32px;
     }
@@ -227,9 +235,69 @@
   }
 }
 
-.trailer {
-  background: yellow;
-  width: 240px;
-  height: auto;
-  margin: 0 auto;
+a {
+  margin-bottom: 0;
+  margin-top: 0;
+  font-style: normal;
+  text-decoration: none;
 }
+.button-trailer{
+    display: block;
+    margin: 0 auto; 
+    padding: 10px 12px;
+    // color: $whiteColor;
+    background-color: $accentColor;
+    // box-shadow: 0px 0px 7px rgba(27, 27, 27, 0.15);
+    border-radius: 100px;
+    border-color: transparent;
+    text-decoration: none;
+    // text-transform: uppercase;
+    // font-weight: $medium-font-weight;
+    // font-size: $common-font-size;
+    // line-height: 1.17; // 14px/12px
+        
+    @include tablet {
+      margin-left: 55%;
+      padding: 12px 18px;
+    }
+      
+    @include desktop {
+      margin-left: 60%;
+      padding: 14px 32px;
+    }
+  }
+.trailer-message{
+    color: $whiteColor;
+    background-color: transparent;
+    box-shadow: 0px 0px 7px rgba(27, 27, 27, 0.15);
+    text-transform: uppercase;
+    font-weight: $medium-font-weight;
+    font-size: 14px;
+    line-height: 1.17; // 14px/12px
+     
+}
+
+  .trailer-missing{
+    display: block;
+    width: auto;
+    margin: 0 auto;
+    padding: 10px 12px;
+    color: $accentColor;
+    background-color: $whiteColor;
+    border-color: transparent;
+    text-decoration: solid;
+    text-transform: uppercase;
+    font-weight: $medium-font-weight;
+    line-height: 1.17; // 14px/12px
+    text-align: center;
+        
+    @include tablet {
+      margin-left: 50%;
+      padding: 12px 18px;
+    }
+          
+    @include desktop {
+      margin-top: -100px;
+      padding: 14px 32px;
+    }
+  }
