@@ -2,40 +2,51 @@
   <div class="container">
     <div class="header__holder">
       <ul class="nav-list list js-btn-list">
+        <li class="nav-list__item nav-list__item--first">
+          <button
+            class="nav-list__button js-signIn"
+            data-target="signIn"
+            type="button"
+          >
+            SIGN IN
+          </button>
+        </li>
         <li class="nav-list__item">
-          <button class="nav-list__button nav-list__button--active" data-target="home" type="button">
+          <button
+            class="nav-list__button nav-list__button--active home"
+            data-target="home"
+            type="button"
+          >
             HOME
           </button>
         </li>
         <li class="nav-list__item">
-          <button class="nav-list__button" data-target="library" type="button">
+          <button
+            class="nav-list__button library-btn"
+            data-target="library"
+            type="button"
+          >
             MY LIBRARY
           </button>
         </li>
-         <li class="nav-list__item">
-      <button
-        class="nav-list__button js-signIn"
-        data-target="signIn"
-        type="button"
-      >
-        SIGN IN
-      </button>
-    </li>
       </ul>
-        <form class="search-form search" id="search-form">
-    <input
-      class="search__input"
-      type="text"
-      name="searchQuery"
-      autocomplete="off"
-      placeholder="Movie Search"
-    />
-    <button type="submit" class="search__btn">
-      <svg class="search__svg">
-        <use class="serch__icon" href="/src/images/icons.svg#icon-search"></use>
-      </svg>
-    </button>
-  </form>
+      <form class="search-form search" id="search-form">
+        <input
+          class="search__input"
+          type="text"
+          name="searchQuery"
+          autocomplete="off"
+          placeholder="Movie Search"
+        />
+        <button type="submit" class="search__btn">
+          <svg class="search__svg">
+            <use
+              class="serch__icon"
+              href="/src/images/icons.svg#icon-search"
+            ></use>
+          </svg>
+        </button>
+      </form>
       <div class="header__headline">
         <svg class="logo">
           <use href="/src/images/icons.svg#icon-logo"></use>
@@ -44,7 +55,11 @@
       </div>
       <ul class="nav-list list library js-btn-list">
         <li class="nav-list__item">
-          <button class="nav-list__button nav-list__button--active" data-target="watched" type="button">
+          <button
+            class="nav-list__button nav-list__button--active"
+            data-target="watched"
+            type="button"
+          >
             WATCHED
           </button>
         </li>

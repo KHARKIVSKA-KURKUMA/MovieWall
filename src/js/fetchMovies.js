@@ -26,7 +26,7 @@ async function getDetailAboutMovie(id) {
   }
 }
 export { getDetailAboutMovie };
-  
+
 async function getFilmByKeyWord(search) {
   try {
     const url = `${BASE_URL}search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${search}`;
@@ -38,3 +38,14 @@ async function getFilmByKeyWord(search) {
 }
 
 export { getFilmByKeyWord };
+
+async function getMovieTrailer(id) {
+  try {
+    const url = `${BASE_URL}/movie/${id}/videos?api_key=${API_KEY}&language=en`;
+    const response = await axios.get(url);
+    return response.data;
+  } catch (error) {
+    Notify.failure('Oops, an error occurred');
+  }
+}
+export { getMovieTrailer };
