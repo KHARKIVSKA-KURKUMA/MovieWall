@@ -6,7 +6,6 @@ export function headerFunctionality() {
     btn.classList.add(refs.activeClass);
     return btn;
   };
-
   refs.libraryEl.hidden = true;
 
   refs.listEl.forEach(list => {
