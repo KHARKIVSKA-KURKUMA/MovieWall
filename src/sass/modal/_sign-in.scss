@@ -93,22 +93,27 @@
     text-align: center;
     text-transform: uppercase;
   }
+
   .google-button {
     display: inline-block;
-    background-color: $google-color;
-    color: $whiteColor;
+    background-color: transparent;
+    color: $blackColor;
     font-size: 16px;
     font-weight: 500;
     text-align: center;
-    border: none;
+    border: 3px solid $accentColor;
     border-radius: 10px;
     margin: 10px auto;
     display: flex;
     padding: 15px 35px;
-    max-width: 250px;
-    transition: background-color 0.3s;
+    max-width: 260px;
+    transition: border-color 0.3s, background-color 0.3s;
     &:hover {
-      background-color: darken($google-color, 10%);
+      border-color: darken($accentColor, 10%);
+      background-color: transparent;
+    }
+    .google-icon {
+      margin-right: 5px;
     }
   }
 }

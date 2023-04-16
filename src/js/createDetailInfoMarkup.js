@@ -1,18 +1,35 @@
-import { genresGalleryEditor } from './genresFormatEditor';
 import { refs } from './refs';
-import { genresItems } from '../data/genres';
 import notAvailablePoster from '../images/poster-not-available.jpg';
+import { getMovieTrailer } from './fetchMovies';
 
+function cutTitleMovie(movieTitle) {
+  return (movieTitle =
+    movieTitle.length <= 15
+      ? movieTitle
+      : movieTitle.slice(movieTitle, 15) + '...');
+}
+
+function genresDetail(array) {
+  return array.map(genre => genre.name).join(', ');
+}
+
+export function clearModal(movie) {
+  refs.movieModalContainer.innerHTML = '';
+}
 
 function createDetailMovieMarkUp(movie) {
   if (!movie) {
     return '';
   }
+
+  const cutTitle = cutTitleMovie(movie.original_title);
+  const genres = genresDetail(movie.genres);
+
   const posterSrc = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
     : notAvailablePoster;
-    
-   const markup = `
+
+  const markup = `
       <div class="modal-wrap">
         <img
             class="modal-img"
@@ -21,7 +38,7 @@ function createDetailMovieMarkUp(movie) {
         />
         
         <div class="params">
-          <h2 class="params__title">${movie.title}</h2>
+          <h2 class="params__title">${movie.original_title}</h2>
           <div class="params__wrap">
             <div class="params__key">
               <p class="params__key__text params__text-retreat">Vote / Votes</p>
@@ -31,13 +48,17 @@ function createDetailMovieMarkUp(movie) {
             </div>
 
             <div class="params__value">
-              <p class="params__text-retreat">
-                <span class="params__vote">${movie.vote_average.toFixed(2)} </span> 
-                <span class="params__slash"> / </span>
+              <p class="params__text-common">
+                <span class="params__vote">${movie.vote_average.toFixed(
+                  2
+                )} </span> 
+                <span class="params__slash">/</span>
                 <span class="params__vote_count">${movie.vote_count}</span></p>
-              <p class="params__popularity params__text-retreat">${movie.popularity.toFixed(1)}</p>
-              <p class="params__text-font params__text-retreat">${movie.original_title}</p>
-              <p class="params__text-font">Genre</p>
+              <p class="params__popularity params__text-common">${movie.popularity.toFixed(
+                1
+              )}</p>
+              <p class="params__text-font params__text-common">${cutTitle}</p>
+              <p class="params__text-font params__text-common">${genres}</p>
             </div>
           </div>
         
@@ -47,15 +68,50 @@ function createDetailMovieMarkUp(movie) {
           </div>
           <div class="modal-buttons">
             <button class="modal-buttons__watched add-to-watched-btn" data-modal-watched>add to Watched</button>
-            <button class="modal-buttons__queue" data-modal-watched>add to queue</button>
+            <button class="modal-buttons__queue add-to-queue-btn" data-modal-watched>add to queue</button>
           </div>
-
-          <div class="trailer"> 
-            Це місце для трейлера
-          </div>
-          
         </div>
       </div>`;
   refs.movieModalContainer.innerHTML = markup;
 }
+
 export { createDetailMovieMarkUp };
+
+export async function showtTrailer(id) {
+  const data = await getMovieTrailer(id)
+    .then(({ results }) =>
+      results.map(item => {
+        if (item.site === 'YouTube') {
+          return `https://www.youtube.com/embed/${item.key}`;
+        }
+      })
+    )
+    .catch(err => console.log(err));
+  const urlTrailer = data[0];
+  markupTrailer(urlTrailer);
+}
+function markupTrailer(url) {
+  const trailerMarkup = `
+          <div class="trailer__wrapper">
+            <iframe 
+              width="240" 
+              height="120"
+              class="trailer__video"
+              src="${url}?rel=0&showinfo=0&autoplay=1"
+              allow="autoplay" 
+              loading="lazy"
+            </iframe>
+        </div>`;
+  refs.movieModalContainer.insertAdjacentHTML('beforeend', trailerMarkup);
+}
+{
+  /* <button class="button-trailer" type="button"> 
+<a
+  href="https://www.youtube.com/watch?v=${key}
+  target="_blank"
+  rel="noreferrer noopener nofollow"
+  > 
+    <span class="trailer-message">Watch a trailer</span>
+</a>
+</button> */
+}

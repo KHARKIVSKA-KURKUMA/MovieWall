@@ -11,20 +11,19 @@
         <div>
           <label for="name">Name</label>
           <input
-            type="name"
+            type="text"
             id="name"
-            name="name"
             class="sign-up-name"
-            required
+            autocomplete="off"
           />
         </div>
         <div>
           <label for="email">Email</label>
           <input
             type="email"
-            id="email"
             name="email"
             class="sign-up-mail"
+            autocomplete="off"
             required
           />
         </div>
@@ -32,8 +31,7 @@
           <label for="password">Password</label>
           <input
             type="password"
-            id="password"
-            name="password"
+            autocomplete="off"
             minlength="6"
             class="sign-up-password"
             required
@@ -41,7 +39,6 @@
         </div>
         <button type="submit">Sign up</button>
       </form>
-      <button class="button-google">Sign up with Google</button>
       <div class="signIn-box">
         <button
           type="button"
