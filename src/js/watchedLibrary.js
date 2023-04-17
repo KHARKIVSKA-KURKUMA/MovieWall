@@ -106,7 +106,7 @@ function createLibraryMovieItem(data) {
 
 watchedBtn.addEventListener('click', onWatchedBtnClick);
 
-const homeBtn = document.querySelector('.nav-list__button');
+const homeBtn = document.querySelector('.js-home');
 homeBtn.addEventListener('click', e => {
-  // location.reload();
+  location.reload();
 });
