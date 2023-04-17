@@ -4,6 +4,7 @@ import { renderPopularMovies } from './js/renderPopularPoster';
 import { onSubmit } from './js/renderFilmByName';
 import { headerFunctionality } from './js/swichBtnOnClick';
 import { OnFormSignIn, OnFormSignUp, onGoogleClick } from './js/firebase';
+import { onLangSelected } from './js/language';
 import {
   onOpenModal,
   onOpenTeamModal,
@@ -19,16 +20,17 @@ import {
   onCloseSignUp,
 } from './js/onCloseModal';
 import { onGenresClick } from './js/renderFilmByGenres';
-// import { onLanguageClick } from './js/renderFilmByLanguage';
 import { onOriginalLangClick } from './js/renderFilmsByLang';
 import { switcherThemeFunctionality } from './js/changeThemeOnClick';
 import { onUpBtn } from './js/upBtn';
+import { returnHomeOnClickLogo } from './js/returnHomeOnClickLogo';
 import { onCloseFilter, onOpenFilter } from './js/onOpenFilter';
 
-renderPopularMovies();
 headerFunctionality();
 switcherThemeFunctionality();
+onLangSelected();
 
+refs.linkEl.addEventListener('click', returnHomeOnClickLogo);
 refs.homeGalleryList.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.searchForm.addEventListener('submit', onSubmit);
@@ -45,7 +47,6 @@ refs.formSignIn.addEventListener('submit', OnFormSignIn);
 refs.formSignUp.addEventListener('submit', OnFormSignUp);
 refs.SignInWithGoogle.addEventListener('click', onGoogleClick);
 refs.filterByGenres.addEventListener('change', onGenresClick);
-// refs.filterByLanguage.addEventListener('click', onLanguageClick);
 refs.filterByLanguage.addEventListener('change', onOriginalLangClick);
 refs.openFilter.addEventListener('click', onOpenFilter);
 refs.closeFilter.addEventListener('click', onCloseFilter);
