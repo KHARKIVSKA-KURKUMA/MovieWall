@@ -42,4 +42,5 @@ export const refs = {
   filter: document.querySelector('.filter'),
   openFilter: document.querySelector('.filter__btn'),
   closeFilter: document.querySelector('.filter-close'),
+  languagesBox: document.querySelector('.languages'),
 };

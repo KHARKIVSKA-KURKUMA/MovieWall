@@ -337,3 +337,13 @@
   //   stroke: #000;
   //   stroke-width: 3;
 }
+.languages {
+  display: flex;
+  justify-content: flex-end;
+}
+.lang-btn {
+  background-color: transparent;
+  border: none;
+  width: 50px;
+  height: 50px;
+}

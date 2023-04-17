@@ -4,6 +4,7 @@ import { renderPopularMovies } from './js/renderPopularPoster';
 import { onSubmit } from './js/renderFilmByName';
 import { headerFunctionality } from './js/swichBtnOnClick';
 import { OnFormSignIn, OnFormSignUp, onGoogleClick } from './js/firebase';
+import { onLangSelected } from './js/language';
 import {
   onOpenModal,
   onOpenTeamModal,
@@ -25,9 +26,10 @@ import { switcherThemeFunctionality } from './js/changeThemeOnClick';
 import { onUpBtn } from './js/upBtn';
 import { onCloseFilter, onOpenFilter } from './js/onOpenFilter';
 
-renderPopularMovies();
+// renderPopularMovies();
 headerFunctionality();
 switcherThemeFunctionality();
+onLangSelected();
 
 refs.homeGalleryList.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);

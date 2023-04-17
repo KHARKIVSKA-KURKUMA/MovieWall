@@ -2,8 +2,8 @@ import { createPopularMovieMarkUp } from './createPopularMovieMarkUp';
 import { refs } from './refs';
 import { getPopularFilms } from './fetchMovies';
 
-function renderPopularMovies() {
-  getPopularFilms().then(data => {
+function renderPopularMovies(id) {
+  getPopularFilms(id).then(data => {
     refs.homeGalleryList.insertAdjacentHTML(
       'beforeend',
       createPopularMovieMarkUp(data.results)

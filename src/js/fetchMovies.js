@@ -5,9 +5,9 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = 'dd2eacab57962d131eb2537d52aeafc3';
 
-async function getPopularFilms() {
+async function getPopularFilms(id) {
   try {
-    const url = `${BASE_URL}movie/popular?api_key=${API_KEY}&language=en`;
+    const url = `${BASE_URL}movie/popular?api_key=${API_KEY}&language=${id}`;
     const response = await axios.get(url);
     return response.data;
   } catch (error) {
@@ -32,15 +32,14 @@ async function getFilmByKeyWord(search) {
     const url = `${BASE_URL}search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${search}`;
     const response = await axios.get(url);
     return await response.data;
-     
   } catch (error) {
     Notify.failure('Oops, an error occurred');
   }
 }
 
 export { getFilmByKeyWord };
-  
-  async function fetchMovieForWatched(movie_id) {
+
+async function fetchMovieForWatched(movie_id) {
   return await fetch(`${BASE_URL}/movie/${movie_id}?api_key=${API_KEY}`)
     .then(response => {
       if (!response.ok) {
