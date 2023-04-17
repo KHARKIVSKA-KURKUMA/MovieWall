@@ -1,6 +1,68 @@
 <section class="gallery">
-  <div class="container gallery-container">
+  <div class="gallery-holder container">
     <h2 class="visually-hidden">Gallery</h2>
+    <ul class="filter is-hidden list">
+      <li class="filter-boxes">
+        <div class="filter-genres">
+          <select class="filter-by-genres">
+            <option class="filter-item" value selected>Filter by Genre:</option>
+            <option class="filter-item" value="28">Action</option>
+            <option class="filter-item" value="12">Adventure</option>
+            <option class="filter-item" value="16">Animation</option>
+            <option class="filter-item" value="35">Comedy</option>
+            <option class="filter-item" value="80">Crime</option>
+            <option class="filter-item" value="99">Documentary</option>
+            <option class="filter-item" value="18">Drama</option>
+            <option class="filter-item" value="10751">Family</option>
+            <option class="filter-item" value="14">Fantasy</option>
+            <option class="filter-item" value="36">History</option>
+            <option class="filter-item" value="27">Horror</option>
+            <option class="filter-item" value="10402">Music</option>
+            <option class="filter-item" value="9648">Mystery</option>
+            <option class="filter-item" value="10749">Romance</option>
+            <option class="filter-item" value="878">Science Fiction</option>
+            <option class="filter-item" value="10770">TV Movie</option>
+            <option class="filter-item" value="53">Thriller</option>
+            <option class="filter-item" value="10752">War</option>
+            <option class="filter-item" value="37">Western</option>
+          </select>
+        </div>
+      </li>
+      <li class="filter-boxes">
+        <div class="filter-languages">
+          <select class="filter-by-lang">
+            <option class="filter-item" value selected>
+              Filter by Original Language:
+            </option>
+            <option class="filter-item" value="en">English</option>
+            <option class="filter-item" value="uk">Українська</option>
+            <option class="filter-item" value="de">Deutsch</option>
+            <option class="filter-item" value="it">Italiano</option>
+            <option class="filter-item" value="fr">Français</option>
+            <option class="filter-item" value="pl">Polski</option>
+            <option class="filter-item" value="es">Español</option>
+          </select>
+        </div>
+      </li>
+      <li class="filter-boxes">
+        <button class="filter-close">
+          <svg class="filter-close-icon" width="30" height="30">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+      </li>
+    </ul>
+
+    <div class="filter-by-language">
+      <!-- це для завдання з перекладом -->
+      <!-- <ul class="list filter-language-list">
+        <li class="filter-language-item" id="uk-UK">ukr</li>
+        <li class="filter-language-item" id="en-US">eng</li>
+      </ul> -->
+      <!-- <ul class="filter-ukrainian-list list">
+        <li class="filter-ukrainian-item">Ukrainian movie</li>
+      </ul> -->
+    </div>
     <ul class="gallery-list list"></ul>
   </div>
 </section>
