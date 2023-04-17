@@ -1,6 +1,6 @@
 import { refs } from './refs';
 
-export function returnHomeOnClickLogo(e) {
-    e.preventDefault();
+export function returnHomeOnClickLogo(evt) {
+    evt.preventDefault();
     refs.home.click();
 }

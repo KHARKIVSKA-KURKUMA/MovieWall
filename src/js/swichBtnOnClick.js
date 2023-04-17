@@ -17,7 +17,6 @@ export function headerFunctionality() {
 
       btn.addEventListener('click', e => {
         e.preventDefault();
-        
         activeBtn = switchBtn(activeBtn, btn);
 
         if (e.target.dataset.target == refs.targetsList.library) {
