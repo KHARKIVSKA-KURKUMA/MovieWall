@@ -30,7 +30,7 @@ export const refs = {
   form: document.querySelector('.search'),
   listEl: document.querySelectorAll('.js-btn-list'),
   libraryEl: document.querySelector('.library'),
-  library: document.querySelector('.library-btn'),
+  library: document.querySelector('.js-library'),
   activeClass: 'nav-list__button--active',
   home: document.querySelector('.js-home'),
   targetsList: {
