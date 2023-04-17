@@ -33,7 +33,7 @@ export const refs = {
   library: document.querySelector('.library-btn'),
   linkEl: document.querySelector('.header__link'),
   activeClass: 'nav-list__button--active',
-  library: document.querySelector('.js-library'),
+  libraryJs: document.querySelector('.js-library'),
   activeClass: 'nav-list__button--active',
   home: document.querySelector('.js-home'),
   targetsList: {
