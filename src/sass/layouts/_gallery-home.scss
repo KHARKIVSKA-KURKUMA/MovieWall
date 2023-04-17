@@ -103,3 +103,58 @@
   font-size: 16px;
   line-height: 480px;
 }
+
+.filter {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  .filter-close {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid $accentColor;
+    background-color: $accentColor;
+    top: 0;
+  }
+  .filter-close-icon {
+    stroke: $whiteColor;
+    stroke-width: 3;
+  }
+  .filter-genres,
+  .filter-languages {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    label {
+      margin-right: 10px;
+    }
+
+    .filter-by-genres,
+    .filter-by-lang {
+      padding: 5px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      outline: none;
+      .filter-item {
+        background-color: $whiteColor;
+        color: #333;
+        transition: background-color 0.3s;
+        &:hover {
+          background-color: $accentColor;
+        }
+        &:checked {
+          background-color: $accentColor;
+          color: $whiteColor;
+        }
+      }
+    }
+  }
+}

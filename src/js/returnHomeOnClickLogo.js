@@ -1,10 +1,10 @@
-export function returnHomepageOnClickLogo {
+export function returnHomepageOnClickLogo() {
    const linkEl = document.querySelector('.header__link');
 
-    linkEl.addEventListener('click', returnHomeOnClickLogo);
+//     linkEl.addEventListener('click', returnHomeOnClickLogo);
 
-   function returnHomeOnClickLogo {
-    
-   }
+//    function returnHomeOnClickLogo() {
+
+//    }
 
 }

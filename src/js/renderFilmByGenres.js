@@ -10,7 +10,7 @@ function onGenresClick(event) {
   // if (!event.target.classList.contains('.filter-item')|| event.target.nodeName != 'LI') {
   //     return;
   // }
-  searchGenres = event.target.id;
+  searchGenres = event.target.value;
   renderFilmByGenres(searchGenres);
 }
 
