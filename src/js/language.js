@@ -16,45 +16,37 @@ export function onLangSelected() {
 }
 
 let activeLang = localStorage.getItem('lang');
+
 if (activeLang === 'en') {
   btnLangEn.classList.add('is-hidden');
   btnLangUk.classList.remove('is-hidden');
+  changeGenresNamesEn();
+  onEnglishLang();
 } else {
   btnLangUk.classList.add('is-hidden');
   btnLangEn.classList.remove('is-hidden');
+  changeGenresNamesUk();
+  onUkrainianLang();
 }
 renderPopularMovies(activeLang);
 
 function changeLang(lang) {
   localStorage.setItem('lang', lang);
-  refs.homeGalleryList.innerHTML = '';
+  location.reload();
   renderPopularMovies(lang);
   if (lang === 'en') {
     btnLangEn.classList.toggle('is-hidden');
     btnLangUk.classList.remove('is-hidden');
+    changeGenresNamesEn();
+    onEnglishLang();
   } else {
+    changeGenresNamesUk();
+    onUkrainianLang();
     btnLangUk.classList.toggle('is-hidden');
     btnLangEn.classList.remove('is-hidden');
   }
 }
-// function changeLang(lang) {
-//   refs.homeGalleryList.innerHTML = '';
-//   let activeLang = localStorage.getItem('lang');
-//   renderPopularMovies(lang);
 
-//   if (lang === 'uk') {
-//     changeGenresNamesUk();
-//     btnLangEn.classList.toggle('is-hidden');
-//     btnLangUk.classList.remove('is-hidden');
-//     onUkrainianLang();
-//   } else {
-//     changeGenresNamesEn();
-//     btnLangUk.classList.toggle('is-hidden');
-//     btnLangEn.classList.remove('is-hidden');
-
-//     onEnglishLang();
-//   }
-// }
 function onUkrainianLang() {
   filterLang.textContent = 'За мовою оригіналу:';
 }

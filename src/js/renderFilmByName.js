@@ -34,9 +34,11 @@ function onSubmit(event) {
     pagination.reset();
   }
 }
+let activeLang = localStorage.getItem('lang');
+
 
 async function renderMovieByWord(searchFilm, currentPage) {
-  await getFilmByKeyWord(searchFilm, currentPage).then(data => {
+  await getFilmByKeyWord(searchFilm, currentPage, activeLang).then(data => {
     if (!data.results || data.results.length === 0) {
       refs.galleryBgImg.style.height = '280px';
       refs.galleryBgImg.style.backgroundRepeat = 'no-repeat';
