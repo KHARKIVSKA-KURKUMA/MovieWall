@@ -23,10 +23,12 @@ import { onUkrMovieClick } from './js/renderUkrainianFilms';
 
 import {switcherThemeFunctionality} from './js/changeThemeOnClick';
 import { onUpBtn } from './js/upBtn';
+import {returnHomepageOnClickLogo} from './js/returnHomeOnClickLogo';
 
 renderPopularMovies();
 headerFunctionality();
 switcherThemeFunctionality();
+returnHomepageOnClickLogo();
 
 refs.homeGalleryList.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);
