@@ -24,17 +24,19 @@ export function onOpenModal(e) {
 export function onOpenTeamModal() {
   refs.teamModal.classList.remove('is-hidden');
   window.addEventListener('keydown', onTeamModalEscPress);
-  refs.body.classList.add('no-scroll');
+  // refs.body.classList.add('no-scroll');
 }
 export function onOpenSignModal() {
   refs.signInBackdrop.classList.remove('is-hidden');
   window.addEventListener('keydown', onSignModalEscPress);
   refs.body.classList.add('no-scroll');
-  onCloseSignUp();
+  refs.signUpBackdrop.classList.add('is-hidden');
+  window.removeEventListener('keydown', onSignUpModalEscPress);
 }
 export function onOpenSignUpModal() {
   refs.signUpBackdrop.classList.remove('is-hidden');
   window.addEventListener('keydown', onSignUpModalEscPress);
   refs.body.classList.add('no-scroll');
-  onCloseSign();
+  refs.signInBackdrop.classList.add('is-hidden');
+  window.removeEventListener('keydown', onSignModalEscPress);
 }
