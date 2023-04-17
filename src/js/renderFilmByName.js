@@ -20,7 +20,9 @@ function onSubmit(event) {
 async function renderMovieByWord(searchFilm) {
   await getFilmByKeyWord(searchFilm).then(data => {
     if (!data.results || data.results.length === 0) {
+      refs.searchForm.insertAdjacentHTML('beforeend', createNotification());
       checkResultActions();
+      
     }
     refs.homeGalleryList.insertAdjacentHTML(
       'beforeend',
@@ -29,4 +31,8 @@ async function renderMovieByWord(searchFilm) {
   });
 }
 
-export { onSubmit };
+function createNotification() {
+  return `<p class='search-notification'>Search result not successful. Enter the correct movie name.</p>`;
+}
+
+export { onSubmit};
