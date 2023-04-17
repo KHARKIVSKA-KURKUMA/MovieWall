@@ -34,15 +34,16 @@ async function getDetailAboutMovie(id, lang) {
 }
 export { getDetailAboutMovie };
 
-
 async function getFilmByKeyWord(search, page) {
   try {
-   startLoader();
+    startLoader();
     const url = `${BASE_URL}search/movie?api_key=${API_KEY}&language=en-US&page=${page}&include_adult=false&query=${search}`;
     const response = await axios.get(url);
     return await response.data;
   } catch (error) {
     Notify.failure('Oops, an error occurred');
+  } finally {
+    stopLoader();
   }
 }
 
