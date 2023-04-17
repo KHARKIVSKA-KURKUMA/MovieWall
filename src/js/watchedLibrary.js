@@ -1,8 +1,8 @@
 import { refs } from './refs';
 import { fetchMovieForWatched } from './fetchMovies';
 import notAvailablePoster from '../images/poster-not-available.jpg';
-import noDataPoster from '../images/photo_clear-watched.jpg'
 import { renderPopularMovies } from './renderPopularPoster';
+import noDataPoster from '../images/photo_clear-watched.png';
 const isMovieInWatched = () => {
   let watchedMovies = null;
   try {
@@ -23,9 +23,11 @@ if (watchedMovies == null || watchedMovies.length === 0) {
 function renderPoster() {
   refs.galleryContainer.insertAdjacentHTML('beforeend', createPoster());
 }
+
 function renderLibrary(movies) {
   for (let i = 0; i < movies.length; i += 1) {
-    fetchMovieForWatched(movies[i]).then(data => {
+    let activeLang = localStorage.getItem('lang');
+    fetchMovieForWatched(movies[i], activeLang).then(data => {
       refs.homeGalleryList.insertAdjacentHTML(
         'beforeend',
         createLibraryMovieItem(data)
@@ -37,11 +39,8 @@ function renderLibrary(movies) {
 const onWatchedBtnClick = event => {
   event.preventDefault();
   refs.watchedBtn.classList.add('is-active');
-
   clearLibrary();
-
   watchedMovies = isMovieInWatched();
-
   if (watchedMovies == null || watchedMovies.length === 0) {
     refs.galleryContainer.innerHTML = '';
     renderPoster();
@@ -91,24 +90,25 @@ function createLibraryMovieItem(data) {
     : 'Unknown genres';
   let genre = null;
   if (genresMovies.length > 2) {
-    genre = `${genresMovie}...`
-  }
-  else {
-    genre = `${genresMovie}`
+    genre = `${genresMovie}...`;
+  } else {
+    genre = `${genresMovie}`;
   }
   const movieDate = release_date ?? null;
   const movieYear = movieDate ? movieDate.slice(0, 4) : 'Unknown year';
-  return `
-      <li class="filmcard">
-  <a href="" class="filmcard-link link" data-id="${id}">
-    <img class="filmcard-img"  src="${posterSrc}" alt="${title}"loading="lazy"/>
-    <div class="movie-info" >
-      <p class="filmcard-name" >${title}</p>
-      <p class="filmcard-genre">${genre}|${movieYear}</p>
+  return `<li class="filmcard" data-movie="${data.id}">
+  <a href="#" class="filmcard-link link">      
+        <img class="filmcard-img"
+        src="${posterSrc}"
+        alt=${data.title}
+        loading="lazy"
+        />      
+    <div class="movie-info">
+      <p class="filmcard-name">${data.title}</p>
+      <p class="filmcard-genre"> ${genre} | ${movieYear}</p> 
     </div>
-  </a>
-</li>
-      `;
+    </a>
+  </li>`;
 }
 
 refs.watchedBtn.addEventListener('click', onWatchedBtnClick);

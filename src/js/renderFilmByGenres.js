@@ -13,9 +13,10 @@ function onGenresClick(event) {
   searchGenres = event.target.value;
   renderFilmByGenres(searchGenres);
 }
+let activeLang = localStorage.getItem('lang');
 
 async function renderFilmByGenres(searchGenres) {
-  await getFilmByGenres(searchGenres).then(data => {
+  await getFilmByGenres(searchGenres, activeLang).then(data => {
     if (!data.results || data.results.length === 0) {
       checkResultActions();
     }

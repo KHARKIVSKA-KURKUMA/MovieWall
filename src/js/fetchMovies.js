@@ -6,10 +6,10 @@ import { startLoader, stopLoader } from './loader';
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = 'dd2eacab57962d131eb2537d52aeafc3';
 
-async function getPopularFilms() {
+async function getPopularFilms(id) {
   try {
+    const url = `${BASE_URL}movie/popular?api_key=${API_KEY}&language=${id}`;
     startLoader();
-    const url = `${BASE_URL}movie/popular?api_key=${API_KEY}&language=en`;
     const response = await axios.get(url);
     return response.data;
   } catch (error) {
@@ -20,10 +20,10 @@ async function getPopularFilms() {
 }
 export { getPopularFilms };
 
-async function getDetailAboutMovie(id) {
+async function getDetailAboutMovie(id, lang) {
   try {
     startLoader();
-    const url = `${BASE_URL}/movie/${id}?api_key=${API_KEY}&language=en`;
+    const url = `${BASE_URL}/movie/${id}?api_key=${API_KEY}&language=${lang}`;
     const response = await axios.get(url);
     return response.data;
   } catch (error) {
@@ -34,13 +34,12 @@ async function getDetailAboutMovie(id) {
 }
 export { getDetailAboutMovie };
 
-async function getFilmByKeyWord(search) {
+async function getFilmByKeyWord(search, lang) {
   try {
     startLoader();
-    const url = `${BASE_URL}search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${search}`;
+    const url = `${BASE_URL}search/movie?api_key=${API_KEY}&language=${lang}&page=1&include_adult=false&query=${search}`;
     const response = await axios.get(url);
     return await response.data;
-     
   } catch (error) {
     Notify.failure('Oops, an error occurred');
   } finally {
@@ -49,13 +48,15 @@ async function getFilmByKeyWord(search) {
 }
 
 export { getFilmByKeyWord };
-  
-async function fetchMovieForWatched(movie_id) {
+
+async function fetchMovieForWatched(movie_id, lang) {
   startLoader();
-  return await fetch(`${BASE_URL}/movie/${movie_id}?api_key=${API_KEY}`)
+  return await fetch(
+    `${BASE_URL}/movie/${movie_id}?api_key=${API_KEY}&language=${lang}`
+  )
     .then(response => {
       if (!response.ok) {
-        throw new Error('Network response was not OK');
+        Notify.failure('Oops, an error occurred');
       }
       return response.json();
     })
@@ -64,18 +65,15 @@ async function fetchMovieForWatched(movie_id) {
       return data;
     })
     .catch(error => {
-      console.error(
-        'There has been a problem with your fetch operation:',
-        error
-      );
+      Notify.failure('Oops, an error occurred');
     });
 }
 
 export { fetchMovieForWatched };
 
-async function getMovieTrailer(id) {
+async function getMovieTrailer(id, lang) {
   try {
-    const url = `${BASE_URL}/movie/${id}/videos?api_key=${API_KEY}&language=en`;
+    const url = `${BASE_URL}/movie/${id}/videos?api_key=${API_KEY}&language=${lang}`;
     const response = await axios.get(url);
     return response.data;
   } catch (error) {
@@ -84,10 +82,10 @@ async function getMovieTrailer(id) {
 }
 export { getMovieTrailer };
 
-async function getFilmByGenres(search) {
+async function getFilmByGenres(search, lang) {
   try {
     startLoader();
-    const url = `${BASE_URL}discover/movie?api_key=${API_KEY}&sort_by=popularity.desc&with_genres=${search}`;
+    const url = `${BASE_URL}discover/movie?api_key=${API_KEY}&sort_by=popularity.desc&language=${lang}&with_genres=${search}`;
     const response = await axios.get(url);
     return await response.data;
   } catch (error) {
