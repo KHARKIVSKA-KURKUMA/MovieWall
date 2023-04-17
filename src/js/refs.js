@@ -31,8 +31,9 @@ export const refs = {
   listEl: document.querySelectorAll('.js-btn-list'),
   libraryEl: document.querySelector('.library'),
   library: document.querySelector('.library-btn'),
+  linkEl: document.querySelector('.header__link'),
   activeClass: 'nav-list__button--active',
-  home: document.querySelector('.home'),
+  home: document.querySelector('[data-target="home"]'),
   targetsList: {
     home: 'home',
     library: 'library',

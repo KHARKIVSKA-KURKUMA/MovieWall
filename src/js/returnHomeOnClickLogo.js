@@ -1,10 +1,6 @@
-export function returnHomepageOnClickLogo() {
-   const linkEl = document.querySelector('.header__link');
+import { refs } from './refs';
 
-//     linkEl.addEventListener('click', returnHomeOnClickLogo);
-
-//    function returnHomeOnClickLogo() {
-
-//    }
-
+export function returnHomeOnClickLogo(e) {
+    e.preventDefault();
+    refs.home.click();
 }
