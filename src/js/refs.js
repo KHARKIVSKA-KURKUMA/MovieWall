@@ -42,4 +42,7 @@ export const refs = {
   filter: document.querySelector('.filter'),
   openFilter: document.querySelector('.filter__btn'),
   closeFilter: document.querySelector('.filter-close'),
+  watchedBtn: document.querySelector('.button-watched'),
+  galleryContainer: document.querySelector('.gallery-holder'),
+  homeBtn: document.querySelector('.js-home'),
 };
