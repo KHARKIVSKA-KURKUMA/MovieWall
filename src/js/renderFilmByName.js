@@ -16,9 +16,10 @@ function onSubmit(event) {
   }
   renderMovieByWord(searchFilm);
 }
+let activeLang = localStorage.getItem('lang');
 
 async function renderMovieByWord(searchFilm) {
-  await getFilmByKeyWord(searchFilm).then(data => {
+  await getFilmByKeyWord(searchFilm, activeLang).then(data => {
     if (!data.results || data.results.length === 0) {
       checkResultActions();
     }
