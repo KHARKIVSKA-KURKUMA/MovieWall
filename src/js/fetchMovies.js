@@ -6,9 +6,9 @@ import { startLoader, stopLoader } from './loader';
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = 'dd2eacab57962d131eb2537d52aeafc3';
 
-async function getPopularFilms(id) {
+async function getPopularFilms(id, page) {
   try {
-    const url = `${BASE_URL}movie/popular?api_key=${API_KEY}&language=${id}`;
+    const url = `${BASE_URL}movie/popular?api_key=${API_KEY}&language=${id}&page=${page}`;
     startLoader();
     const response = await axios.get(url);
     return response.data;
@@ -34,16 +34,13 @@ async function getDetailAboutMovie(id) {
 }
 export { getDetailAboutMovie };
 
-async function getFilmByKeyWord(search) {
+async function getFilmByKeyWord(search, page) {
   try {
-    startLoader();
-    const url = `${BASE_URL}search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${search}`;
+    const url = `${BASE_URL}search/movie?api_key=${API_KEY}&language=en-US&page=${page}&include_adult=false&query=${search}`;
     const response = await axios.get(url);
     return await response.data;
   } catch (error) {
     Notify.failure('Oops, an error occurred');
-  } finally {
-    stopLoader();
   }
 }
 
@@ -98,10 +95,10 @@ async function getFilmByGenres(search) {
 }
 export { getFilmByGenres };
 
-async function getFilmByLanguage(search) {
+async function getFilmByLanguage(search, page) {
   try {
     startLoader();
-    const url = `${BASE_URL}discover/movie?api_key=${API_KEY}&language=${search}&page=1`;
+    const url = `${BASE_URL}discover/movie?api_key=${API_KEY}&language=${search}&page=${page}`;
     const response = await axios.get(url);
     return await response.data;
   } catch (error) {
