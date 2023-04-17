@@ -60,6 +60,15 @@
         }
     }
 
+    &__link {
+        display: flex;
+        gap: 8px;
+
+        @include tablet{
+            gap: 16px;
+        }
+    }
+
     &__title {
         color: $whiteColor;
         font-weight: 500;
@@ -143,18 +152,36 @@
         }
 
         &:hover {
-            scale: 1.06;
+            scale: 1.04;
             cursor: pointer;
         }
     }
 }
 
 .user-bar {
+    position: relative;
     margin-bottom: 8px;
 
     @include tablet {
         order: 3;
         margin: 0 0 0 auto;
+    }
+
+    .nav-list__button {
+        padding-left: 44px;
+    }
+
+    &__icon {
+        transform: translateY(-50%);
+        transform-origin: center 0;
+        z-index: 10;
+        fill: $whiteColor;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: 50%;
+        pointer-events: none;
+        left: 18px;
     }
 }
 

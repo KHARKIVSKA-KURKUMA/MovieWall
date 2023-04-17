@@ -3,11 +3,15 @@
     
     .js-signIn {
         background: #8c8c8c;
-        color: #fff;
+        color: #000;
     
         &:disabled {
-            color: #fff;
+            color: #000;
         }
+    }
+
+    .user-bar__icon {
+        fill: #000000;
     }
     
     .library {
