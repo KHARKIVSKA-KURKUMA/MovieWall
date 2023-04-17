@@ -1,3 +1,4 @@
+import './js/watchedLibrary';
 import { refs } from './js/refs';
 import { renderPopularMovies } from './js/renderPopularPoster';
 import { onSubmit } from './js/renderFilmByName';

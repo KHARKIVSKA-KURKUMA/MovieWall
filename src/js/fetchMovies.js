@@ -32,12 +32,34 @@ async function getFilmByKeyWord(search) {
     const url = `${BASE_URL}search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${search}`;
     const response = await axios.get(url);
     return await response.data;
+     
   } catch (error) {
     Notify.failure('Oops, an error occurred');
   }
 }
 
 export { getFilmByKeyWord };
+  
+  async function fetchMovieForWatched(movie_id) {
+  return await fetch(`${BASE_URL}/movie/${movie_id}?api_key=${API_KEY}`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not OK');
+      }
+      return response.json();
+    })
+    .then(data => {
+      return data;
+    })
+    .catch(error => {
+      console.error(
+        'There has been a problem with your fetch operation:',
+        error
+      );
+    });
+}
+
+export { fetchMovieForWatched };
 
 async function getMovieTrailer(id) {
   try {
