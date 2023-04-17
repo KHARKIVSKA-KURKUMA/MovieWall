@@ -72,14 +72,13 @@ async function getFilmByLanguage(search) {
 }
 export { getFilmByLanguage };
 
-async function getUkrainianFilms() {
+async function getFilmsByLang(lang) {
   try {
-    const url = `${BASE_URL}discover/movie?api_key=${API_KEY}&language=uk-UK&page=1&with_original_language=uk`;
+    const url = `${BASE_URL}discover/movie?api_key=${API_KEY}&language=${lang}&page=1&with_original_language=${lang}`;
     const response = await axios.get(url);
     return await response.data;
   } catch (error) {
     Notify.failure('Oops, an error occurred');
   }
 }
-export { getUkrainianFilms };
-
+export { getFilmsByLang };

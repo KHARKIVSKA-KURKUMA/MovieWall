@@ -1,18 +1,20 @@
-import { getUkrainianFilms } from './fetchMovies';
+import { getFilmsByLang } from './fetchMovies';
 import { createPopularMovieMarkUp } from './createPopularMovieMarkUp';
 import { refs } from './refs';
 import { eventActions, checkResultActions } from './checkFetchResultFun';
 
-function onUkrMovieClick(event) {
+let selectedLang = '';
+function onOriginalLangClick(event) {
   eventActions(event);
   // if (!event.target.classList.contains('.filter-item')|| event.target.nodeName != 'LI') {
   //     return;
   // }
-  renderUkrainianMovie();
+  selectedLang = event.target.value;
+  renderMovieByLang(selectedLang);
 }
 
-async function renderUkrainianMovie() {
-  await getUkrainianFilms().then(data => {
+async function renderMovieByLang(lang) {
+  await getFilmsByLang(lang).then(data => {
     if (!data.results || data.results.length === 0) {
       checkResultActions();
     }
@@ -24,4 +26,4 @@ async function renderUkrainianMovie() {
   });
 }
 
-export { onUkrMovieClick };
+export { onOriginalLangClick };

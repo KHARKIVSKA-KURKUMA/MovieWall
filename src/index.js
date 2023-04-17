@@ -18,11 +18,11 @@ import {
   onCloseSignUp,
 } from './js/onCloseModal';
 import { onGenresClick } from './js/renderFilmByGenres';
-import { onLanguageClick } from './js/renderFilmByLanguage';
-import { onUkrMovieClick } from './js/renderUkrainianFilms';
-
-import {switcherThemeFunctionality} from './js/changeThemeOnClick';
+// import { onLanguageClick } from './js/renderFilmByLanguage';
+import { onOriginalLangClick } from './js/renderFilmsByLang';
+import { switcherThemeFunctionality } from './js/changeThemeOnClick';
 import { onUpBtn } from './js/upBtn';
+import { onCloseFilter, onOpenFilter } from './js/onOpenFilter';
 
 renderPopularMovies();
 headerFunctionality();
@@ -43,7 +43,9 @@ refs.openSignUpModal.addEventListener('click', onOpenSignUpModal);
 refs.formSignIn.addEventListener('submit', OnFormSignIn);
 refs.formSignUp.addEventListener('submit', OnFormSignUp);
 refs.SignInWithGoogle.addEventListener('click', onGoogleClick);
-refs.filterByGenres.addEventListener('click', onGenresClick);
-refs.filterByLanguage.addEventListener('click', onLanguageClick);
-refs.filterUkrMovie.addEventListener('click', onUkrMovieClick);
+refs.filterByGenres.addEventListener('change', onGenresClick);
+// refs.filterByLanguage.addEventListener('click', onLanguageClick);
+refs.filterByLanguage.addEventListener('change', onOriginalLangClick);
+refs.openFilter.addEventListener('click', onOpenFilter);
+refs.closeFilter.addEventListener('click', onCloseFilter);
 window.addEventListener('scroll', onUpBtn);

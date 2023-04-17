@@ -37,7 +37,9 @@ export const refs = {
     home: 'home',
     library: 'library',
   },
-  filterByGenres: document.querySelector('.filter-list-by-genres'),
-  filterUkrMovie: document.querySelector('.filter-ukrainian-list'),
-  filterByLanguage: document.querySelector('.filter-language-list'),
+  filterByGenres: document.querySelector('.filter-by-genres'),
+  filterByLanguage: document.querySelector('.filter-by-lang'),
+  filter: document.querySelector('.filter'),
+  openFilter: document.querySelector('.filter__btn'),
+  closeFilter: document.querySelector('.filter-close'),
 };
