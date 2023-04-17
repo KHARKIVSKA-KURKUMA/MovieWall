@@ -23,14 +23,6 @@ function checkResultActions() {
   notification.textContent = 'OOPS! nothing found';
   refs.galleryBgImg.append(notification);
   notification.classList.add('text-notification');
-  refs.searchForm.insertAdjacentHTML('beforeend', createNotification());
 }
-
-function createNotification() {
-  return `<p class='search-notification'>Search result not successful. Enter the correct movie name.</p>`;
-}
-
-//  async function stopNotification() { setTimeout(await text.remove(), 1000); }
-//   stopNotification();
 
 export { eventActions, checkResultActions };

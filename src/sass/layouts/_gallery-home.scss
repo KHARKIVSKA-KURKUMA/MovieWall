@@ -99,7 +99,7 @@
 
 .text-notification {
   text-align: center;
-  color: #b92f2c;
+  color: $accentColor;
   font-weight: 500;
   font-size: 16px;
   line-height: 480px;
@@ -111,6 +111,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  margin-bottom: -53px;
   .filter-close {
     width: 32px;
     height: 32px;

@@ -12,7 +12,6 @@ let totalPages = 0;
 let pagination;
 
 function onSubmit(event) {
-  
   event.preventDefault();
   refs.homeGalleryList.innerHTML = '';
   refs.galleryBgImg.style = 'none';
@@ -36,19 +35,11 @@ function onSubmit(event) {
 }
 let activeLang = localStorage.getItem('lang');
 
-
 async function renderMovieByWord(searchFilm, currentPage) {
   await getFilmByKeyWord(searchFilm, currentPage, activeLang).then(data => {
     if (!data.results || data.results.length === 0) {
-      refs.galleryBgImg.style.height = '280px';
-      refs.galleryBgImg.style.backgroundRepeat = 'no-repeat';
-      refs.galleryBgImg.style.backgroundPosition = 'center';
-      refs.galleryBgImg.style.backgroundImage = `url(${notAvailableResult})`;
-      const notification = document.createElement('p');
-      notification.textContent = 'OOPS! nothing found';
-      refs.galleryBgImg.append(notification);
-      notification.classList.add('text-notification');
       refs.searchForm.insertAdjacentHTML('beforeend', createNotification());
+      checkResultActions();
     }
 
     refs.homeGalleryList.insertAdjacentHTML(
@@ -57,8 +48,6 @@ async function renderMovieByWord(searchFilm, currentPage) {
     );
 
     totalPages = data.total_pages;
-
-    // pagination = null;
 
     if (!pagination) {
       pagination = makeTuiPagination(data.total_results, totalPages);
@@ -70,14 +59,14 @@ async function renderMovieByWord(searchFilm, currentPage) {
   });
 }
 
-function handlePageChange(page) {
-  console.log(page);
-  refs.homeGalleryList.innerHTML = '';
-  renderMovieByWord(searchFilm, page);
-}
-
 function createNotification() {
   return `<p class='search-notification'>Search result not successful. Enter the correct movie name.</p>`;
 }
 
 export { onSubmit };
+
+function handlePageChange(page) {
+  console.log(page);
+  refs.homeGalleryList.innerHTML = '';
+  renderMovieByWord(searchFilm, page);
+}

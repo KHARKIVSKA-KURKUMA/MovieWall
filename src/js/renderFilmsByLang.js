@@ -6,9 +6,6 @@ import { eventActions, checkResultActions } from './checkFetchResultFun';
 let selectedLang = '';
 function onOriginalLangClick(event) {
   eventActions(event);
-  // if (!event.target.classList.contains('.filter-item')|| event.target.nodeName != 'LI') {
-  //     return;
-  // }
   selectedLang = event.target.value;
   renderMovieByLang(selectedLang);
 }
@@ -16,6 +13,7 @@ function onOriginalLangClick(event) {
 async function renderMovieByLang(lang) {
   await getFilmsByLang(lang).then(data => {
     if (!data.results || data.results.length === 0) {
+      refs.searchForm.insertAdjacentHTML('beforeend', createNotification());
       checkResultActions();
     }
 
@@ -24,6 +22,10 @@ async function renderMovieByLang(lang) {
       createPopularMovieMarkUp(data.results)
     );
   });
+}
+
+function createNotification() {
+  return `<p class='search-notification'>OOps. Something going wrong. Try one more time</p>`;
 }
 
 export { onOriginalLangClick };

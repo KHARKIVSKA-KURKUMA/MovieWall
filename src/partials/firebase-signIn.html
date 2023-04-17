@@ -9,21 +9,32 @@
       <form class="signIn-form sign-in">
         <h2>Authorization</h2>
         <label for="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          autocomplete="off"
-          required
-        />
+        <div class="signIn-form-wrapper">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="off"
+            required
+          />
+          <svg class="signIn-form-icon" width="18" height="18">
+            <use href="/src/images/icons.svg#icon-email"></use>
+          </svg>
+        </div>
         <label for="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          autocomplete="off"
-          required
-        />
+        <div class="signIn-form-wrapper">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            autocomplete="off"
+            required
+          />
+          <svg class="signIn-form-icon" width="18" height="18">
+            <use href="/src/images/icons.svg#icon-password"></use>
+          </svg>
+        </div>
+
         <button type="submit">Sign In</button>
       </form>
       <button class="google-button">

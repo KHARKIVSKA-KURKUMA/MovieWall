@@ -5,9 +5,11 @@ export function onOpenFilter(e) {
     onCloseFilter();
   } else {
     refs.filter.classList.remove('is-hidden');
+    refs.filter.style.marginBottom = '0';
   }
   isOpen = !isOpen;
 }
 export function onCloseFilter() {
   refs.filter.classList.add('is-hidden');
+  refs.filter.style.marginBottom = '-53px';
 }
