@@ -1,338 +1,370 @@
 .header {
-  @include tablet {
-    padding: 32px 0;
-  }
-
-  &__holder {
-    position: relative;
-    min-height: 460px;
-    padding: 14px;
-    background-color: $accentColor;
-    background-image: url(../images/hero-background/hero-bg-mob.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-
-    @media (min-resolution: 2dppx) {
-      background-image: url(../images/hero-background/hero-bg-mob-@2x.jpg);
-    }
-
     @include tablet {
-      flex-direction: row;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      min-height: 222px;
-      padding: 14px;
-      border-radius: 16px;
-      background-image: url(../images/hero-background/hero-bg-tab.jpg);
-
-      @media (min-resolution: 2dppx) {
-        background-image: url(../images/hero-background/hero-bg-tab-@2x.jpg);
-      }
+        padding: 32px 0;
     }
 
-    @include desktop {
-      min-height: 316px;
-      padding: 16px 32px;
-      background-image: url(../images/hero-background/hero-bg-desktop.jpg);
+    &__holder {
+        position: relative;
+        min-height: 460px;
+        padding: 14px;
+        background-color: $accentColor;
+        background-image: url(../images/hero-background/hero-bg-mob.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
 
-      @media (min-resolution: 2dppx) {
-        background-image: url(../images/hero-background/hero-bg-desktop-@2x.jpg);
-      }
+        @media (min-resolution: 2dppx) {
+            background-image: url(../images/hero-background/hero-bg-mob-@2x.jpg);
+        }
+
+        @include tablet {
+            flex-direction: row;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            min-height: 222px;
+            padding: 14px;
+            border-radius: 16px;
+            background-image: url(../images/hero-background/hero-bg-tab.jpg);
+
+            @media (min-resolution: 2dppx) {
+                background-image: url(../images/hero-background/hero-bg-tab-@2x.jpg);
+            }
+        }
+
+        @include desktop {
+            min-height: 316px;
+            padding: 16px 32px;
+            background-image: url(../images/hero-background/hero-bg-desktop.jpg);
+
+            @media (min-resolution: 2dppx) {
+                background-image: url(../images/hero-background/hero-bg-desktop-@2x.jpg);
+            }
+        }
     }
-  }
 
-  &__headline {
-    margin-top: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    gap: 8px;
+    &__headline {
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 8px;
 
-    @include tablet {
-      justify-content: flex-start;
-      order: 5;
-      gap: 16px;
-    }
-  }
-
-  &__title {
-    color: $whiteColor;
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 1.19;
-
-    @include tablet {
-      font-size: 40px;
-      line-height: 1.175;
+        @include tablet {
+            justify-content: flex-start;
+            order: 5;
+            gap: 16px;
+        }
     }
 
-    @include desktop {
-      font-size: 64px;
-      line-height: 1.17;
+    &__link {
+        display: flex;
+        gap: 8px;
+        text-decoration: none;
+
+        @include tablet{
+            gap: 16px;
+        }
     }
-  }
+
+    &__title {
+        color: $whiteColor;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 1.19;
+
+        @include tablet {
+            font-size: 40px;
+            line-height: 1.175;
+        }
+
+        @include desktop {
+            font-size: 64px;
+            line-height: 1.17;
+        }
+    }
 }
 
 .nav-list {
-  --default-bg: #fff;
-  --default-color: #000;
-  --active-bg: #000;
-  --active-color: #fff;
+    --default-bg: #fff;
+    --default-color: #000;
+    --active-bg: #000;
+    --active-color: #fff;
 
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-  margin-bottom: 8px;
-
-  @include tablet {
-    margin-bottom: 0;
-    order: 2;
-  }
-
-  @include desktop {
-    gap: 8px;
-  }
-
-  &__item {
+    display: flex;
+    flex-wrap: wrap;
     gap: 4px;
-
-    @include desktop {
-      gap: 8px;
-    }
-  }
-
-  @keyframes scale {
-    0% {
-      transform: scale(0.9);
-    }
-
-    100% {
-      transform: scale(1.06);
-    }
-  }
-
-  &__button {
-    text-align: center;
-    transition: scale 0.25s ease;
-    border-radius: 100px;
-    padding: 10px 22px;
-    min-width: 87px;
-    border: none;
-    background: var(--default-bg);
-    color: var(--default-color);
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.17;
-
+    margin-bottom: 8px;
+    
     @include tablet {
-      padding: 12px 20px;
+        margin-bottom: 0;
+        order: 2;
     }
-
+    
     @include desktop {
-      padding: 14px 24px;
+        gap: 8px;
+    }
+    
+    &__item {
+        gap: 4px;
+        
+        @include desktop {
+            gap: 8px;
+        }
     }
 
-    &--active {
-      background: var(--active-bg);
-      color: var(--active-color);
+    @keyframes scale {
+        0% {
+            transform: scale(0.9);
+        }
+    
+        100% {
+            transform: scale(1.06);
+        }
     }
+    
+    &__button {
+        text-align: center;
+        transition: scale .25s ease;
+        border-radius: 100px;
+        padding: 10px 22px;
+        min-width: 87px;
+        border: none;
+        background: var(--default-bg);
+        color: var(--default-color);
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.17;
+       
+        @include tablet {
+            padding: 12px 20px;
+        }
 
-    &:hover {
-      scale: 1.06;
-      cursor: pointer;
+        @include desktop {
+            padding: 14px 24px;
+        }
+
+        &--active {
+            background: var(--active-bg);
+            color: var(--active-color);
+        }
+
+        &:hover {
+            scale: 1.04;
+            cursor: pointer;
+        }
     }
-  }
 }
 
 .user-bar {
-  margin-bottom: 8px;
+    position: relative;
+    margin-bottom: 8px;
 
-  @include tablet {
-    order: 3;
-    margin: 0 0 0 auto;
-  }
+    @include tablet {
+        order: 3;
+        margin: 0 0 0 auto;
+    }
+
+    .nav-list__button {
+        padding-left: 44px;
+    }
+
+    &__icon {
+        transform: translateY(-50%);
+        transform-origin: center 0;
+        z-index: 10;
+        fill: $whiteColor;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: 50%;
+        pointer-events: none;
+        left: 18px;
+    }
 }
 
 .js-signIn {
-  color: $whiteColor;
-  background: #8c8c8c;
-
-  &:disabled {
     color: $whiteColor;
-    background: #8c8c8c;
-  }
+    background: #8C8C8C;
+
+    &:disabled {
+        color: $whiteColor;
+        background: #8C8C8C;
+    }
 }
 
 .library {
-  --default-bg: #fff;
-  --default-color: #b92f2c;
-  --active-bg: #b92f2c;
-  --active-color: #fff;
+    --default-bg: #fff;
+    --default-color: #B92F2C;
+    --active-bg: #B92F2C;
+    --active-color: #fff;
 
-  width: 100%;
-  justify-content: center;
-  display: none;
-
-  @include tablet {
-    margin-left: 10px;
-    width: auto;
-    order: 4;
-    justify-content: start;
-  }
+    width: 100%;
+    justify-content: center;
+    display: none;
+    
+    @include tablet {
+        margin-left: 10px;
+        width: auto;
+        order: 4;
+        justify-content: start;
+    }
 }
 
 .logo {
-  stroke: $whiteColor;
-  width: 27px;
-  height: 27px;
-  animation: rotate 3s infinite;
-  transition: scale 0.25s ease;
-
-  @include tablet {
-    width: 40px;
-    height: 40px;
-  }
-
-  @include desktop {
-    width: 59px;
-    height: 59px;
-  }
-
-  &:hover {
-    scale: 1.2;
-    cursor: pointer;
-  }
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.search {
-  width: 100%;
-
-  @include tablet {
-    max-width: 165px;
-    order: 1;
-    margin-right: 4px;
-  }
-
-  @include desktop {
-    max-width: 187px;
-    margin-right: 8px;
-  }
-
-  &__field {
-    position: relative;
-  }
-
-  &__input {
-    border-radius: 100px;
-    padding: 10px 14px;
-    width: 100%;
-    border: none;
-    font-size: 12px;
-    line-height: 1.17;
-    background: $whiteColor;
+    stroke: $whiteColor;
+    width: 27px;
+    height: 27px;
+    animation: rotate 3s infinite;
+    transition: scale .25s ease;
 
     @include tablet {
-      height: 37px;
-      font-size: 14px;
-      line-height: 1.14;
+        width: 40px;
+        height: 40px;
     }
 
     @include desktop {
-      height: 42px;
-    }
-
-    &::-webkit-search-cancel-button {
-      -webkit-appearance: none;
-    }
-  }
-
-  &__btn {
-    position: absolute;
-    top: 50%;
-    right: 14px;
-    border: none;
-    background: none;
-    padding: 0;
-    margin: 0;
-    transform: translateY(-50%);
-    transition: scale 0.25s ease;
-    transform-origin: center 0;
-
-    @include tablet {
-      right: 16px;
+        width: 59px;
+        height: 59px;
     }
 
     &:hover {
-      scale: 1.2;
-      cursor: pointer;
+        scale: 1.2;
+        cursor: pointer;
     }
-  }
+}
 
-  &__svg {
-    width: 14px;
-    height: 14px;
-    stroke: #000;
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.search {
+    width: 100%;
 
     @include tablet {
-      width: 16px;
-      height: 16px;
+        max-width: 165px;
+        order: 1;
+        margin-right: 4px;
     }
-  }
+
+    @include desktop {
+        max-width: 187px;
+        margin-right: 8px;
+    }
+
+    &__field {
+        position: relative;
+    }
+
+    &__input {
+        border-radius: 100px;
+        padding: 10px 14px;
+        width: 100%;
+        border: none;
+        font-size: 12px;
+        line-height: 1.17;
+        background: $whiteColor;
+
+        @include tablet {
+            height: 37px;
+            font-size: 14px;
+            line-height: 1.14;
+        }
+
+        @include desktop {
+            height: 42px;
+        }
+
+        &::-webkit-search-cancel-button {
+            -webkit-appearance: none;
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        top: 50%;
+        right: 14px;
+        border: none;
+        background: none;
+        padding: 0;
+        margin: 0;
+        transform: translateY(-50%);
+        transition: scale .25s ease;
+        transform-origin: center 0;
+
+        @include tablet {
+            right: 16px;
+        }
+
+        &:hover {
+            scale: 1.2;
+            cursor: pointer;
+        }
+    }
+
+    &__svg {
+        width: 14px;
+        height: 14px;
+        stroke: #000;
+
+        @include tablet {
+            width: 16px;
+            height: 16px;
+        }
+    }
 }
 
 .theme {
-  &__button {
-    background: none;
-    border: none;
-  }
+    &__button {
+        background: none;
+        border: none;
+    }
 }
 
 .theme__svg {
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  filter: drop-shadow(0 0 8px #efd478);
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    filter: drop-shadow(0 0 8px #EFD478);
 }
 
-.change-theme[data-theme='light'] {
-  display: none;
+.change-theme[data-theme="light"] {
+    display: none;
 }
 
 .theme {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  margin-left: auto;
-  // fill:#EFD478;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    margin-left: auto;
+    display: flex;
+    // fill:#EFD478;
 
-  @include tablet {
-    position: static;
-  }
+    @include tablet {
+        position: static;
+    }
 
-  &__icon {
-    fill: #efd478;
-  }
+    &__icon {
+        fill: #EFD478;
+    }
 }
+
 .filter__btn {
-  background-color: transparent;
-  border: none;
+    background-color: transparent;
+    border: none;
 }
+
 .filter__svg {
+<<<<<<< HEAD
   fill: #fff;
   //   stroke: #000;
   //   stroke-width: 3;
@@ -347,3 +379,14 @@
   width: 50px;
   height: 50px;
 }
+||||||| 3d009ba
+  fill: #fff;
+  //   stroke: #000;
+  //   stroke-width: 3;
+}
+=======
+    fill: #fff;
+    //   stroke: #000;
+    //   stroke-width: 3;
+}
+>>>>>>> 957b84ea16543481637c7b98169a50dd1bd5ee0a

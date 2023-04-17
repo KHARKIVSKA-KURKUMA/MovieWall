@@ -24,6 +24,7 @@ import { onGenresClick } from './js/renderFilmByGenres';
 import { onOriginalLangClick } from './js/renderFilmsByLang';
 import { switcherThemeFunctionality } from './js/changeThemeOnClick';
 import { onUpBtn } from './js/upBtn';
+import {returnHomeOnClickLogo} from './js/returnHomeOnClickLogo';
 import { onCloseFilter, onOpenFilter } from './js/onOpenFilter';
 
 // renderPopularMovies();
@@ -31,6 +32,7 @@ headerFunctionality();
 switcherThemeFunctionality();
 onLangSelected();
 
+refs.linkEl.addEventListener('click', returnHomeOnClickLogo);
 refs.homeGalleryList.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.searchForm.addEventListener('submit', onSubmit);
