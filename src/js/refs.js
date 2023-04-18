@@ -47,6 +47,7 @@ export const refs = {
   closeFilter: document.querySelector('.filter-close'),
   languagesBox: document.querySelector('.languages'),
   watchedBtn: document.querySelector('.button-watched'),
+  queuedBtn: document.querySelector('.button-queue'),
   galleryContainer: document.querySelector('.gallery-holder'),
   homeBtn: document.querySelector('.js-home'),
 };
