@@ -10,11 +10,30 @@ export function clearModal(movie) {
   refs.movieModalContainer.innerHTML = '';
 }
 
+function changeModalBackgroundColor(rating) {
+  const currentElement = document.querySelector('.params__vote')
+  if (rating > 1 && rating < 5) {
+    currentElement.classList.add("red");
+  }
+  if (rating > 5 && rating < 8) {
+    currentElement.classList.add("yellow");
+  }
+   if (rating >= 8) {
+     currentElement.classList.add("green");
+  }
+}
+
+function cutOriginalTitleMobile(title) {
+  const text = document.querySelector('.params__text-font');
+  const newTitle = title.length >= 20 ? title.slice(0, 20) + '...' : title;
+  text.textContent = `${newTitle}`;
+}
+
 function createDetailMovieMarkUp(movie) {
   if (!movie) {
     return '';
   }
-
+  
   const posterSrc = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
     : notAvailablePoster;
@@ -31,26 +50,27 @@ function createDetailMovieMarkUp(movie) {
           <h2 class="params__title">${movie.title}</h2>
           <div class="params__wrap">
             <div class="params__key">
-              <p class="params__key__text params__text-retreat">Vote/Votes</p>
-              <p class="params__key__text params__text-retreat">Popularity</p>
-              <p class="params__key__text params__text-retreat">Original Title</p>
+              <p class="params__key__text">Vote/Votes</p>
+              <p class="params__key__text">Popularity</p>
+              <p class="params__key__text">Original Title</p>
               <p class="params__key__text">Genre</p>
             </div>
 
             <div class="params__value">
-              <p class="params__text-retreat">
-                <span class="params__vote">${movie.vote_average.toFixed(
-                  2
-                )} </span> 
+              <p class="">
+                <span class="params__vote">${movie.vote_average.toFixed(2)} </span> 
                 <span class="params__slash">/</span>
                 <span class="params__vote_count">${movie.vote_count}</span></p>
+              <p class="params__popularity">${movie.popularity.toFixed(1)}</p>
+              <p class="params__text-font">${movie.original_title}</p>
+              <p class="params__text-font params__text-retreat">${genres}</p>
               <p class="params__popularity params__text-retreat">${movie.popularity.toFixed(
                 1
               )}</p>
               <p class="params__text-font params__text-retreat">${
                 movie.original_title
               }</p>
-              <p class="params__text-font params__text-retreat">${genres}</p>
+              
             </div>
           </div>
         
@@ -67,6 +87,7 @@ function createDetailMovieMarkUp(movie) {
 
   refs.movieModalContainer.innerHTML = markup;
   changeModalBackgroundColor(movie.vote_average);
+  cutOriginalTitleMobile(movie.original_title);
 }
 
 export { createDetailMovieMarkUp };
@@ -97,17 +118,32 @@ export async function showtTrailer(id) {
   markupTrailer(urlTrailer);
 }
 function markupTrailer(url) {
-  const trailerMarkup = `
+  const trailerMobileMarkup = `
+          <button class="modal-buttons__watched button-trailer">
+            <a
+              href="${url}?rel=0&showinfo=0&autoplay=0" 
+              class="decoration"
+              target="_blank" 
+              rel="noreferrer noopener"
+            >Watch a trailer
+            </a>
+          </button>`;
+  
+  refs.movieModalContainer.insertAdjacentHTML('beforeend', trailerMobileMarkup);
+
+  const trailerTabletMarkup = `
           <div class="trailer-wrapper">
             <iframe 
-              width="280" 
-              height="160"
+              width="650" 
+              height="400"
               class="trailer__video"
-              src="${url}?rel=0&showinfo=0&autoplay=1"
-              allow="autoplay" 
+              src="${url}?rel=0&showinfo=0&autoplay=0"
+              frameborder="0" 
               loading="lazy"
             </iframe>
         </div>`;
+
+  refs.movieModalContainer.insertAdjacentHTML('afterend', trailerTabletMarkup);
   refs.movieModalContainer.insertAdjacentHTML('beforeend', trailerMarkup);
 }
 

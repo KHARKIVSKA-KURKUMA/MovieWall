@@ -16,6 +16,7 @@
   z-index: 10;
   overflow-y: scroll;
   padding: 8px 8px 40px 12px;
+  background-color: $whiteColor;
   transform: translate(-50%, -50%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   
@@ -72,8 +73,8 @@
 
   .modal-img {
     display: block;
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 5px;
 
@@ -121,14 +122,16 @@
 
   &__key__text {
     min-width: 70px;
+    margin-bottom: 8px;
     color: #c0c0c0;
     font-weight: $medium-font-weight;
     font-size: $common-font-size;
     line-height: $common-line-height;
+    
   }
 
-  &__text-retreat {
-    margin-bottom: 8px;
+  &__key__text:last-child{
+    margin-bottom: 0;
   }
 
   &__vote {
@@ -137,6 +140,7 @@
     background-color: $accentColor;
     color: $whiteColor;
     border-radius: 5px;
+    margin-bottom: 7px;
     font-size: $common-font-size;
     line-height: 1.17; //14px/12px
     font-weight: $medium-font-weight;
@@ -159,6 +163,7 @@
   }
 
   &__popularity {
+    margin-bottom: 7px;
     font-size: $common-font-size;
     line-height: 1.17; //14px/12px
     font-weight: $medium-font-weight;
@@ -168,7 +173,11 @@
     font-size: $common-font-size;
     line-height: $common-line-height;
     font-weight: $medium-font-weight;
+    margin-bottom: 7px;
   }
+    &__text-font:last-child{
+      margin-bottom: 0;
+    }
 }
 
 .about {
@@ -199,8 +208,8 @@
   &__watched {
     display: inline-block;
     padding: 10px 12px;
+    min-width: 120px;
     background-color: $accentColor;
-    box-shadow: 0px 0px 7px rgba(27, 27, 27, 0.15);
     border-radius: 100px;
     border-color: transparent;
     color: $greyColor;
@@ -222,7 +231,8 @@
     display: inline-block;
     padding: 10px 14px;
     background-color: $whiteColor;
-    border: 1px solid $blackColor;
+    border: none;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
     border-radius: 100px;
     color: $accentColor;
     text-transform: uppercase;
@@ -240,23 +250,45 @@
   }
 }
 
-.trailer-wrapper {
-  margin-top: 20px;
+.button-trailer{
+  display: block;
+  margin: 0 auto;
 
   @include tablet {
-    padding-left: 170px;
+      display: none;
+    }
+}
+.decoration {
+  margin-bottom: 0;
+  margin-top: 0;
+  font-style: normal;
+  text-decoration: none;
+  color: $greyColor;
+}
+.trailer-wrapper {
+  display: none;
+
+  @include tablet {
+    display: block;
+    margin: 0 auto;
+    // width: 100%;
+    // height: 100%;
+    margin-top: 20px;
   }
   
-  @include desktop {
-    padding-left: 400px;
-    margin-top: -160px;
-  }
+  // @include desktop {
+  //   min-width: 806px;
+  // }
 }
 .trailer__video{
   max-width: inherit;
   max-height: inherit;
   border-radius: 10px;
-  position: relative;
+  
+    @include desktop {
+      min-width: 806px;
+      min-height: 520px;
+    }
 }
 .trailer-message {
   color: $accentColor;
@@ -276,4 +308,15 @@
     bottom: -150px;
     right: 35px;
   }
+}
+
+.red{
+  background-color: red;
+}
+.yellow {
+  background-color: yellow;
+  color: $blackColor;
+}
+.green {
+  background-color: green;
 }
