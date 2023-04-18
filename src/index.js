@@ -6,6 +6,7 @@ import { onSubmit } from './js/renderFilmByName';
 import { headerFunctionality } from './js/swichBtnOnClick';
 import { OnFormSignIn, OnFormSignUp, onGoogleClick } from './js/firebase';
 import { onLangSelected } from './js/language';
+
 import {
   onOpenModal,
   onOpenTeamModal,

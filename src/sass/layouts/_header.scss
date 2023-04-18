@@ -154,7 +154,6 @@
 
     &:hover {
       scale: 1.04;
-      cursor: url('/src/images/cursor_pointer.png'), auto;
     }
   }
 }
@@ -233,7 +232,6 @@
 
   &:hover {
     scale: 1.2;
-    cursor: url('/src/images/cursor_pointer.png'), auto;
   }
 }
 
@@ -307,7 +305,6 @@
 
     &:hover {
       scale: 1.2;
-      cursor: pointer;
     }
   }
 
@@ -333,7 +330,6 @@
 .theme__svg {
   width: 40px;
   height: 40px;
-  cursor: pointer;
   filter: drop-shadow(0 0 8px #efd478);
 }
 
