@@ -9,8 +9,8 @@
     transform: translate(-50%, -50%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-        0px 2px 1px rgba(0, 0, 0, 0.2);
-      border-radius: 4px;
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
     padding: 20px;
     @include mobile {
       width: 420px;
@@ -94,17 +94,17 @@
       margin-left: 10px;
     }
   }
-    .signIn-form-wrapper {
-      position: relative;
-    }
-    .signIn-form-icon {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 12px;
-      display: inline-block;
-      fill: $accentColor;
-    }
+  .signIn-form-wrapper {
+    position: relative;
+  }
+  .signIn-form-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 12px;
+    display: inline-block;
+    fill: $accentColor;
+  }
   h2 {
     margin-bottom: 20px;
     color: $accentColor;
@@ -125,7 +125,7 @@
     margin: 15px auto 0;
     display: flex;
     padding: 15px 35px;
-    max-width: 260px;
+    max-width: 300px;
     transition: border-color 0.3s, background-color 0.3s;
     &:hover {
       border-color: darken($accentColor, 10%);
@@ -134,11 +134,10 @@
     .google-icon {
       margin-top: 10px;
       margin-right: 5px;
-       @include mobile {
+      @include mobile {
         margin-top: 0px;
         margin-right: 10px;
-       }
+      }
     }
   }
 }
-

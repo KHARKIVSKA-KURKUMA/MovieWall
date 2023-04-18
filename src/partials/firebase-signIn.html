@@ -7,8 +7,8 @@
     </button>
     <div class="signIn-container">
       <form class="signIn-form sign-in">
-        <h2>Authorization</h2>
-        <label for="email">Email</label>
+        <h2 class="signIn-title">Authorization</h2>
+        <label class="signIn-label" for="email">Email</label>
         <div class="signIn-form-wrapper">
           <input
             type="email"
@@ -21,7 +21,7 @@
             <use href="/src/images/icons.svg#icon-email"></use>
           </svg>
         </div>
-        <label for="password">Password</label>
+        <label class="signIn-password" for="password">Password</label>
         <div class="signIn-form-wrapper">
           <input
             type="password"
@@ -35,7 +35,7 @@
           </svg>
         </div>
 
-        <button type="submit">Sign In</button>
+        <button class="signIn-btn-submit" type="submit">Sign In</button>
       </form>
       <button class="google-button">
         <svg class="google-icon" width="18" height="18" viewBox="0 0 18 18">
@@ -68,10 +68,10 @@
             stroke="none"
           ></path>
         </svg>
-        Continue with Google
+        <p class="continue-with">Continue with Google</p>
       </button>
       <div class="signUp-box">
-        <p>No account?</p>
+        <p class="no-account-desk">No account?</p>
         <button type="button" class="signUp-open">Sign Up</button>
       </div>
     </div>
