@@ -1,6 +1,7 @@
 import { refs } from './refs';
 import notAvailablePoster from '../images/poster-not-available.jpg';
 import { getMovieTrailer } from './fetchMovies';
+import * as basicLightbox from 'basiclightbox';
 
 function genresDetail(array) {
   return array.map(genre => genre.name).join(', ');
@@ -155,6 +156,7 @@ export async function showtTrailer(id) {
   const urlTrailer = data[0];
   markupTrailer(urlTrailer);
 }
+
 function markupTrailer(url) {
   const trailerMobileMarkup = `
           <button class="modal-buttons__watched button-trailer">
@@ -176,6 +178,7 @@ function markupTrailer(url) {
               height="400"
               class="trailer__video"
               src="${url}?rel=0&showinfo=0&autoplay=0"
+              data-source="${url}?rel=0&showinfo=0&autoplay=0"
               frameborder="0" 
               loading="lazy"
             </iframe>
@@ -183,4 +186,46 @@ function markupTrailer(url) {
 
   // refs.movieModalContainer.insertAdjacentHTML('afterend', trailerTabletMarkup);
   // refs.movieModalContainer.insertAdjacentHTML('beforeend', trailerMarkup);
+
+  const buttonTrailer = document.querySelector('.button-trailer');
+  buttonTrailer.addEventListener('click', openModalWithBasicLightbox);
+}
+
+function openModalWithBasicLightbox(event) {
+
+  if (event.target.nodeName !== "BUTTON") {
+        return;
+    }
+
+    const closeModal = event => {
+
+        if (event.key === "Escape" || event.code === "Escape") {
+
+            modal.close();
+        }
+        
+    }
+        const modal = basicLightbox.create(`
+            <iframe 
+              width="650" 
+              height="400"
+              class="trailer__video"
+              src="${event.target.dataset.source}"
+              frameborder="0" 
+              loading="lazy"
+            </iframe>
+          `,
+          {
+            onShow: modal => {
+
+                    window.addEventListener('keydown', closeModal);
+                },
+
+            onClose: modal => {
+
+                    window.removeEventListener('keydown', closeModal);
+                },
+        });
+    
+    modal.show();
 }
