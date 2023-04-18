@@ -158,74 +158,42 @@ export async function showtTrailer(id) {
 }
 
 function markupTrailer(url) {
-  const trailerMobileMarkup = `
-          <button class="modal-buttons__watched button-trailer">
-            <a
-              href="${url}?rel=0&showinfo=0&autoplay=0" 
-              class="decoration"
-              target="_blank" 
-              rel="noreferrer noopener"
-            >Watch a trailer
-            </a>
-          </button>`;
+  if (activeLang === 'uk') {
+    const trailerMobileMarkup = `
+    <button type= "button" class="modal-buttons__watched button-trailer">
+     Дивитись трейлер
+    </button>`;
+    refs.movieModalContainer.insertAdjacentHTML(
+      'beforeend',
+      trailerMobileMarkup
+    );
+  } else {
+    const trailerMobileMarkup = `
+    <button type= "button" class="modal-buttons__watched button-trailer">
+     Watch a trailer
+    </button>`;
+    refs.movieModalContainer.insertAdjacentHTML(
+      'beforeend',
+      trailerMobileMarkup
+    );
+  }
 
-  refs.movieModalContainer.insertAdjacentHTML('beforeend', trailerMobileMarkup);
-
-  const trailerTabletMarkup = `
-          <div class="trailer-wrapper">
-            <iframe 
-              width="650" 
-              height="400"
-              class="trailer__video"
-              src="${url}?rel=0&showinfo=0&autoplay=0"
-              data-source="${url}?rel=0&showinfo=0&autoplay=0"
-              frameborder="0" 
-              loading="lazy"
-            </iframe>
-        </div>`;
-
-  // refs.movieModalContainer.insertAdjacentHTML('afterend', trailerTabletMarkup);
-  // refs.movieModalContainer.insertAdjacentHTML('beforeend', trailerMarkup);
-
-  const buttonTrailer = document.querySelector('.button-trailer');
-  buttonTrailer.addEventListener('click', openModalWithBasicLightbox);
-}
-
-function openModalWithBasicLightbox(event) {
-
-  if (event.target.nodeName !== "BUTTON") {
-        return;
-    }
-
-    const closeModal = event => {
-
-        if (event.key === "Escape" || event.code === "Escape") {
-
-            modal.close();
-        }
-        
-    }
-        const modal = basicLightbox.create(`
-            <iframe 
-              width="650" 
-              height="400"
-              class="trailer__video"
-              src="${event.target.dataset.source}"
-              frameborder="0" 
-              loading="lazy"
-            </iframe>
-          `,
-          {
-            onShow: modal => {
-
-                    window.addEventListener('keydown', closeModal);
-                },
-
-            onClose: modal => {
-
-                    window.removeEventListener('keydown', closeModal);
-                },
-        });
-    
-    modal.show();
+  const trailerRef = document.querySelector('.button-trailer');
+  if (!url) {
+    trailerRef.classList.add('is-hidden');
+  }
+  trailerRef.onclick = () => {
+    basicLightbox
+      .create(
+        `  <iframe
+        width="650"
+        height="400"
+        class="trailer__video"
+        src="${url}?rel=0&showinfo=0&autoplay=1"
+        frameborder="0"
+        loading="lazy"
+      </iframe>`
+      )
+      .show();
+  };
 }
