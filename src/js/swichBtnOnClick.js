@@ -18,7 +18,7 @@ export function headerFunctionality() {
       btn.addEventListener('click', e => {
         e.preventDefault();
         activeBtn = switchBtn(activeBtn, btn);
-
+        localStorage.setItem('page', activeBtn.dataset.target);
         if (e.target.dataset.target == refs.targetsList.library) {
           refs.form.hidden = true;
           refs.libraryEl.style.display = 'flex';

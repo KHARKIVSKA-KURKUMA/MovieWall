@@ -1,13 +1,22 @@
-.clear-watched{
+.clear-watched {
+  display: flex;
+  justify-content: center;
+}
+.clear-watched-name {
+  display: flex;
+  justify-content: center;
+}
+.clear-watched-problems {
+  display: flex;
+  justify-content: center;
+}
+.gallery-holder-watch {
+  @include tablet {
     display: flex;
-    justify-content: center;
-}
-.clear-watched-name{
-   display: flex;
-    justify-content: center;
-
-}
-.clear-watched-problems{
-display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+  @include desktop {
+    gap: 32px 16px;
+  }
 }

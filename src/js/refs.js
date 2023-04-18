@@ -48,7 +48,7 @@ export const refs = {
   languagesBox: document.querySelector('.languages'),
   watchedBtn: document.querySelector('.button-watched'),
   queuedBtn: document.querySelector('.button-queue'),
-  galleryContainer: document.querySelector('.gallery-holder'),
+  galleryContainer: document.querySelector('.gallery-holder-watch'),
   homeBtn: document.querySelector('.js-home'),
   ourTeamHead: document.querySelector('.teammate__header'),
   signInTitle: document.querySelector('.signIn-title'),
@@ -65,5 +65,5 @@ export const refs = {
   signUpDesc: document.querySelector('.sign-up-text'),
   // signUp: document.querySelector('.'),
   swiper: document.querySelector('.swiper'),
-slider: document.querySelector('.swiper-wrapper')
+  slider: document.querySelector('.swiper-wrapper'),
 };

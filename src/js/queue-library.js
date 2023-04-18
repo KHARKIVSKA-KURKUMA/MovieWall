@@ -20,8 +20,6 @@ if (watchedMovies == null || watchedMovies.length === 0) {
 } else if (watchedMovies.length > 0) {
   refs.watchedBtn.classList.add('is-active');
   renderLibrary(watchedMovies);
-  
-  
 }
 
 function renderPoster() {
@@ -35,16 +33,14 @@ function renderPoster() {
 
 function renderLibrary(movies) {
   for (let i = 0; i < movies.length; i += 1) {
-        
     let activeLang = localStorage.getItem('lang');
     fetchMovieForWatched(movies[i], activeLang).then(data => {
-      refs.homeGalleryList.insertAdjacentHTML(
+      refs.galleryContainer.innerHTML = '';
+      refs.galleryContainer.insertAdjacentHTML(
         'beforeend',
         createLibraryMovieItem(data)
-        
       );
-         
-      });
+    });
   }
 }
 
@@ -93,7 +89,7 @@ function createPosterUk() {
 }
 function createLibraryMovieItem(data) {
   if (watchedMovies == null || watchedMovies.length === 0) {
-     return;
+    return;
   }
   const {
     id,
@@ -107,7 +103,7 @@ function createLibraryMovieItem(data) {
     vote_average,
     vote_count,
   } = data;
-  
+
   const posterSrc = poster_path
     ? `https://image.tmdb.org/t/p/w500/${poster_path}`
     : notAvailablePoster;

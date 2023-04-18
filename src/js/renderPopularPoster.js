@@ -9,6 +9,7 @@ let pagination;
 
 function renderPopularMovies(id) {
   getPopularFilms(id).then(data => {
+    refs.galleryContainer.innerHTML = '';
     refs.homeGalleryList.insertAdjacentHTML(
       'beforeend',
       createPopularMovieMarkUp(data.results)

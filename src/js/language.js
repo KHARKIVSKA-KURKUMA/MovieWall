@@ -28,6 +28,7 @@ if (activeLang === 'en' || activeLang === null) {
   changeGenresNamesUk();
   onUkrainianLang();
 }
+
 renderPopularMovies(activeLang);
 
 function changeLang(lang) {
