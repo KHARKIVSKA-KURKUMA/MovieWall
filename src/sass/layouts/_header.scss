@@ -154,7 +154,7 @@
 
     &:hover {
       scale: 1.04;
-      cursor: pointer;
+      cursor: url('/src/images/cursor_pointer.png'), auto;
     }
   }
 }
@@ -233,7 +233,7 @@
 
   &:hover {
     scale: 1.2;
-    cursor: pointer;
+    cursor: url('/src/images/cursor_pointer.png'), auto;
   }
 }
 

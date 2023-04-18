@@ -1,7 +1,7 @@
 import { refs } from './refs';
 import { fetchMovieForWatched } from './fetchMovies';
 import notAvailablePoster from '../images/poster-not-available.jpg';
-import { renderPopularMovies } from './renderPopularPoster';
+// import { renderPopularMovies } from './renderPopularPoster';
 import noDataPoster from '../images/photo_clear-watched.png';
 const isMovieInWatched = () => {
   let watchedMovies = null;
@@ -113,7 +113,6 @@ function createLibraryMovieItem(data) {
 
 refs.watchedBtn.addEventListener('click', onWatchedBtnClick);
 refs.homeBtn.addEventListener('click', e => {
-  e.preventDefault()
-  clearLibrary();
-  renderPopularMovies()
+  location. reload()
 });
+refs.libraryJs.addEventListener('click', onWatchedBtnClick)
