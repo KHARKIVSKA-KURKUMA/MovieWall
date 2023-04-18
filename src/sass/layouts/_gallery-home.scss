@@ -106,6 +106,7 @@
 }
 
 .filter {
+  flex-wrap: wrap;
   display: flex;
   gap: 30px;
   align-items: center;
@@ -133,6 +134,7 @@
   .filter-languages {
     display: flex;
     align-items: center;
+
     margin-bottom: 20px;
 
     label {
