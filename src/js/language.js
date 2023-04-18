@@ -49,6 +49,8 @@ function changeLang(lang) {
 
 function onUkrainianLang() {
   filterLang.textContent = 'За мовою оригіналу:';
+
+  // refs.queueBtnStyle.textContent = 'додати до Черги';
 }
 function onEnglishLang() {
   filterLang.textContent = 'Filter by Original Language:';
