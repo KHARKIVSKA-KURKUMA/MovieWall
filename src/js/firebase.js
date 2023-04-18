@@ -16,7 +16,6 @@ import {
 } from 'firebase/auth';
 
 const STRG_KEY = 'UserName';
-refs.openSignInModal.textContent = `SIGN IN`;
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAU7wH85_udF-Qb2LdQkjbDtUFIVHR9oMA',
@@ -51,7 +50,7 @@ export function OnFormSignIn(e) {
     .catch(error => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      Notify.failure(`User login error! ${errorCode} Please try again`);
+      //   Notify.failure(`User login error! ${errorCode} Please try again`);
     });
 }
 /* ------------------------------- Реєстрація ------------------------------- */
@@ -77,7 +76,7 @@ export function OnFormSignUp(e) {
     .catch(error => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      Notify.failure(`User registration error! ${errorCode} Please try again`);
+      // Notify.failure(`User registration error! ${errorCode} Please try again`);
     });
 }
 /* ---------------------------- Реєстрація гуглом --------------------------- */
@@ -105,18 +104,26 @@ export function onGoogleClick(e) {
     .catch(error => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      const email = error.customData.email;
       const credential = GoogleAuthProvider.credentialFromError(error);
-      Notify.failure(`User registration error! ${errorCode} Please try again`);
+      // Notify.failure(`User registration error! ${errorCode} Please try again`);
     });
 }
 
 const getName = localStorage.getItem(STRG_KEY);
+let activeLang = localStorage.getItem('lang');
+
 if (getName === null) {
-  refs.openSignInModal.textContent = `SIGN IN`;
+  if (activeLang === 'uk') {
+    refs.openSignInModal.textContent = `ВXІД`;
+  } else {
+    refs.openSignInModal.textContent = `SIGN IN`;
+  }
 } else {
-  refs.openSignInModal.textContent = getName;
+  console.log(getName);
+
   refs.openSignInModal.disabled = true;
+  refs.openSignInModal.textContent = getName;
+  console.log(refs.openSignInModal.textContent);
 }
 
 function addActiveBtn() {
