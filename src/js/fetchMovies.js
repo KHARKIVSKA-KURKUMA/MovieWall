@@ -73,11 +73,14 @@ export { fetchMovieForWatched };
 
 async function getMovieTrailer(id, lang) {
   try {
+    startLoader();
     const url = `${BASE_URL}/movie/${id}/videos?api_key=${API_KEY}&language=${lang}`;
     const response = await axios.get(url);
     return response.data;
   } catch (error) {
     Notify.failure('Oops, an error occurred');
+  } finally {
+    stopLoader();
   }
 }
 export { getMovieTrailer };
@@ -126,11 +129,14 @@ export { getFilmsByLang };
 
 async function getTopRatedFilms() {
   try {
+    startLoader();
     const url = `${BASE_URL}/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`;
     const response = await axios.get(url);
     return response.data;
   } catch (error) {
     Notify.failure('Oops, an error occurred');
+  } finally {
+    stopLoader();
   }
 }
 export { getTopRatedFilms };
