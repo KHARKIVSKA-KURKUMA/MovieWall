@@ -4,13 +4,13 @@
     top: 50%;
     left: 50%;
     min-width: 280px;
-      height: 55%;
+    height: 55%;
     background-color: $whiteColor;
     transform: translate(-50%, -50%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-        0px 2px 1px rgba(0, 0, 0, 0.2);
-      border-radius: 4px;
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
     padding: 20px;
     @include mobile {
       width: 420px;
@@ -34,7 +34,7 @@
     border: none;
     border-radius: 10px;
     color: $whiteColor;
-    max-width: 150px;
+    max-width: 250px;
     margin: 20px auto 10px;
     background-color: $accentColor;
     transition: background-color 0.3s ease-in-out;
@@ -107,18 +107,18 @@
     text-align: center;
     text-transform: uppercase;
   }
-    .signUp-form-wrapper {
-      position: relative;
-    }
-  
-    .signUp-form-icon {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 12px;
-      display: inline-block;
-      fill: $accentColor;
-    }
+  .signUp-form-wrapper {
+    position: relative;
+  }
+
+  .signUp-form-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 12px;
+    display: inline-block;
+    fill: $accentColor;
+  }
 }
 // .js-signIn {
 //   background-color: black;

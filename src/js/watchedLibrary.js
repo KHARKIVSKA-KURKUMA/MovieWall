@@ -21,7 +21,12 @@ if (watchedMovies == null || watchedMovies.length === 0) {
   renderLibrary(watchedMovies);
 }
 function renderPoster() {
-  refs.galleryContainer.insertAdjacentHTML('beforeend', createPoster());
+  let activeLang = localStorage.getItem('lang');
+  if (activeLang === 'uk') {
+    refs.galleryContainer.insertAdjacentHTML('beforeend', createPosterUk());
+  } else {
+    refs.galleryContainer.insertAdjacentHTML('beforeend', createPoster());
+  }
 }
 
 function renderLibrary(movies) {
@@ -60,6 +65,19 @@ function createPoster() {
     <div class="movie-info" >
       <p class="filmcard-name clear-watched-name" >NOTING!!</p>
       <p class="filmcard-genre clear-watched-problems">Your collection list is empty.</p>
+    </div>
+</div>
+</div>
+      `;
+}
+function createPosterUk() {
+  return `
+  <div class="clear-watched">
+      <div>
+    <img  src="${noDataPoster}" alt="title"loading="lazy"/>
+    <div class="movie-info" >
+      <p class="filmcard-name clear-watched-name" >НІЧОГО!!</p>
+      <p class="filmcard-genre clear-watched-problems">Ваша колекція пуста.</p>
     </div>
 </div>
 </div>
@@ -113,6 +131,6 @@ function createLibraryMovieItem(data) {
 
 refs.watchedBtn.addEventListener('click', onWatchedBtnClick);
 refs.homeBtn.addEventListener('click', e => {
-  location. reload()
+  location.reload();
 });
-refs.libraryJs.addEventListener('click', onWatchedBtnClick)
+refs.libraryJs.addEventListener('click', onWatchedBtnClick);

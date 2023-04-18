@@ -127,6 +127,7 @@
   .filter-close-icon {
     stroke: $whiteColor;
     stroke-width: 3;
+    fill: $accentColor;
   }
   .filter-genres,
   .filter-languages {
@@ -145,7 +146,8 @@
       border-radius: 5px;
       border: 1px solid #ccc;
       outline: none;
-      .filter-item {
+      .filter-item,
+      .filter-item-genre {
         background-color: $whiteColor;
         color: #333;
         transition: background-color 0.3s;

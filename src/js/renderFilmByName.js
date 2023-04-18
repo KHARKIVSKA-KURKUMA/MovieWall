@@ -38,8 +38,13 @@ let activeLang = localStorage.getItem('lang');
 async function renderMovieByWord(searchFilm, currentPage) {
   await getFilmByKeyWord(searchFilm, currentPage, activeLang).then(data => {
     if (!data.results || data.results.length === 0) {
-      refs.searchForm.insertAdjacentHTML('beforeend', createNotification());
-      checkResultActions();
+      if (activeLang === 'uk') {
+        refs.searchForm.insertAdjacentHTML('beforeend', createNotificationUk());
+      } else {
+        refs.searchForm.insertAdjacentHTML('beforeend', createNotification());
+      }
+      // файл не знайдено
+      // checkResultActions();
     }
 
     refs.homeGalleryList.insertAdjacentHTML(
@@ -61,6 +66,9 @@ async function renderMovieByWord(searchFilm, currentPage) {
 
 function createNotification() {
   return `<p class='search-notification'>Search result not successful. Enter the correct movie name.</p>`;
+}
+function createNotificationUk() {
+  return `<p class='search-notification'>Результат пошуку невдалий. Введіть правильну назву фільму.</p>`;
 }
 
 export { onSubmit };

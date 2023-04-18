@@ -17,7 +17,7 @@ export function onLangSelected() {
 
 let activeLang = localStorage.getItem('lang');
 
-if (activeLang === 'en') {
+if (activeLang === 'en' || activeLang === null) {
   btnLangEn.classList.add('is-hidden');
   btnLangUk.classList.remove('is-hidden');
   changeGenresNamesEn();
@@ -49,11 +49,53 @@ function changeLang(lang) {
 
 function onUkrainianLang() {
   filterLang.textContent = 'За мовою оригіналу:';
-
-  // refs.queueBtnStyle.textContent = 'додати до Черги';
+  refs.ourTeamHead.textContent = 'Наша команда';
+  refs.homeBtn.textContent = 'ГОЛОВНА';
+  refs.libraryJs.textContent = 'МОЯ БІБЛІОТЕКА';
+  refs.openSignInModal.textContent = 'РЕЄСТРАЦІЯ';
+  refs.queuedBtn.textContent = 'ЧЕРГА';
+  refs.watchedBtn.textContent = 'ПЕРЕГЛЯНУТІ';
+  refs.signInTitle.textContent = 'Авторизація';
+  refs.signInLabel.textContent = 'Пошта';
+  refs.signInPassword.textContent = 'Пароль';
+  refs.signInSubmitBtn.textContent = 'Вхід';
+  refs.signInGoogleBtn.textContent = ' Продовжити з Google';
+  refs.signInNoAcc.textContent = 'Немає акаунта?';
+  refs.openSignUpModal.textContent = 'Зареєструватись';
+  refs.signUpTitle.textContent = 'Створити обліковий запис';
+  refs.signUpName.textContent = 'Ім`я';
+  refs.signUpEmail.textContent = 'Пошта';
+  refs.signUpPassword.textContent = 'Пароль';
+  refs.signUpSubmitBtn.textContent = 'Зареєструватись';
+  refs.openSignInModalNd.textContent = 'Вхід';
+  refs.signUpDesc.textContent = 'з вашим MovieWall акаунтом';
+  // refs.homeBtn.textContent = '';
+  // refs.homeBtn.textContent = '';
+  // refs.homeBtn.textContent = '';
 }
 function onEnglishLang() {
   filterLang.textContent = 'Filter by Original Language:';
+  refs.ourTeamHead.textContent = 'Our Team';
+  refs.homeBtn.textContent = 'HOME';
+  refs.libraryJs.textContent = 'MY LIBRARY';
+  refs.openSignInModal.textContent = 'SIGN IN';
+  refs.queuedBtn.textContent = 'QUEUE';
+  refs.watchedBtn.textContent = 'WATCHED';
+  refs.signInTitle.textContent = 'Authorization';
+  refs.signInLabel.textContent = 'Email';
+  refs.signInPassword.textContent = 'Password';
+  refs.signInSubmitBtn.textContent = 'Sign In';
+  refs.signInGoogleBtn.textContent = 'Continue with Google';
+  refs.signInNoAcc.textContent = 'No account?';
+  refs.openSignUpModal.textContent = 'Sign Up';
+  refs.signUpTitle.textContent = 'Create an account';
+  refs.signUpName.textContent = 'Name';
+  refs.signUpEmail.textContent = 'Email';
+  refs.signUpPassword.textContent = 'Password';
+  refs.signUpSubmitBtn.textContent = 'Sign Up';
+  refs.openSignInModalNd.textContent = 'Sign In';
+  refs.signUpDesc.textContent = 'with your MovieWall account';
+  // refs.homeBtn.textContent = '';
 }
 
 function changeGenresNamesUk() {
