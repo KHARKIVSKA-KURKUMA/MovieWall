@@ -9,6 +9,7 @@ export function makeTuiPagination(totalItems, totalPages) {
   const options = {
     totalItems,
     itemsPerPage: 20,
+    page: 1,
     visiblePages,
     centerAlign: false,
     firstItemClassName: 'tui-first-child',

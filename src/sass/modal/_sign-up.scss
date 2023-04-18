@@ -4,14 +4,22 @@
     top: 50%;
     left: 50%;
     min-width: 280px;
+      height: 55%;
     background-color: $whiteColor;
     transform: translate(-50%, -50%);
-    padding: 40px;
-    @include tablet {
-      width: 400px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+    padding: 20px;
+    @include mobile {
+      width: 420px;
+      height: 450px;
+      padding: 32px;
     }
-    @include desktop {
+    @include tablet {
       width: 500px;
+      height: 450px;
     }
   }
   label {
@@ -44,7 +52,7 @@
     height: 40px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
-    padding-left: 15px;
+    padding-left: 40px;
     transition: outline-color 0.3s ease-in-out;
     &:focus {
       outline-color: $accentColor;
@@ -78,14 +86,19 @@
     margin-top: 15px;
     display: flex;
     justify-content: center;
-    font-size: 20px;
+    align-items: center;
+    font-size: 16px;
     button {
       background-color: transparent;
       color: $accentColor;
       padding: 0;
       margin: 0;
       margin-right: 10px;
+      font-size: 18px;
     }
+  }
+  .sign-up-text {
+    font-size: 16px;
   }
   h2 {
     margin-bottom: 20px;
@@ -94,6 +107,18 @@
     text-align: center;
     text-transform: uppercase;
   }
+    .signUp-form-wrapper {
+      position: relative;
+    }
+  
+    .signUp-form-icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 12px;
+      display: inline-block;
+      fill: $accentColor;
+    }
 }
 // .js-signIn {
 //   background-color: black;

@@ -6,7 +6,7 @@ import noDataPoster from '../images/photo_clear-watched.png';
 const isMovieInWatched = () => {
   let watchedMovies = null;
   try {
-    watchedMovies = JSON.parse(localStorage.getItem('Watched movies'));
+    watchedMovies = JSON.parse(localStorage.getItem('Queue movies'));
   } catch {
     return;
   }
@@ -111,7 +111,7 @@ function createLibraryMovieItem(data) {
   </li>`;
 }
 
-refs.watchedBtn.addEventListener('click', onWatchedBtnClick);
+refs.queuedBtn.addEventListener('click', onWatchedBtnClick);
 refs.homeBtn.addEventListener('click', e => {
   e.preventDefault()
   clearLibrary();

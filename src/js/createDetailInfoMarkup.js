@@ -5,7 +5,7 @@ import { getMovieTrailer } from './fetchMovies';
 function genresDetail(array) {
   return array.map(genre => genre.name).join(', ');
 }
-
+let activeLang = localStorage.getItem('lang');
 export function clearModal(movie) {
   refs.movieModalContainer.innerHTML = '';
 }
@@ -37,7 +37,7 @@ function createDetailMovieMarkUp(movie) {
   const posterSrc = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
     : notAvailablePoster;
-
+  const genres = genresDetail(movie.genres);
   const markup = `
       <div class="modal-wrap">
         <img
@@ -47,7 +47,7 @@ function createDetailMovieMarkUp(movie) {
         />
         
         <div class="params">
-          <h2 class="params__title">${movie.original_title}</h2>
+          <h2 class="params__title">${movie.title}</h2>
           <div class="params__wrap">
             <div class="params__key">
               <p class="params__key__text">Vote/Votes</p>
@@ -63,7 +63,14 @@ function createDetailMovieMarkUp(movie) {
                 <span class="params__vote_count">${movie.vote_count}</span></p>
               <p class="params__popularity">${movie.popularity.toFixed(1)}</p>
               <p class="params__text-font">${movie.original_title}</p>
-              <p class="params__text-font">${genresDetail(movie.genres)}</p>
+              <p class="params__text-font params__text-retreat">${genres}</p>
+              <p class="params__popularity params__text-retreat">${movie.popularity.toFixed(
+                1
+              )}</p>
+              <p class="params__text-font params__text-retreat">${
+                movie.original_title
+              }</p>
+              
             </div>
           </div>
         
@@ -77,6 +84,7 @@ function createDetailMovieMarkUp(movie) {
           </div>
         </div>
       </div>`;
+
   refs.movieModalContainer.innerHTML = markup;
   changeModalBackgroundColor(movie.vote_average);
   cutOriginalTitleMobile(movie.original_title);
@@ -85,7 +93,7 @@ function createDetailMovieMarkUp(movie) {
 export { createDetailMovieMarkUp };
 
 export async function showtTrailer(id) {
-  const data = await getMovieTrailer(id)
+  const data = await getMovieTrailer(id, activeLang)
     .then(({ results }) =>
       results.map(item => {
         if (item.site === 'YouTube') {
@@ -94,13 +102,16 @@ export async function showtTrailer(id) {
       })
     )
     .catch(err => console.log(err));
-  
-  if (data[0] === '' || typeof(data[0]) === 'undefined') {
+
+  if (data[0] === '' || typeof data[0] === 'undefined') {
     const trailerErrorMessage = `
       <div class="trailer-message"> 
         <h3> sorry, there is no trailer for this movie <h3>
-      </div>`
-    refs.movieModalContainer.insertAdjacentHTML('beforeend', trailerErrorMessage);
+      </div>`;
+    refs.movieModalContainer.insertAdjacentHTML(
+      'beforeend',
+      trailerErrorMessage
+    );
     return;
   }
   const urlTrailer = data[0];
@@ -131,5 +142,20 @@ function markupTrailer(url) {
               loading="lazy"
             </iframe>
         </div>`;
+
   refs.movieModalContainer.insertAdjacentHTML('afterend', trailerTabletMarkup);
+  refs.movieModalContainer.insertAdjacentHTML('beforeend', trailerMarkup);
+}
+
+function changeModalBackgroundColor(rating) {
+  const modalMovie = document.querySelector('.modal');
+  if (rating > 1 && rating < 5) {
+    modalMovie.style.backgroundColor = 'red';
+  }
+  if (rating > 5 && rating < 8) {
+    modalMovie.style.backgroundColor = 'yellow';
+  }
+  if (rating >= 8) {
+    modalMovie.style.backgroundColor = 'green';
+  }
 }
