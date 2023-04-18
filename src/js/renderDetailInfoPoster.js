@@ -6,8 +6,8 @@ import { clearModal } from './createDetailInfoMarkup';
 import { addLocalStorage } from './addToWatchedLocalStorage';
 import { addQueueLocalStorage } from './addToQueueLocalStorage';
 
-export function renderDetailInfoPoster(id) {
-  getDetailAboutMovie(id).then(data => {
+export function renderDetailInfoPoster(id, lang) {
+  getDetailAboutMovie(id, lang).then(data => {
     clearModal(data);
     createDetailMovieMarkUp(data);
     showtTrailer(id);

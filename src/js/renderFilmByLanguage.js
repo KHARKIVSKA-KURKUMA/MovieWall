@@ -7,9 +7,6 @@ let searchLanguage = '';
 
 function onLanguageClick(event) {
   eventActions(event);
-  // if (!event.target.classList.contains('.filter-item')|| event.target.nodeName != 'LI') {
-  //     return;
-  // }
   searchLanguage = event.target.id;
   renderFilmByLanguage(searchLanguage);
 }
@@ -17,6 +14,7 @@ function onLanguageClick(event) {
 async function renderFilmByLanguage(searchLanguage) {
   await getFilmByLanguage(searchLanguage).then(data => {
     if (!data.results || data.results.length === 0) {
+      refs.searchForm.insertAdjacentHTML('beforeend', createNotification());
       checkResultActions();
     }
     refs.homeGalleryList.insertAdjacentHTML(
@@ -24,6 +22,10 @@ async function renderFilmByLanguage(searchLanguage) {
       createPopularMovieMarkUp(data.results)
     );
   });
-}
+};
+
+function createNotification() {
+  return `<p class='search-notification'>OOps. Something going wrong. Try one more time</p>`;
+};
 
 export { onLanguageClick };

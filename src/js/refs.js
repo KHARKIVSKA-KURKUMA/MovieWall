@@ -31,8 +31,11 @@ export const refs = {
   listEl: document.querySelectorAll('.js-btn-list'),
   libraryEl: document.querySelector('.library'),
   library: document.querySelector('.library-btn'),
+  linkEl: document.querySelector('.header__link'),
   activeClass: 'nav-list__button--active',
-  home: document.querySelector('.home'),
+  libraryJs: document.querySelector('.js-library'),
+  activeClass: 'nav-list__button--active',
+  home: document.querySelector('.js-home'),
   targetsList: {
     home: 'home',
     library: 'library',
@@ -42,4 +45,9 @@ export const refs = {
   filter: document.querySelector('.filter'),
   openFilter: document.querySelector('.filter__btn'),
   closeFilter: document.querySelector('.filter-close'),
+  languagesBox: document.querySelector('.languages'),
+  watchedBtn: document.querySelector('.button-watched'),
+  queuedBtn: document.querySelector('.button-queue'),
+  galleryContainer: document.querySelector('.gallery-holder'),
+  homeBtn: document.querySelector('.js-home'),
 };
