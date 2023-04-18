@@ -1,15 +1,7 @@
 .swiper {
-    margin-bottom: 80px;
+    margin-bottom: 30px;
     position: relative;
-    &-title {
-      margin-bottom: 30px;
-      font-family: inherit;
-      font-size: 30px;
-      text-transform: uppercase;
-      text-align: left;
-      color: rgb(172, 17, 17);
-    }
-
+    
     &-link {
       & > * {
         pointer-events: none;
@@ -64,10 +56,6 @@
 
   
   @media screen and (max-width: 768px) {
-    .swiper-title {
-      font-size: 20px;
-    }
-
     .swiper-button-next-icon,
     .swiper-button-prev-icon {
       width: 50px;

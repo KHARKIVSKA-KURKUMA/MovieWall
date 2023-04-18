@@ -10,6 +10,7 @@ export const swiper = new Swiper(swiperTop, {
     modules: [Navigation, Autoplay],
     slidesPerView: 8,
     spaceBetween: 8,
+    loop: true,
     autoplay: {
       enabled: true,
       delay: 1500,
