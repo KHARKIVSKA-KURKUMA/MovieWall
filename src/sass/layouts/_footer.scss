@@ -29,5 +29,8 @@
     font: inherit;
     cursor: pointer;
     padding: 0;
+    &:hover {
+      cursor: url('/src/images/cursor_pointer.png'), auto;
+    }
   }
 }

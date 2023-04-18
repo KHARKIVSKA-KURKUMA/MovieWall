@@ -5,9 +5,29 @@ body {
   cursor: url('/src/images/cursor.cur'), auto;
 }
 
+// :hover {
+//   cursor: url('/src/images/cursor_pointer.png'), auto;
+// }
+
 .link {
   text-decoration: none;
+  &:hover{
+    cursor: url('/src/images/cursor_pointer.png'), auto;
+  }
 }
+
+button:hover {
+  cursor: url('/src/images/cursor_pointer.png'), auto;
+}
+
+svg:hover {
+  cursor: url('/src/images/cursor_pointer.png'), auto;
+}
+
+a:hover {
+  cursor: url('/src/images/cursor_pointer.png'), auto;
+}
+
 
 .list {
   list-style-type: none;

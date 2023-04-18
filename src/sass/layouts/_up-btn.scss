@@ -11,6 +11,9 @@
     justify-content: center;
     width: 80px;
     height: 70px;
+    &:hover {
+      cursor: url('/src/images/cursor_pointer.png'), auto;
+    }
   }
   
   .btn-up::before {
