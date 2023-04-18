@@ -38,6 +38,7 @@ let activeLang = localStorage.getItem('lang');
 async function renderMovieByWord(searchFilm, currentPage) {
   await getFilmByKeyWord(searchFilm, currentPage, activeLang).then(data => {
     if (!data.results || data.results.length === 0) {
+      // refs.paginationEl.style.display = 'none';
       if (activeLang === 'uk') {
         refs.searchForm.insertAdjacentHTML('beforeend', createNotificationUk());
       } else {
