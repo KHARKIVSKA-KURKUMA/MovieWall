@@ -102,6 +102,7 @@
   @include tablet {
     margin-bottom: 0;
     order: 2;
+    gap: 8;
   }
 
   @include desktop {
@@ -156,39 +157,53 @@
       scale: 1.04;
       cursor: url('/src/images/cursor_pointer.png'), auto;
     }
+
+    &--exit {
+        padding: 5px;
+        background: #8c8c8c;
+        min-width: 50px;
+    }
   }
 }
 
 .user-bar {
   position: relative;
   margin-bottom: 8px;
+  display: flex;
+  gap: 4px;
 
   @include tablet {
     order: 3;
     margin: 0 0 0 auto;
+    gap: 8px;
   }
 
-  .nav-list__button {
-    padding-left: 44px;
-  }
+  &__exit {
+    width: 25px;
+    height: 25px;
+    fill: $whiteColor;
 
+  }
+  
   &__icon {
     transform: translateY(-50%);
     transform-origin: center 0;
-    z-index: 10;
+    z-index: 5;
     fill: $whiteColor;
     width: 16px;
     height: 16px;
     position: absolute;
     top: 50%;
     pointer-events: none;
-    left: 18px;
+    left: 12px;
   }
 }
 
 .js-signIn {
   color: $whiteColor;
   background: #8c8c8c;
+  padding-left: 30px;
+  padding-right: 10px;
 
   &:disabled {
     color: $whiteColor;
@@ -324,38 +339,44 @@
 }
 
 .theme {
-  &__button {
-    background: none;
-    border: none;
-  }
-}
-
-.theme__svg {
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  filter: drop-shadow(0 0 8px #efd478);
+    position: absolute;
+    bottom: 100px;
+    right: 5px;
+    text-align: center;
+    margin-left: auto;
+    align-items: center;
+    margin-top: auto;
+    cursor: pointer;
+    
+    @include tablet {
+        display: flex;
+        bottom: 5px;
+    }
+    
+    &__button {
+        background: none;
+        border: none;
+    }
+    
+    &__icon {
+        fill: #efd478;
+    }
+    
+    &__svg {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        filter: drop-shadow(0 0 8px #efd478);
+        
+        // @include tablet {
+        //     width: 40px;
+        //     height: 40px;
+        // }
+    }
 }
 
 .change-theme[data-theme='light'] {
   display: none;
-}
-
-.theme {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  margin-left: auto;
-  display: flex;
-  // fill:#EFD478;
-
-  @include tablet {
-    position: static;
-  }
-
-  &__icon {
-    fill: #efd478;
-  }
 }
 
 .filter__btn {
@@ -365,14 +386,23 @@
 
 .filter__svg {
   fill: #fff;
+  width: 25px;
+  height: 25px;
+
+    // @include tablet {
+    //     width: 30px;
+    //     height: 30px;
+    // }
 }
-.languages {
-  display: flex;
-  justify-content: flex-end;
-}
+
 .lang-btn {
   background-color: transparent;
   border: none;
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
+
+//    @include tablet {
+//     width: 40px;
+//     height: 40px;
+//     }
 }

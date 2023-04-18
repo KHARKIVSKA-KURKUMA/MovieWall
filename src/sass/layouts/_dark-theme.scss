@@ -6,8 +6,13 @@
         color: #fff;
     
         &:disabled {
-            color: #fff;
+            color: #000;
         }
+    }
+
+    .user-bar__exit,
+    .user-bar__icon {
+        fill: #000;
     }
     
     .library {
@@ -27,11 +32,16 @@
     
     .search__input {
         background: #000000;
+        color: #ffffff;
     }
     
     .search__svg {
         stroke: #ffffff;
         background: #000000;
+    }
+
+    .search-notification {
+        color: #000;
     }
     
     .signIn-modal {
@@ -61,7 +71,7 @@
     }
     
     .signUp-box p {
-        color: #ffffff;
+        color: #fff;
     }
     
     .modal-close-icon {
@@ -116,5 +126,21 @@
     .theme {
         fill: #fff;
     }
-}
 
+    #pagination .tui-page-btn {
+        color: #fff;
+    }
+
+
+    #pagination .tui-page-btn {
+        // background: transparent;
+    }
+
+    #pagination .tui-is-selected {
+        background: #B92F2C;
+    }
+
+    .btn-up:hover {
+        background-color: #B92F2C;
+    }
+}

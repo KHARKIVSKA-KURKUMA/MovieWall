@@ -26,10 +26,14 @@ import { switcherThemeFunctionality } from './js/changeThemeOnClick';
 import { onUpBtn } from './js/upBtn';
 import { returnHomeOnClickLogo } from './js/returnHomeOnClickLogo';
 import { onCloseFilter, onOpenFilter } from './js/onOpenFilter';
+// import {exitOnClickExit} from './js/exitOnClicExit';
+
 
 headerFunctionality();
 switcherThemeFunctionality();
 onLangSelected();
+// exitOnClickExit();
+
 
 refs.linkEl.addEventListener('click', returnHomeOnClickLogo);
 refs.homeGalleryList.addEventListener('click', onOpenModal);
