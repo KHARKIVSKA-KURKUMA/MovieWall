@@ -123,3 +123,14 @@ async function getFilmsByLang(lang) {
   }
 }
 export { getFilmsByLang };
+
+async function getTopRatedFilms() {
+  try {
+    const url = `${BASE_URL}/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`;
+    const response = await axios.get(url);
+    return response.data;
+  } catch (error) {
+    Notify.failure('Oops, an error occurred');
+  }
+}
+export { getTopRatedFilms };
