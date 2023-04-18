@@ -1,7 +1,8 @@
 .swiper {
-    margin-bottom: 30px;
     position: relative;
-    
+    @include tablet {
+      margin-bottom: 30px;
+    }
     &-link {
       & > * {
         pointer-events: none;
