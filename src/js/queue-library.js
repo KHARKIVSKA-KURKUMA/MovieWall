@@ -3,6 +3,7 @@ import { fetchMovieForWatched } from './fetchMovies';
 import notAvailablePoster from '../images/poster-not-available.jpg';
 import { renderPopularMovies } from './renderPopularPoster';
 import noDataPoster from '../images/photo_clear-watched.png';
+
 const isMovieInWatched = () => {
   let watchedMovies = null;
   try {
@@ -19,7 +20,10 @@ if (watchedMovies == null || watchedMovies.length === 0) {
 } else if (watchedMovies.length > 0) {
   refs.watchedBtn.classList.add('is-active');
   renderLibrary(watchedMovies);
+  
+  
 }
+
 function renderPoster() {
   let activeLang = localStorage.getItem('lang');
   if (activeLang === 'uk') {
@@ -31,13 +35,16 @@ function renderPoster() {
 
 function renderLibrary(movies) {
   for (let i = 0; i < movies.length; i += 1) {
+        
     let activeLang = localStorage.getItem('lang');
     fetchMovieForWatched(movies[i], activeLang).then(data => {
       refs.homeGalleryList.insertAdjacentHTML(
         'beforeend',
         createLibraryMovieItem(data)
+        
       );
-    });
+         
+      });
   }
 }
 
@@ -51,6 +58,7 @@ const onWatchedBtnClick = event => {
     renderPoster();
   } else if (watchedMovies.length > 0) {
     clearLibrary();
+
     renderLibrary(watchedMovies);
   }
 };
@@ -85,7 +93,7 @@ function createPosterUk() {
 }
 function createLibraryMovieItem(data) {
   if (watchedMovies == null || watchedMovies.length === 0) {
-    return;
+     return;
   }
   const {
     id,
@@ -99,6 +107,7 @@ function createLibraryMovieItem(data) {
     vote_average,
     vote_count,
   } = data;
+  
   const posterSrc = poster_path
     ? `https://image.tmdb.org/t/p/w500/${poster_path}`
     : notAvailablePoster;
@@ -130,8 +139,10 @@ function createLibraryMovieItem(data) {
 }
 
 refs.queuedBtn.addEventListener('click', onWatchedBtnClick);
+
 refs.homeBtn.addEventListener('click', e => {
   e.preventDefault();
   clearLibrary();
+  refs.paginationEl.style.display = 'block';
   renderPopularMovies();
 });
