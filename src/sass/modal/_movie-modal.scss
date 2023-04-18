@@ -95,7 +95,7 @@
 
   @include tablet {
     margin-top: 0;
-    margin-left: 68px;
+    margin-left: 58px;
   }
 
   @include desktop {
@@ -253,10 +253,12 @@
 .button-trailer{
   display: block;
   margin: 0 auto;
+  margin-top: 20px;
 
-  @include tablet {
-      display: none;
-    }
+  @include desktop {
+    margin-top: -100px;
+    margin-right: 100px;
+  }
 }
 .decoration {
   margin-bottom: 0;
@@ -280,16 +282,17 @@
   //   min-width: 806px;
   // }
 }
-.trailer__video{
-  max-width: inherit;
-  max-height: inherit;
-  border-radius: 10px;
+// .trailer__video{
+//   max-width: 100;
+//   max-height: inherit;
+//   border-radius: 10px;
+//   position: relative;
   
-    @include desktop {
-      min-width: 806px;
-      min-height: 520px;
-    }
-}
+//     @include desktop {
+//       min-width: 806px;
+//       min-height: 520px;
+//     }
+// }
 .trailer-message {
   color: $accentColor;
   text-align: center;
@@ -305,7 +308,7 @@
   @include desktop {
     display: block;
     position: absolute;
-    bottom: -150px;
+    bottom: 0;
     right: 35px;
   }
 }
