@@ -4,22 +4,22 @@ import notAvailablePoster from '../images/poster-not-available.jpg';
 import { renderPopularMovies } from './renderPopularPoster';
 import noDataPoster from '../images/photo_clear-watched.png';
 
-const isMovieInWatched = () => {
-  let watchedMovies = null;
+const isMovieInQueue = () => {
+  let queueMovies = null;
   try {
-    watchedMovies = JSON.parse(localStorage.getItem('Queue movies'));
+    queueMovies = JSON.parse(localStorage.getItem('Queue movies'));
   } catch {
     return;
   }
-  return watchedMovies;
+  return queueMovies;
 };
-let watchedMovies = isMovieInWatched();
+let queueMovies = isMovieInQueue();
 
-if (watchedMovies == null || watchedMovies.length === 0) {
+if (queueMovies == null || queueMovies.length === 0) {
   clearLibrary();
-} else if (watchedMovies.length > 0) {
-  refs.watchedBtn.classList.add('is-active');
-  renderLibrary(watchedMovies);
+} else if (queueMovies.length > 0) {
+  refs.queuedBtn.classList.add('is-active');
+  renderLibrary(queueMovies);
 }
 
 function renderPoster() {
@@ -43,18 +43,18 @@ function renderLibrary(movies) {
   }
 }
 
-const onWatchedBtnClick = event => {
+const onQueueBtnClick = event => {
   event.preventDefault();
-  refs.watchedBtn.classList.add('is-active');
+  refs.queuedBtn.classList.add('is-active');
   clearLibrary();
-  watchedMovies = isMovieInWatched();
-  if (watchedMovies == null || watchedMovies.length === 0) {
+  queueMovies = isMovieInQueue();
+  if (queueMovies == null || queueMovies.length === 0) {
     refs.galleryContainer.innerHTML = '';
     renderPoster();
-  } else if (watchedMovies.length > 0) {
+  } else if (queueMovies.length > 0) {
     clearLibrary();
 
-    renderLibrary(watchedMovies);
+    renderLibrary(queueMovies);
   }
 };
 function clearLibrary() {
@@ -87,7 +87,7 @@ function createPosterUk() {
       `;
 }
 function createLibraryMovieItem(data) {
-  if (watchedMovies == null || watchedMovies.length === 0) {
+  if (queueMovies == null || queueMovies.length === 0) {
     return;
   }
   const {
@@ -133,7 +133,7 @@ function createLibraryMovieItem(data) {
   </li>`;
 }
 
-refs.queuedBtn.addEventListener('click', onWatchedBtnClick);
+refs.queuedBtn.addEventListener('click', onQueueBtnClick);
 
 refs.homeBtn.addEventListener('click', e => {
   e.preventDefault();
