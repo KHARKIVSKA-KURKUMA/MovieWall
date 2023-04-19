@@ -30,6 +30,7 @@ import { onCloseFilter, onOpenFilter } from './js/onOpenFilter';
 import { exitOnClickExit } from './js/exitOnClicExit';
 
 import { renderTopRatedMovies } from './js/slider';
+import { exitOnClickExit } from './js/exitOnClickExit';
 
 headerFunctionality();
 switcherThemeFunctionality();

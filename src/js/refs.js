@@ -66,4 +66,5 @@ export const refs = {
   signUpDesc: document.querySelector('.sign-up-text'),
   swiper: document.querySelector('.swiper'),
   slider: document.querySelector('.swiper-wrapper'),
+  exitBtn: document.querySelector('[data-target="logout"]'),
 };
