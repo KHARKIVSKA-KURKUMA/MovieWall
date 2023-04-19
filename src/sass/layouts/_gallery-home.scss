@@ -102,7 +102,10 @@
   color: $accentColor;
   font-weight: 500;
   font-size: 16px;
+  line-height: 400px;
+  @include tablet {
   line-height: 480px;
+  }
 }
 
 .filter {
@@ -112,8 +115,9 @@
   align-items: left;
   justify-content: center;
   position: relative;
-  margin-bottom: -53px;
+  margin-bottom: -106px;
    @include tablet {
+    margin-bottom: -53px;
   flex-direction: row;
   gap: 30px;
    }
@@ -130,7 +134,7 @@
     background-color: $accentColor;
     top: 0;
 
-    @media screen and (max-width: 703.98px) {
+    @media screen and (max-width: 767.98px) {
       right: 5px;
     }
   }
