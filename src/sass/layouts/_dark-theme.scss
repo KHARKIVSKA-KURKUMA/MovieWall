@@ -27,7 +27,6 @@
   }
 
   .search__input {
-
     background: $blackColor;
     color: $whiteColor;
   }
@@ -50,8 +49,6 @@
     color: $accentColor;
   }
 
-
-
   .js-signIn {
     color: $darkGrey;
   }
@@ -67,11 +64,11 @@
   }
 
   .signIn .google-button {
-    color:$whiteColor;
+    color: $whiteColor;
   }
 
   .signUp-box p {
-    color:$whiteColor;
+    color: $whiteColor;
   }
 
   .signUp-modal {
@@ -79,7 +76,7 @@
   }
 
   .signUp .sign-up-text {
-    color:$whiteColor;
+    color: $whiteColor;
   }
 
   .modal-signUp-close {
@@ -88,7 +85,7 @@
 
   .signUp input {
     background: $darkGrey;
-    color:$whiteColor;
+    color: $whiteColor;
     border: 1px solid $whiteColor;
   }
 
@@ -115,7 +112,7 @@
   }
 
   .movie-info .filmcard-name {
-    color:$whiteColor;
+    color: $whiteColor;
   }
 
   .modal {
@@ -139,14 +136,14 @@
   }
 
   .about {
-    color:$whiteColor;
+    color: $whiteColor;
   }
 
   .footer {
     background: $blackColor;
 
     &__text {
-      color:$whiteColor;
+      color: $whiteColor;
     }
   }
 
@@ -178,7 +175,9 @@
       color: $whiteColor;
     }
   }
-
+  .white {
+    background-color: $blackColor;
+  }
   .btn-up:hover {
     background: $accentColor;
   }
