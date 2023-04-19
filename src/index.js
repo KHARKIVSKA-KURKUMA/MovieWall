@@ -27,7 +27,7 @@ import { switcherThemeFunctionality } from './js/changeThemeOnClick';
 import { onUpBtn } from './js/upBtn';
 import { returnHomeOnClickLogo } from './js/returnHomeOnClickLogo';
 import { onCloseFilter, onOpenFilter } from './js/onOpenFilter';
-import {exitOnClickExit} from './js/exitOnClicExit';
+import { exitOnClickExit } from './js/exitOnClicExit';
 
 import { renderTopRatedMovies } from './js/slider';
 
@@ -39,7 +39,6 @@ renderTopRatedMovies();
 
 refs.linkEl.addEventListener('click', returnHomeOnClickLogo);
 refs.homeGalleryList.addEventListener('click', onOpenModal);
-// refs.galleryContainer.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.searchForm.addEventListener('submit', onSubmit);
 refs.backdrop.addEventListener('click', onBackdropClick);
