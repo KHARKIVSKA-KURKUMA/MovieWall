@@ -152,7 +152,8 @@ function markupTrailer(url) {
     const trailerMobileMarkup = `
     <button type= "button" class="modal-buttons__watched button-trailer">
      Дивитись трейлер
-    </button>`;
+    </button>
+    <div class="white"></div>`;
     refs.movieModalContainer.insertAdjacentHTML(
       'beforeend',
       trailerMobileMarkup
@@ -161,7 +162,8 @@ function markupTrailer(url) {
     const trailerMobileMarkup = `
     <button type= "button" class="modal-buttons__watched button-trailer">
      Watch a trailer
-    </button>`;
+    </button>
+    <div class="white"></div>`;
     refs.movieModalContainer.insertAdjacentHTML(
       'beforeend',
       trailerMobileMarkup
