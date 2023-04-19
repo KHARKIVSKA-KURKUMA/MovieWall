@@ -5,10 +5,17 @@
         <svg class="user-bar__icon">
           <use href="/src/images/icons.svg#icon-user"></use>
         </svg>
-        <button class="nav-list__button js-signIn" data-modal="signIn" type="button">
+        <button
+          class="nav-list__button js-signIn"
+          data-modal="signIn"
+          type="button"
+        >
           SIGN IN
         </button>
-        <button class="nav-list__button nav-list__button--exit" data-target="logout">
+        <button
+          class="nav-list__button nav-list__button--exit"
+          data-target="logout"
+        >
           <svg class="user-bar__exit">
             <use href="/src/images/icons.svg#icon-exit"></use>
           </svg>
@@ -16,22 +23,39 @@
       </div>
       <ul class="nav-list list js-btn-list">
         <li class="nav-list__item">
-          <button class="nav-list__button nav-list__button--active js-home" data-target="home" type="button">
+          <button
+            class="nav-list__button nav-list__button--active js-home"
+            data-target="home"
+            type="button"
+          >
             HOME
           </button>
         </li>
         <li class="nav-list__item">
-          <button class="nav-list__button js-library" data-target="library" type="button">
+          <button
+            class="nav-list__button js-library"
+            data-target="library"
+            type="button"
+          >
             MY LIBRARY
           </button>
         </li>
       </ul>
       <form class="search-form search" id="search-form">
         <div class="search__field">
-          <input class="search__input" type="text" name="searchQuery" autocomplete="off" placeholder="Movie Search" />
+          <input
+            class="search__input"
+            type="text"
+            name="searchQuery"
+            autocomplete="off"
+            placeholder="Movie Search"
+          />
           <button type="submit" class="search__btn">
             <svg class="search__svg">
-              <use class="serch__icon" href="/src/images/icons.svg#icon-search"></use>
+              <use
+                class="serch__icon"
+                href="/src/images/icons.svg#icon-search"
+              ></use>
             </svg>
           </button>
         </div>
@@ -40,31 +64,40 @@
         <li>
           <button type="button" class="filter__btn">
             <svg class="filter__svg">
-              <use class="filter__icon" href="/src/images/icons.svg#icon-filter"></use>
+              <use
+                class="filter__icon"
+                href="/src/images/icons.svg#icon-filter"
+              ></use>
             </svg>
           </button>
         </li>
         <li>
           <button class="languages lang-btn change-lang" id="en" data-lang="uk">
-            <img src="./images/ua.png" alt="Ukrainian" />
+            <img src="./images/ua.png" alt="Ukrainian" width="50" height="50" />
           </button>
         </li>
         <li>
           <button class="lang-btn change-lang" id="uk" data-lang="en">
-            <img src="./images/uk.png" alt="English" />
+            <img src="./images/uk.png" alt="English" width="50" height="50" />
           </button>
         </li>
         <li>
           <button class="theme__button change-theme" data-theme="light">
             <svg class="theme__svg">
-              <use class="theme__icon" href="/src/images/icons.svg#icon-sun"></use>
+              <use
+                class="theme__icon"
+                href="/src/images/icons.svg#icon-sun"
+              ></use>
             </svg>
           </button>
         </li>
         <li>
           <button class="theme__button change-theme" data-theme="dark">
             <svg class="theme__svg">
-              <use class="theme__icon" href="/src/images/icons.svg#icon-moon"></use>
+              <use
+                class="theme__icon"
+                href="/src/images/icons.svg#icon-moon"
+              ></use>
             </svg>
           </button>
         </li>
@@ -79,12 +112,20 @@
       </div>
       <ul class="nav-list list library js-btn-list">
         <li class="nav-list__item">
-          <button class="nav-list__button nav-list__button--active button-watched" data-target="watched" type="button">
+          <button
+            class="nav-list__button nav-list__button--active button-watched"
+            data-target="watched"
+            type="button"
+          >
             WATCHED
           </button>
         </li>
         <li class="nav-list__item">
-          <button class="nav-list__button button-queue" data-target="queue" type="button">
+          <button
+            class="nav-list__button button-queue"
+            data-target="queue"
+            type="button"
+          >
             QUEUE
           </button>
         </li>

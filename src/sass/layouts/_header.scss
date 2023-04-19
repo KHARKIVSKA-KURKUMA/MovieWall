@@ -161,9 +161,9 @@
     }
 
     &--exit {
-        padding: 5px;
-        background: #8c8c8c;
-        min-width: 50px;
+      padding: 5px;
+      background: #8c8c8c;
+      min-width: 50px;
     }
   }
 }
@@ -185,7 +185,7 @@
     height: 20px;
     fill: $whiteColor;
   }
-  
+
   &__icon {
     transform: translateY(-50%);
     transform-origin: center 0;
@@ -338,40 +338,40 @@
 }
 
 .theme {
-    position: absolute;
-    bottom: 100px;
-    right: 5px;
-    text-align: center;
-    margin-left: auto;
-    align-items: center;
-    margin-top: auto;
+  position: absolute;
+  bottom: 100px;
+  right: 5px;
+  text-align: center;
+  margin-left: auto;
+  align-items: center;
+  margin-top: auto;
+  cursor: pointer;
+
+  @include tablet {
+    display: flex;
+    bottom: 5px;
+  }
+
+  &__button {
+    background: none;
+    border: none;
+  }
+
+  &__icon {
+    fill: #efd478;
+  }
+
+  &__svg {
+    width: 30px;
+    height: 30px;
     cursor: pointer;
-    
+    filter: drop-shadow(0 0 8px #efd478);
+
     @include tablet {
-        display: flex;
-        bottom: 5px;
+      width: 50px;
+      height: 50px;
     }
-    
-    &__button {
-        background: none;
-        border: none;
-    }
-    
-    &__icon {
-        fill: #efd478;
-    }
-    
-    &__svg {
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-        filter: drop-shadow(0 0 8px #efd478);
-        
-        // @include tablet {
-        //     width: 40px;
-        //     height: 40px;
-        // }
-    }
+  }
 }
 
 .change-theme[data-theme='light'] {
@@ -381,6 +381,9 @@
 .filter__btn {
   background-color: transparent;
   border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .filter__svg {
@@ -388,10 +391,14 @@
   width: 25px;
   height: 25px;
 
-    // @include tablet {
-    //     width: 30px;
-    //     height: 30px;
-    // }
+  // @include tablet {
+  //     width: 30px;
+  //     height: 30px;
+  // }
+  @include tablet {
+    width: 35px;
+    height: 35px;
+  }
 }
 
 .lang-btn {
@@ -400,8 +407,9 @@
   width: 35px;
   height: 35px;
 
-//    @include tablet {
-//     width: 40px;
-//     height: 40px;
-//     }
+  @include tablet {
+    width: 50px;
+    height: 50px;
+    margin-left: 5px;
+  }
 }
