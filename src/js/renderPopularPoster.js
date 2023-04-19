@@ -9,6 +9,7 @@ let pagination;
 
 function renderPopularMovies(id) {
   getPopularFilms(id).then(data => {
+     refs.homeGalleryList.innerHTML = '';
     refs.homeGalleryList.insertAdjacentHTML(
       'beforeend',
       createPopularMovieMarkUp(data.results)
@@ -27,6 +28,7 @@ function renderPopularMovies(id) {
   function handlePageChange(page) {
     refs.homeGalleryList.innerHTML = '';
     getPopularFilms(id, page).then(data => {
+       refs.homeGalleryList.innerHTML = '';
       refs.homeGalleryList.insertAdjacentHTML(
         'beforeend',
         createPopularMovieMarkUp(data.results)
