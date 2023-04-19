@@ -34,8 +34,7 @@ function renderLibrary(movies) {
   for (let i = 0; i < movies.length; i += 1) {
     let activeLang = localStorage.getItem('lang');
     fetchMovieForWatched(movies[i], activeLang).then(data => {
-      refs.homeGalleryList.innerHTML = '';
-      refs.galleryContainer.insertAdjacentHTML(
+      refs.homeGalleryList.insertAdjacentHTML(
         'beforeend',
         createLibraryMovieItem(data)
       );
@@ -43,23 +42,21 @@ function renderLibrary(movies) {
   }
 }
 
-export function onWatchedBtnClick(event) {
+const onWatchedBtnClick = event => {
   event.preventDefault();
   refs.watchedBtn.classList.add('is-active');
   clearLibrary();
   watchedMovies = isMovieInWatched();
   if (watchedMovies == null || watchedMovies.length === 0) {
-    refs.galleryContainer.innerHTML = '';
-    refs.paginationEl.style.display = 'none';
-    clearLibrary();
+    // refs.galleryContainer.innerHTML = '';
     renderPoster();
   } else if (watchedMovies.length > 0) {
     clearLibrary();
-    refs.galleryContainer.innerHTML = '';
+    // refs.galleryContainer.innerHTML = '';
     refs.paginationEl.style.display = 'none';
     renderLibrary(watchedMovies);
   }
-}
+};
 function clearLibrary() {
   refs.homeGalleryList.innerHTML = '';
 }

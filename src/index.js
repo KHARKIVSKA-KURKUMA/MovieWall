@@ -36,7 +36,7 @@ renderTopRatedMovies();
 
 refs.linkEl.addEventListener('click', returnHomeOnClickLogo);
 refs.homeGalleryList.addEventListener('click', onOpenModal);
-refs.galleryContainer.addEventListener('click', onOpenModal);
+// refs.galleryContainer.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.searchForm.addEventListener('submit', onSubmit);
 refs.backdrop.addEventListener('click', onBackdropClick);
@@ -57,3 +57,5 @@ refs.openFilter.addEventListener('click', onOpenFilter);
 refs.closeFilter.addEventListener('click', onCloseFilter);
 window.addEventListener('scroll', onUpBtn);
 refs.slider.addEventListener('click', onOpenModal);
+let activeLang = localStorage.getItem('lang');
+renderPopularMovies(activeLang);
