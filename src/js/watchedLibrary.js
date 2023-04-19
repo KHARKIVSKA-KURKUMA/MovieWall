@@ -139,27 +139,28 @@ refs.watchedBtn.addEventListener('click', onWatchedBtnClick);
 
 refs.libraryJs.addEventListener('click', onWatchedBtnClick);
 
-let activePage = localStorage.getItem('page');
-console.log(activePage);
-if (
-  activePage === 'library' ||
-  activePage === 'queue' ||
-  activePage === 'watched'
-) {
-  if (activePage === 'queue') {
-    refs.queuedBtn.classList.add(refs.activeClass);
-    refs.watchedBtn.classList.remove(refs.activeClass);
-  } else {
-    refs.watchedBtn.classList.add(refs.activeClass);
-    refs.queuedBtn.classList.remove(refs.activeClass);
-  }
-  refs.libraryJs.classList.add(refs.activeClass);
-  refs.form.hidden = true;
-  refs.libraryEl.style.display = 'flex';
-  refs.homeBtn.classList.remove(refs.activeClass);
-} else if (activePage === 'home' || activePage === 'null') {
-  refs.form.hidden = false;
-  refs.libraryEl.style.display = 'none';
-  refs.homeBtn.classList.add(refs.activeClass);
-  refs.libraryJs.classList.remove(refs.activeClass);
-}
+// let activePage = localStorage.getItem('page');
+// console.log(activePage);
+// if (
+//   activePage === 'library' ||
+//   activePage === 'queue' ||
+//   activePage === 'watched'
+// ) {
+//   if (activePage === 'queue') {
+//     refs.queuedBtn.classList.add(refs.activeClass);
+//     refs.watchedBtn.classList.remove(refs.activeClass);
+//   } else {
+//     refs.watchedBtn.classList.add(refs.activeClass);
+//     refs.queuedBtn.classList.remove(refs.activeClass);
+//   }
+//   refs.libraryJs.classList.add(refs.activeClass);
+//   refs.form.hidden = true;
+//   refs.libraryEl.style.display = 'flex';
+//   refs.homeBtn.classList.remove(refs.activeClass);
+// } else if (activePage === 'home' || activePage === 'null') {
+//   refs.form.hidden = false;
+//   let activeLang = localStorage.getItem('lang');
+//   refs.libraryEl.style.display = 'none';
+//   refs.homeBtn.classList.add(refs.activeClass);
+//   refs.libraryJs.classList.remove(refs.activeClass);
+// }
