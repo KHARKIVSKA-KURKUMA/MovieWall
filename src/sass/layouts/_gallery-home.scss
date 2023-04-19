@@ -108,11 +108,17 @@
 .filter {
   flex-wrap: wrap;
   display: flex;
-  gap: 30px;
-  align-items: center;
+  flex-direction: column;
+  align-items: left;
   justify-content: center;
   position: relative;
-  margin-bottom: -53px;
+  margin-bottom: -106px;
+   @include tablet {
+    margin-bottom: -53px;
+  flex-direction: row;
+  gap: 30px;
+   }
+
   .filter-close {
     width: 32px;
     height: 32px;
@@ -124,6 +130,10 @@
     border: 1px solid $accentColor;
     background-color: $accentColor;
     top: 0;
+
+    @media screen and (max-width: 767.98px) {
+      right: 5px;
+    }
   }
   .filter-close-icon {
     stroke: $whiteColor;

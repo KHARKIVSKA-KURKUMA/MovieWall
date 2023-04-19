@@ -7,6 +7,7 @@ function genresDetail(array) {
   return array.map(genre => genre.name).join(', ');
 }
 let activeLang = localStorage.getItem('lang');
+
 export function clearModal(movie) {
   refs.movieModalContainer.innerHTML = '';
 }
@@ -142,17 +143,6 @@ export async function showtTrailer(id) {
       })
     )
     .catch(err => console.log(err));
-  if (data[0] === '' || typeof data[0] === 'undefined') {
-    const trailerErrorMessage = `
-      <div class="trailer-message"> 
-        <h3> sorry, there is no trailer for this movie <h3>
-      </div>`;
-    refs.movieModalContainer.insertAdjacentHTML(
-      'beforeend',
-      trailerErrorMessage
-    );
-    return;
-  }
   const urlTrailer = data[0];
   markupTrailer(urlTrailer);
 }

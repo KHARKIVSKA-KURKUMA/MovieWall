@@ -73,11 +73,14 @@ export { fetchMovieForWatched };
 
 async function getMovieTrailer(id, lang) {
   try {
+    startLoader();
     const url = `${BASE_URL}/movie/${id}/videos?api_key=${API_KEY}&language=${lang}`;
     const response = await axios.get(url);
     return response.data;
   } catch (error) {
     Notify.failure('Oops, an error occurred');
+  } finally {
+    stopLoader();
   }
 }
 export { getMovieTrailer };
@@ -96,20 +99,6 @@ async function getFilmByGenres(search, lang) {
 }
 export { getFilmByGenres };
 
-async function getFilmByLanguage(search, page) {
-  try {
-    startLoader();
-    const url = `${BASE_URL}discover/movie?api_key=${API_KEY}&language=${search}&page=${page}`;
-    const response = await axios.get(url);
-    return await response.data;
-  } catch (error) {
-    Notify.failure('Oops, an error occurred');
-  } finally {
-    stopLoader();
-  }
-}
-export { getFilmByLanguage };
-
 async function getFilmsByLang(lang) {
   try {
     startLoader();
@@ -124,13 +113,16 @@ async function getFilmsByLang(lang) {
 }
 export { getFilmsByLang };
 
-async function getTopRatedFilms() {
+async function getTopRatedFilms(lang) {
   try {
-    const url = `${BASE_URL}/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`;
+    startLoader();
+    const url = `${BASE_URL}/movie/top_rated?api_key=${API_KEY}&language=${lang}&page=1`;
     const response = await axios.get(url);
     return response.data;
   } catch (error) {
     Notify.failure('Oops, an error occurred');
+  } finally {
+    stopLoader();
   }
 }
 export { getTopRatedFilms };

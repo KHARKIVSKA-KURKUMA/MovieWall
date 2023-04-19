@@ -4,7 +4,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
-  z-index: 3;
+    z-index: 3;
 }
 
 .modal {
@@ -12,7 +12,6 @@
   top: 50%;
   left: 50%;
   min-width: 280px;
-  height: 85%;
   opacity: 1;
   z-index: 10;
   overflow-y: scroll;
@@ -20,7 +19,7 @@
   background-color: $whiteColor;
   transform: translate(-50%, -50%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  
+
   @include tablet {
     min-width: 704px;
   }
@@ -39,7 +38,6 @@
     width: 30px;
     height: 30px;
     padding: 0;
-    cursor: pointer;
     border: transparent;
     background-color: transparent;
   }
@@ -96,7 +94,7 @@
 
   @include tablet {
     margin-top: 0;
-    margin-left: 58px;
+    margin-left: 48px;
   }
 
   @include desktop {
@@ -128,10 +126,10 @@
     font-weight: $medium-font-weight;
     font-size: $common-font-size;
     line-height: $common-line-height;
-    
+
   }
 
-  &__key__text:last-child{
+  &__key__text:last-child {
     margin-bottom: 0;
   }
 
@@ -176,9 +174,10 @@
     font-weight: $medium-font-weight;
     margin-bottom: 7px;
   }
-    &__text-font:last-child{
-      margin-bottom: 0;
-    }
+
+  &__text-font:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .about {
@@ -204,7 +203,6 @@
   display: flex;
   column-gap: 4px;
   margin-bottom: 20px;
-  
 
   &__watched {
     display: inline-block;
@@ -251,76 +249,20 @@
   }
 }
 
-.button-trailer{
+.button-trailer {
   display: block;
-  margin: 0 auto;
-  margin-top: 20px;
-
-  @include desktop {
-    margin-top: -100px;
-    margin-right: 100px;
-  }
-}
-.decoration {
-  margin-bottom: 0;
-  margin-top: 0;
-  font-style: normal;
-  text-decoration: none;
-  color: $greyColor;
-}
-.trailer-wrapper {
-  display: none;
-
-  @include tablet {
-    display: block;
-    margin: 0 auto;
-    // width: 100%;
-    // height: 100%;
-    margin-top: 20px;
-  }
-  
-  // @include desktop {
-  //   min-width: 806px;
-  // }
-}
-// .trailer__video{
-//   max-width: 100;
-//   max-height: inherit;
-//   border-radius: 10px;
-//   position: relative;
-  
-//     @include desktop {
-//       min-width: 806px;
-//       min-height: 520px;
-//     }
-// }
-.trailer-message {
-  color: $accentColor;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: $medium-font-weight;
-  font-size: 14px;
-  line-height: 1.17; // 14px/12px  
-
-  @include tablet {
-    margin-top: 20px;
-  }
-    
-  @include desktop {
-    display: block;
-    position: absolute;
-    bottom: 0;
-    right: 35px;
-  }
+  margin: 20px auto 0;
 }
 
-.red{
+.red {
   background-color: red;
 }
+
 .yellow {
   background-color: yellow;
   color: $blackColor;
 }
+
 .green {
   background-color: green;
 }

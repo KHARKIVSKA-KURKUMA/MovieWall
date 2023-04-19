@@ -1,120 +1,185 @@
 .dark-theme {
+  background: $darkGrey;
+  cursor: url('/src/images/cursor-white.cur'), auto;
+
+  .js-signIn {
+    background: #8c8c8c;
+    color: $whiteColor;
+
+    &:disabled {
+      color: $blackColor;
+    }
+  }
+
+  .library {
+    --default-bg: #000;
+    --default-color: #ffffff;
+    --active-bg: #b92f2c;
+    --active-color: #ffffff;
+  }
+
+  .header__title {
+    color: $whiteColor;
+  }
+
+  .logo {
+    stroke: $whiteColor;
+  }
+
+  .search__input {
+
+    background: $blackColor;
+    color: $whiteColor;
+  }
+
+  .search-notification {
+    color: $blackColor;
+  }
+
+  .search__svg {
+    stroke: $whiteColor;
+    background: $blackColor;
+  }
+
+  .signIn-modal {
+    background: $darkGrey;
+  }
+
+  .signIn-form label {
+    opacity: 1;
+    color: $accentColor;
+  }
+
+
+
+  .js-signIn {
+    color: $darkGrey;
+  }
+
+  .signIn-form input {
+    background: $darkGrey;
+    border: 1px solid $whiteColor;
+    color: $whiteColor;
+  }
+
+  .signIn .modal-SignIn-close {
+    background: $darkGrey;
+  }
+
+  .signIn .google-button {
+    color:$whiteColor;
+  }
+
+  .signUp-box p {
+    color:$whiteColor;
+  }
+
+  .signUp-modal {
+    background: $darkGrey;
+  }
+
+  .signUp .sign-up-text {
+    color:$whiteColor;
+  }
+
+  .modal-signUp-close {
+    background: $darkGrey;
+  }
+
+  .signUp input {
+    background: $darkGrey;
+    color:$whiteColor;
+    border: 1px solid $whiteColor;
+  }
+
+  .signUp-modal {
     background: #333;
-    
-    .js-signIn {
-        background: #8c8c8c;
-        color: #fff;
-    
-        &:disabled {
-            color: #fff;
-        }
-    }
-    
-    .library {
-        --default-bg: #000;
-        --default-color: #fff;
-        --active-bg: #B92F2C;
-        --active-color: #fff;
-    }
-    
-    .header__title {
-        color:#ffffff;
-    }
-    
-    .logo {
-        stroke:#ffffff;
-    }
-    
-    .search__input {
-        background: #000000;
-    }
-    
-    .search__svg {
-        stroke: #ffffff;
-        background: #000000;
-    }
-    
-    .signIn-modal {
-        background: #333;
-    }
-    
-    .signIn-form label {
-        opacity: 1;
-    }
-    
-    .js-signIn {
-        color: #333;
-    }
-    
-    .signIn-form input {
-        background:#333;
-        border: 1px solid #ffffff;
-        color: #ffffff;
-    }
-    
-    .signIn .modal-SignIn-close {
-        background:#333;
+  }
+
+  .signUp .sign-up-text {
+    color: #fff;
+  }
+
+  .modal-signUp-close {
+    background: #333;
+  }
+
+  .signUp input {
+    background: #333;
+    color: #fff;
+    border: 1px solid #fff;
+  }
+
+  .modal-close-icon {
+    background: $darkGrey;
+  }
+
+  .movie-info .filmcard-name {
+    color:$whiteColor;
+  }
+
+  .modal {
+    background: $darkGrey;
+
+    .modal-close {
+      background: $darkGrey;
     }
 
-    .signIn .google-button {
-        color: #fff;
-    }
-    
-    .signUp-box p {
-        color: #ffffff;
-    }
-    
     .modal-close-icon {
-        background: #333;
+      stroke: $whiteColor;
     }
-    
-    .movie-info .filmcard-name {
-        color: #ffffff;
-    }
-    
-    .modal {
-        background: #333;
-    
-        .modal-close {
-            background: #333;
-    
-        }
-    
-        .modal-close-icon {
-            stroke: #ffffff;
-        }
-    }
-    
-    .params__title {
-        color: #ffffff;
-    }
-    
-    .params__value {
-        color: #ffffff;
-    }
-    
-    .about {
-        color: #ffffff;
-    }
-    
-    .footer {
-        background: #000;
-    
-        &__text {
-            color: #ffffff;
-        }
-    }
-    
-    .change-theme[data-theme="dark"] {
-        display: none;
-    }
-    
-    .change-theme[data-theme="light"] {
-        display: block;
-    }
-    
-    .theme {
-        fill: #fff;
-    }
-}
+  }
 
+  .params__title {
+    color: $whiteColor;
+  }
+
+  .params__value {
+    color: $whiteColor;
+  }
+
+  .about {
+    color:$whiteColor;
+  }
+
+  .footer {
+    background: $blackColor;
+
+    &__text {
+      color:$whiteColor;
+    }
+  }
+
+  .change-theme[data-theme='dark'] {
+    display: none;
+  }
+
+  .change-theme[data-theme='light'] {
+    display: block;
+  }
+
+  .theme {
+    fill: $whiteColor;
+  }
+
+  .user-bar__icon,
+  .user-bar__exit {
+    fill: $blackColor;
+  }
+
+  #pagination .tui-page-btn {
+    color: $whiteColor;
+
+    &:hover {
+      color: $accentColor;
+    }
+
+    &.tui-is-selected {
+      color: $whiteColor;
+    }
+  }
+
+  .btn-up:hover {
+    background: $accentColor;
+  }
+}
