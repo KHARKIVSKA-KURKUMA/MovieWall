@@ -28,7 +28,7 @@ import { onUpBtn } from './js/upBtn';
 import { returnHomeOnClickLogo } from './js/returnHomeOnClickLogo';
 import { onCloseFilter, onOpenFilter } from './js/onOpenFilter';
 import { renderTopRatedMovies } from './js/slider';
-import {exitOnClickExit} from './js/exitOnClicExit';
+import { exitOnClickExit } from './js/exitOnClickExit';
 
 headerFunctionality();
 switcherThemeFunctionality();
