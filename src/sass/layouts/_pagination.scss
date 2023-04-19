@@ -109,13 +109,10 @@
   .tui-last {
     display: none;
   }
-
-  .tui-next-is-ellip {
-    pointer-events: none;
-  }
-  
   .tui-ico-ellip {
-    background: none;
     font-size: inherit;
+    @include tablet {
+      background: none;
+    }
   }
 }

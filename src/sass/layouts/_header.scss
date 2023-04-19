@@ -164,6 +164,11 @@
       padding: 5px;
       background: #8c8c8c;
       min-width: 50px;
+      display: none;
+
+      [disabled] + & {
+        display: inline-flex;
+      }
     }
   }
 }
