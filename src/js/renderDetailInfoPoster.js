@@ -1,6 +1,5 @@
 import { getDetailAboutMovie } from './fetchMovies';
 import { createDetailMovieMarkUp } from './createDetailInfoMarkup';
-import { refs } from './refs';
 import { showtTrailer } from './createDetailInfoMarkup';
 import { clearModal } from './createDetailInfoMarkup';
 import { addLocalStorage } from './addToWatchedLocalStorage';
