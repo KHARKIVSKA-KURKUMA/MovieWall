@@ -64,7 +64,6 @@ export const refs = {
   signUpPassword: document.querySelector('.SignUp-password'),
   signUpSubmitBtn: document.querySelector('.SignUp-btn-submit'),
   signUpDesc: document.querySelector('.sign-up-text'),
-  // signUp: document.querySelector('.'),
   swiper: document.querySelector('.swiper'),
-slider: document.querySelector('.swiper-wrapper')
+  slider: document.querySelector('.swiper-wrapper'),
 };

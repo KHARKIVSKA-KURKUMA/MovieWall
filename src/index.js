@@ -1,5 +1,5 @@
 import './js/watchedLibrary';
-import './js/queue-library';
+import './js/queueLibrary';
 import { refs } from './js/refs';
 import { renderPopularMovies } from './js/renderPopularPoster';
 import { onSubmit } from './js/renderFilmByName';
@@ -39,6 +39,7 @@ renderTopRatedMovies();
 
 refs.linkEl.addEventListener('click', returnHomeOnClickLogo);
 refs.homeGalleryList.addEventListener('click', onOpenModal);
+// refs.galleryContainer.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.searchForm.addEventListener('submit', onSubmit);
 refs.backdrop.addEventListener('click', onBackdropClick);

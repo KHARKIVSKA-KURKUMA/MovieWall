@@ -17,8 +17,6 @@ let watchedMovies = isMovieInWatched();
 
 if (watchedMovies == null || watchedMovies.length === 0) {
   clearLibrary();
- 
-
 } else if (watchedMovies.length > 0) {
   refs.watchedBtn.classList.add('is-active');
   renderLibrary(watchedMovies);
@@ -57,7 +55,7 @@ const onWatchedBtnClick = event => {
 
     // ------ховає пагінацію
     refs.paginationEl.style.display = 'none';
-    
+
     renderLibrary(watchedMovies);
   }
 };
