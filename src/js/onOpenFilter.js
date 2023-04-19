@@ -1,5 +1,6 @@
 import { refs } from './refs';
 let isOpen = false;
+const mediaScreen = window.matchMedia('(min-width: 768px)') 
 export function onOpenFilter(e) {
   if (isOpen) {
     onCloseFilter();
@@ -11,5 +12,8 @@ export function onOpenFilter(e) {
 }
 export function onCloseFilter() {
   refs.filter.classList.add('is-hidden');
+  refs.filter.style.marginBottom = '-106px';
+  if (mediaScreen.matches) {
   refs.filter.style.marginBottom = '-53px';
+  }
 }
