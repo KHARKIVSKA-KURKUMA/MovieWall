@@ -3,6 +3,8 @@ import { fetchMovieForWatched } from './fetchMovies';
 import notAvailablePoster from '../images/poster-not-available.jpg';
 import { renderPopularMovies } from './renderPopularPoster';
 
+const clearWatch = document.querySelector('.div');
+console.log(clearWatch);
 import noDataPoster from '../images/photo_clear-watched.png';
 const isMovieInWatched = () => {
   let watchedMovies = null;
@@ -24,9 +26,9 @@ if (watchedMovies == null || watchedMovies.length === 0) {
 function renderPoster() {
   let activeLang = localStorage.getItem('lang');
   if (activeLang === 'uk') {
-    refs.galleryContainer.insertAdjacentHTML('beforeend', createPosterUk());
+    clearWatch.insertAdjacentHTML('beforeend', createPosterUk());
   } else {
-    refs.galleryContainer.insertAdjacentHTML('beforeend', createPoster());
+    clearWatch.insertAdjacentHTML('beforeend', createPoster());
   }
 }
 
@@ -48,11 +50,12 @@ const onWatchedBtnClick = event => {
   clearLibrary();
   watchedMovies = isMovieInWatched();
   if (watchedMovies == null || watchedMovies.length === 0) {
-    refs.galleryContainer.innerHTML = '';
+    clearWatch.innerHTML = '';
     renderPoster();
+    refs.paginationEl.style.display = 'none';
   } else if (watchedMovies.length > 0) {
     clearLibrary();
-
+    clearWatch.innerHTML = '';
     // ------ховає пагінацію
     refs.paginationEl.style.display = 'none';
 
