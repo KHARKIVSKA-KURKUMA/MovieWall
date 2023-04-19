@@ -1,106 +1,131 @@
 .dark-theme {
-  background: #333;
+  background: $darkGrey;
   cursor: url('/src/images/cursor-white.cur'), auto;
+
   .js-signIn {
     background: #8c8c8c;
-    color: #fff;
+    color: $whiteColor;
 
     &:disabled {
-      color: #fff;
+      color: $blackColor;
     }
   }
 
   .library {
     --default-bg: #000;
-    --default-color: #fff;
+    --default-color: #ffffff;
     --active-bg: #b92f2c;
-    --active-color: #fff;
+    --active-color: #ffffff;
   }
 
   .header__title {
-    color: #ffffff;
+    color: $whiteColor;
   }
 
   .logo {
-    stroke: #ffffff;
+    stroke: $whiteColor;
   }
 
   .search__input {
-    background: #000000;
+    background: $blackColor;
+    color: $whiteColor;
+  }
+
+  .search-notification {
+    color: $blackColor;
   }
 
   .search__svg {
-    stroke: #ffffff;
-    background: #000000;
+    stroke: $whiteColor;
+    background: $blackColor;
   }
 
   .signIn-modal {
-    background: #333;
+    background: $darkGrey;
   }
 
   .signIn-form label {
     opacity: 1;
+    color: $accentColor;
   }
 
   .js-signIn {
-    color: #333;
+    color: $darkGrey;
   }
 
   .signIn-form input {
-    background: #333;
-    border: 1px solid #ffffff;
-    color: #ffffff;
+    background: $darkGrey;
+    border: 1px solid $whiteColor;
+    color: $whiteColor;
   }
 
   .signIn .modal-SignIn-close {
-    background: #333;
+    background: $darkGrey;
   }
 
   .signIn .google-button {
-    color: #fff;
+    color:$whiteColor;
   }
 
   .signUp-box p {
-    color: #ffffff;
+    color:$whiteColor;
+  }
+
+  .signUp-modal {
+    background: $darkGrey;
+  }
+
+  .signUp .sign-up-text {
+    color:$whiteColor;
+  }
+
+  .modal-signUp-close {
+    background: $darkGrey;
+  }
+
+  .signUp input {
+    background: $darkGrey;
+    color:$whiteColor;
+    border: 1px solid $whiteColor;
   }
 
   .modal-close-icon {
-    background: #333;
+    background: $darkGrey;
   }
 
   .movie-info .filmcard-name {
-    color: #ffffff;
+    color:$whiteColor;
   }
 
   .modal {
-    background: #333;
+    background: $darkGrey;
 
     .modal-close {
-      background: #333;
+      background: $darkGrey;
     }
 
     .modal-close-icon {
-      stroke: #ffffff;
+      stroke: $whiteColor;
     }
   }
 
   .params__title {
-    color: #ffffff;
+    color: $whiteColor;
   }
 
   .params__value {
-    color: #ffffff;
+    color: $whiteColor;
   }
 
   .about {
-    color: #ffffff;
+    color:$whiteColor;
   }
 
   .footer {
-    background: #000;
+    background: $blackColor;
 
     &__text {
-      color: #ffffff;
+      color:$whiteColor;
     }
   }
 
@@ -113,6 +138,27 @@
   }
 
   .theme {
-    fill: #fff;
+    fill: $whiteColor;
+  }
+
+  .user-bar__icon,
+  .user-bar__exit {
+    fill: $blackColor;
+  }
+
+  #pagination .tui-page-btn {
+    color: $whiteColor;
+
+    &:hover {
+      color: $accentColor;
+    }
+
+    &.tui-is-selected {
+      color: $whiteColor;
+    }
+  }
+
+  .btn-up:hover {
+    background: $accentColor;
   }
 }
