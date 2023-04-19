@@ -57,5 +57,3 @@ refs.openFilter.addEventListener('click', onOpenFilter);
 refs.closeFilter.addEventListener('click', onCloseFilter);
 window.addEventListener('scroll', onUpBtn);
 refs.slider.addEventListener('click', onOpenModal);
-let activeLang = localStorage.getItem('lang');
-renderPopularMovies(activeLang);
