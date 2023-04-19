@@ -114,6 +114,8 @@ function createPosterUk() {
       `;
 }
 function createLibraryMovieItem(data) {
+  let watchedMovies = isMovieInWatched();
+  let queueMovies = isMovieInQueue();
   if (
     (watchedMovies == null || watchedMovies.length === 0) &&
     (queueMovies == null || queueMovies.length === 0)
