@@ -1,5 +1,5 @@
 import './js/watchedLibrary';
-import './js/queue-library';
+import './js/queueLibrary';
 import { refs } from './js/refs';
 import { renderPopularMovies } from './js/renderPopularPoster';
 import { onSubmit } from './js/renderFilmByName';
