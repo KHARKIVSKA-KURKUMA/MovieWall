@@ -9,6 +9,10 @@
           SIGN IN
         </button>
         <button class="nav-list__button nav-list__button--exit" data-target="logout">
+        <button
+          class="nav-list__button nav-list__button--exit"
+          data-target="logout"
+        >
           <svg class="user-bar__exit">
             <use href="/src/images/icons.svg#icon-exit"></use>
           </svg>
@@ -57,17 +61,39 @@
               <use class="filter__icon" href="/src/images/icons.svg#icon-filter"></use>
             </svg>
           </button>
+        </li>
+        <li>
+          <button class="languages lang-btn change-lang" id="en" data-lang="uk">
+            <img src="./images/ua.png" alt="Ukrainian" width="50" height="50" />
+          </button>
+        </li>
+        <li>
+          <button class="lang-btn change-lang" id="uk" data-lang="en">
+            <img src="./images/uk.png" alt="English" width="50" height="50" />
+          </button>
+        </li>
+        <li>
           <button class="theme__button change-theme" data-theme="light">
             <svg class="theme__svg">
               <use class="theme__icon" href="/src/images/icons.svg#icon-sun"></use>
             </svg>
           </button>
+        </li>
+        <li>
           <button class="theme__button change-theme" data-theme="dark">
             <svg class="theme__svg">
               <use class="theme__icon" href="/src/images/icons.svg#icon-moon"></use>
             </svg>
           </button>
-        </div>
+        </li>
+      </ul>
+      <div class="header__headline">
+        <a href="#home" class="header__link">
+          <svg class="logo">
+            <use href="/src/images/icons.svg#icon-logo"></use>
+          </svg>
+          <h1 class="header__title">Filmoteka</h1>
+        </a>
       </div>
       <ul class="nav-list list library js-btn-list">
         <li class="nav-list__item">

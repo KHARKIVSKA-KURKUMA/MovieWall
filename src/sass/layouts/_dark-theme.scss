@@ -27,6 +27,7 @@
   }
 
   .search__input {
+
     background: $blackColor;
     color: $whiteColor;
   }
@@ -48,6 +49,8 @@
     opacity: 1;
     color: $accentColor;
   }
+
+
 
   .js-signIn {
     color: $darkGrey;
@@ -87,6 +90,24 @@
     background: $darkGrey;
     color:$whiteColor;
     border: 1px solid $whiteColor;
+  }
+
+  .signUp-modal {
+    background: #333;
+  }
+
+  .signUp .sign-up-text {
+    color: #fff;
+  }
+
+  .modal-signUp-close {
+    background: #333;
+  }
+
+  .signUp input {
+    background: #333;
+    color: #fff;
+    border: 1px solid #fff;
   }
 
   .modal-close-icon {

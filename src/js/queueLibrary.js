@@ -3,7 +3,7 @@ import { fetchMovieForWatched } from './fetchMovies';
 import notAvailablePoster from '../images/poster-not-available.jpg';
 import { renderPopularMovies } from './renderPopularPoster';
 import noDataPoster from '../images/photo_clear-watched.png';
-
+const clearWatch = document.querySelector('.div');
 const isMovieInQueue = () => {
   let queueMovies = null;
   try {
@@ -25,9 +25,9 @@ if (queueMovies == null || queueMovies.length === 0) {
 function renderPoster() {
   let activeLang = localStorage.getItem('lang');
   if (activeLang === 'uk') {
-    refs.galleryContainer.insertAdjacentHTML('beforeend', createPosterUk());
+    clearWatch.insertAdjacentHTML('beforeend', createPosterUk());
   } else {
-    refs.galleryContainer.insertAdjacentHTML('beforeend', createPoster());
+    clearWatch.insertAdjacentHTML('beforeend', createPoster());
   }
 }
 
@@ -49,11 +49,11 @@ const onQueueBtnClick = event => {
   clearLibrary();
   queueMovies = isMovieInQueue();
   if (queueMovies == null || queueMovies.length === 0) {
-    refs.galleryContainer.innerHTML = '';
+    clearWatch.innerHTML = '';
     renderPoster();
   } else if (queueMovies.length > 0) {
     clearLibrary();
-
+    clearWatch.innerHTML = '';
     renderLibrary(queueMovies);
   }
 };
