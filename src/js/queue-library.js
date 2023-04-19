@@ -35,8 +35,7 @@ function renderLibrary(movies) {
   for (let i = 0; i < movies.length; i += 1) {
     let activeLang = localStorage.getItem('lang');
     fetchMovieForWatched(movies[i], activeLang).then(data => {
-      refs.galleryContainer.innerHTML = '';
-      refs.galleryContainer.insertAdjacentHTML(
+      refs.homeGalleryList.insertAdjacentHTML(
         'beforeend',
         createLibraryMovieItem(data)
       );

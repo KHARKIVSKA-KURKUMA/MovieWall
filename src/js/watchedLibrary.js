@@ -2,8 +2,8 @@ import { refs } from './refs';
 import { fetchMovieForWatched } from './fetchMovies';
 import notAvailablePoster from '../images/poster-not-available.jpg';
 import { renderPopularMovies } from './renderPopularPoster';
-import noDataPoster from '../images/photo_clear-watched.png';
 
+import noDataPoster from '../images/photo_clear-watched.png';
 const isMovieInWatched = () => {
   let watchedMovies = null;
   try {
@@ -48,12 +48,14 @@ const onWatchedBtnClick = event => {
   clearLibrary();
   watchedMovies = isMovieInWatched();
   if (watchedMovies == null || watchedMovies.length === 0) {
-    // refs.galleryContainer.innerHTML = '';
+    refs.galleryContainer.innerHTML = '';
     renderPoster();
   } else if (watchedMovies.length > 0) {
     clearLibrary();
-    // refs.galleryContainer.innerHTML = '';
+
+    // ------ховає пагінацію
     refs.paginationEl.style.display = 'none';
+
     renderLibrary(watchedMovies);
   }
 };
@@ -118,46 +120,22 @@ function createLibraryMovieItem(data) {
   const movieDate = release_date ?? null;
   const movieYear = movieDate ? movieDate.slice(0, 4) : 'Unknown year';
   return `<li class="filmcard" data-movie="${data.id}">
-  <a href="#" class="filmcard-link link">
+  <a href="#" class="filmcard-link link">      
         <img class="filmcard-img"
         src="${posterSrc}"
         alt=${data.title}
         loading="lazy"
-        />
+        />      
     <div class="movie-info">
       <p class="filmcard-name">${data.title}</p>
-      <p class="filmcard-genre"> ${genre} | ${movieYear}</p>
+      <p class="filmcard-genre"> ${genre} | ${movieYear}</p> 
     </div>
     </a>
   </li>`;
 }
 
 refs.watchedBtn.addEventListener('click', onWatchedBtnClick);
-
+refs.homeBtn.addEventListener('click', e => {
+  location.reload();
+});
 refs.libraryJs.addEventListener('click', onWatchedBtnClick);
-
-// let activePage = localStorage.getItem('page');
-// console.log(activePage);
-// if (
-//   activePage === 'library' ||
-//   activePage === 'queue' ||
-//   activePage === 'watched'
-// ) {
-//   if (activePage === 'queue') {
-//     refs.queuedBtn.classList.add(refs.activeClass);
-//     refs.watchedBtn.classList.remove(refs.activeClass);
-//   } else {
-//     refs.watchedBtn.classList.add(refs.activeClass);
-//     refs.queuedBtn.classList.remove(refs.activeClass);
-//   }
-//   refs.libraryJs.classList.add(refs.activeClass);
-//   refs.form.hidden = true;
-//   refs.libraryEl.style.display = 'flex';
-//   refs.homeBtn.classList.remove(refs.activeClass);
-// } else if (activePage === 'home' || activePage === 'null') {
-//   refs.form.hidden = false;
-//   let activeLang = localStorage.getItem('lang');
-//   refs.libraryEl.style.display = 'none';
-//   refs.homeBtn.classList.add(refs.activeClass);
-//   refs.libraryJs.classList.remove(refs.activeClass);
-// }
