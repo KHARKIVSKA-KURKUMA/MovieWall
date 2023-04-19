@@ -24,7 +24,7 @@ export function onOpenModal(e) {
 export function onOpenTeamModal() {
   refs.teamModal.classList.remove('is-hidden');
   window.addEventListener('keydown', onTeamModalEscPress);
-  // refs.body.classList.add('no-scroll');
+  refs.body.classList.add('no-scroll');
 }
 export function onOpenSignModal() {
   refs.signInBackdrop.classList.remove('is-hidden');
