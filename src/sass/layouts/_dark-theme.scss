@@ -6,7 +6,7 @@
     color: #fff;
 
     &:disabled {
-      color: #fff;
+      color: #000;
     }
   }
 
@@ -26,7 +26,12 @@
   }
 
   .search__input {
-    background: #000000;
+    background: #000;
+    color: #fff;
+  }
+
+  .search-notification {
+    color: #000;
   }
 
   .search__svg {
@@ -40,7 +45,10 @@
 
   .signIn-form label {
     opacity: 1;
+    color:#b92f2c;
   }
+
+
 
   .js-signIn {
     color: #333;
@@ -62,6 +70,24 @@
 
   .signUp-box p {
     color: #ffffff;
+  }
+
+  .signUp-modal {
+    background: #333;
+  }
+
+  .signUp .sign-up-text {
+    color: #fff;
+  }
+
+  .modal-signUp-close {
+    background: #333;
+  }
+
+  .signUp input {
+    background: #333;
+    color: #fff;
+    border: 1px solid #fff;
   }
 
   .modal-close-icon {
@@ -115,4 +141,11 @@
   .theme {
     fill: #fff;
   }
-}
+
+    .user-bar__icon,
+    .user-bar__exit {
+    fill :#000;
+  }
+
+
+  }

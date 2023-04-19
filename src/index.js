@@ -27,11 +27,14 @@ import { switcherThemeFunctionality } from './js/changeThemeOnClick';
 import { onUpBtn } from './js/upBtn';
 import { returnHomeOnClickLogo } from './js/returnHomeOnClickLogo';
 import { onCloseFilter, onOpenFilter } from './js/onOpenFilter';
+import {exitOnClickExit} from './js/exitOnClicExit';
+
 import { renderTopRatedMovies } from './js/slider';
 
 headerFunctionality();
 switcherThemeFunctionality();
 onLangSelected();
+
 renderTopRatedMovies();
 
 refs.linkEl.addEventListener('click', returnHomeOnClickLogo);
@@ -57,3 +60,4 @@ refs.openFilter.addEventListener('click', onOpenFilter);
 refs.closeFilter.addEventListener('click', onCloseFilter);
 window.addEventListener('scroll', onUpBtn);
 refs.slider.addEventListener('click', onOpenModal);
+refs.exitBtn.addEventListener('click', exitOnClickExit);
