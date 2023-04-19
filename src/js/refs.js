@@ -25,7 +25,7 @@ export const refs = {
   closeSignUpModal: document.querySelector('.modal-signUp-close'),
   formSignIn: document.querySelector('.sign-in'),
   formSignUp: document.querySelector('.sign-up'),
-  exitBtn: document.querySelector('[data-modal="exit"]'),
+  exitBtn: document.querySelector('[data-target="logout"]'),
   SignInWithGoogle: document.querySelector('.google-button'),
   SignUpWithGoogle: document.querySelector('.button-google'),
   form: document.querySelector('.search'),
@@ -65,4 +65,6 @@ export const refs = {
   signUpSubmitBtn: document.querySelector('.SignUp-btn-submit'),
   signUpDesc: document.querySelector('.sign-up-text'),
   // signUp: document.querySelector('.'),
+  swiper: document.querySelector('.swiper'),
+slider: document.querySelector('.swiper-wrapper')
 };

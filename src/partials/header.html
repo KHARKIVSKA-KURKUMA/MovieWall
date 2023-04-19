@@ -5,10 +5,10 @@
         <svg class="user-bar__icon">
           <use href="/src/images/icons.svg#icon-user"></use>
         </svg>
-        <button class="nav-list__button js-signIn" data-target="signIn" type="button">
+        <button class="nav-list__button js-signIn" data-modal="signIn" type="button">
           SIGN IN
         </button>
-        <button class="nav-list__button nav-list__button--exit" data-target="exit">
+        <button class="nav-list__button nav-list__button--exit" data-target="logout">
           <svg class="user-bar__exit">
             <use href="/src/images/icons.svg#icon-exit"></use>
           </svg>
@@ -67,7 +67,6 @@
               <use class="theme__icon" href="/src/images/icons.svg#icon-moon"></use>
             </svg>
           </button>
-
         </li>
       </ul>
       <div class="header__headline">
@@ -80,12 +79,12 @@
       </div>
       <ul class="nav-list list library js-btn-list">
         <li class="nav-list__item">
-          <button class="nav-list__button  button-watched" data-target="watched" type="button">
+          <button class="nav-list__button nav-list__button--active button-watched" data-target="watched" type="button">
             WATCHED
           </button>
         </li>
         <li class="nav-list__item">
-          <button class="nav-list__button nav-list__button--active button-queue" data-target="queue" type="button">
+          <button class="nav-list__button button-queue" data-target="queue" type="button">
             QUEUE
           </button>
         </li>

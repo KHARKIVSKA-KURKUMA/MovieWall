@@ -139,6 +139,9 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 1.17;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
     @include tablet {
       padding: 12px 20px;
@@ -155,7 +158,6 @@
 
     &:hover {
       scale: 1.04;
-      cursor: url('/src/images/cursor_pointer.png'), auto;
     }
 
     &--exit {
@@ -179,16 +181,15 @@
   }
 
   &__exit {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     fill: $whiteColor;
-
   }
   
   &__icon {
     transform: translateY(-50%);
     transform-origin: center 0;
-    z-index: 5;
+    z-index: 1;
     fill: $whiteColor;
     width: 16px;
     height: 16px;
@@ -248,7 +249,6 @@
 
   &:hover {
     scale: 1.2;
-    cursor: url('/src/images/cursor_pointer.png'), auto;
   }
 }
 
@@ -322,7 +322,6 @@
 
     &:hover {
       scale: 1.2;
-      cursor: pointer;
     }
   }
 

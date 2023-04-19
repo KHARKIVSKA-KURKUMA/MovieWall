@@ -1,0 +1,68 @@
+.swiper {
+  position: relative;
+  @include tablet {
+    margin-bottom: 30px;
+  }
+  &-link {
+    & > * {
+      pointer-events: none;
+    }
+    & > img {
+      transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 10px;
+    }
+    &:hover > img,
+    &:focus > img {
+      transform: scale(1.1);
+    }
+  }
+}
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.swiper-button-prev {
+  left: 8px;
+  :hover {
+    opacity: 1;
+  }
+  :active {
+    opacity: 1;
+    scale: 0.9;
+  }
+}
+.swiper-button-next {
+  right: 8px;
+  :hover {
+    opacity: 1;
+  }
+  :active {
+    opacity: 1;
+    scale: 0.9;
+  }
+}
+.swiper-button-next-icon,
+.swiper-button-prev-icon {
+  width: 60px;
+  height: 60px;
+  fill: rgb(172, 17, 17);
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 768px) {
+  .swiper-button-next-icon,
+  .swiper-button-prev-icon {
+    width: 50px;
+    height: 50px;
+  }
+  .swiper-button-prev {
+    left: 4px;
+  }
+  .swiper-button-next {
+    right: 4px;
+  }
+}

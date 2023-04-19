@@ -1,146 +1,151 @@
 .dark-theme {
+  background: #333;
+  cursor: url('/src/images/cursor-white.cur'), auto;
+  .js-signIn {
+    background: #8c8c8c;
+    color: #fff;
+
+    &:disabled {
+      color: #000;
+    }
+  }
+
+  .library {
+    --default-bg: #000;
+    --default-color: #fff;
+    --active-bg: #b92f2c;
+    --active-color: #fff;
+  }
+
+  .header__title {
+    color: #ffffff;
+  }
+
+  .logo {
+    stroke: #ffffff;
+  }
+
+  .search__input {
+    background: #000;
+    color: #fff;
+  }
+
+  .search-notification {
+    color: #000;
+  }
+
+  .search__svg {
+    stroke: #ffffff;
+    background: #000000;
+  }
+
+  .signIn-modal {
     background: #333;
-    
-    .js-signIn {
-        background: #8c8c8c;
-        color: #fff;
-    
-        &:disabled {
-            color: #000;
-        }
+  }
+
+  .signIn-form label {
+    opacity: 1;
+    color:#b92f2c;
+  }
+
+
+
+  .js-signIn {
+    color: #333;
+  }
+
+  .signIn-form input {
+    background: #333;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+  }
+
+  .signIn .modal-SignIn-close {
+    background: #333;
+  }
+
+  .signIn .google-button {
+    color: #fff;
+  }
+
+  .signUp-box p {
+    color: #ffffff;
+  }
+
+  .signUp-modal {
+    background: #333;
+  }
+
+  .signUp .sign-up-text {
+    color: #fff;
+  }
+
+  .modal-signUp-close {
+    background: #333;
+  }
+
+  .signUp input {
+    background: #333;
+    color: #fff;
+    border: 1px solid #fff;
+  }
+
+  .modal-close-icon {
+    background: #333;
+  }
+
+  .movie-info .filmcard-name {
+    color: #ffffff;
+  }
+
+  .modal {
+    background: #333;
+
+    .modal-close {
+      background: #333;
     }
 
-    .user-bar__exit,
-    .user-bar__icon {
-        fill: #000;
-    }
-    
-    .library {
-        --default-bg: #000;
-        --default-color: #fff;
-        --active-bg: #B92F2C;
-        --active-color: #fff;
-    }
-    
-    .header__title {
-        color:#ffffff;
-    }
-    
-    .logo {
-        stroke:#ffffff;
-    }
-    
-    .search__input {
-        background: #000000;
-        color: #ffffff;
-    }
-    
-    .search__svg {
-        stroke: #ffffff;
-        background: #000000;
-    }
-
-    .search-notification {
-        color: #000;
-    }
-    
-    .signIn-modal {
-        background: #333;
-    }
-    
-    .signIn-form label {
-        opacity: 1;
-    }
-    
-    .js-signIn {
-        color: #333;
-    }
-    
-    .signIn-form input {
-        background:#333;
-        border: 1px solid #ffffff;
-        color: #ffffff;
-    }
-    
-    .signIn .modal-SignIn-close {
-        background:#333;
-    }
-
-    .signIn .google-button {
-        color: #fff;
-    }
-    
-    .signUp-box p {
-        color: #fff;
-    }
-    
     .modal-close-icon {
-        background: #333;
+      stroke: #ffffff;
     }
-    
-    .movie-info .filmcard-name {
-        color: #ffffff;
-    }
-    
-    .modal {
-        background: #333;
-    
-        .modal-close {
-            background: #333;
-    
-        }
-    
-        .modal-close-icon {
-            stroke: #ffffff;
-        }
-    }
-    
-    .params__title {
-        color: #ffffff;
-    }
-    
-    .params__value {
-        color: #ffffff;
-    }
-    
-    .about {
-        color: #ffffff;
-    }
-    
-    .footer {
-        background: #000;
-    
-        &__text {
-            color: #ffffff;
-        }
-    }
-    
-    .change-theme[data-theme="dark"] {
-        display: none;
-    }
-    
-    .change-theme[data-theme="light"] {
-        display: block;
-    }
-    
-    .theme {
-        fill: #fff;
-    }
+  }
 
-    #pagination .tui-page-btn {
-        color: #fff;
+  .params__title {
+    color: #ffffff;
+  }
+
+  .params__value {
+    color: #ffffff;
+  }
+
+  .about {
+    color: #ffffff;
+  }
+
+  .footer {
+    background: #000;
+
+    &__text {
+      color: #ffffff;
     }
+  }
+
+  .change-theme[data-theme='dark'] {
+    display: none;
+  }
+
+  .change-theme[data-theme='light'] {
+    display: block;
+  }
+
+  .theme {
+    fill: #fff;
+  }
+
+    .user-bar__icon,
+    .user-bar__exit {
+    fill :#000;
+  }
 
 
-    #pagination .tui-page-btn {
-        // background: transparent;
-    }
-
-    #pagination .tui-is-selected {
-        background: #B92F2C;
-    }
-
-    .btn-up:hover {
-        background-color: #B92F2C;
-    }
-}
+  }
