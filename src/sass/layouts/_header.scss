@@ -344,16 +344,18 @@
 
 .theme {
   position: absolute;
+  display: flex;
+  flex-direction: column;
   bottom: 100px;
   right: 5px;
   text-align: center;
   margin-left: auto;
   align-items: center;
   margin-top: auto;
-  cursor: pointer;
-
   @include tablet {
     display: flex;
+    flex-direction: row;
+    align-items: center;
     bottom: 5px;
   }
 
@@ -395,26 +397,28 @@
   fill: #fff;
   width: 25px;
   height: 25px;
-
-  // @include tablet {
-  //     width: 30px;
-  //     height: 30px;
-  // }
   @include tablet {
-    width: 35px;
-    height: 35px;
+    width: 43px;
+    height: 49px;
   }
 }
 
+.lang-svg {
+  width: 25px;
+  height: 25px;
+  @include tablet {
+    width: 45px;
+    height: 42px;
+  }
+}
 .lang-btn {
+  margin-top: 5px;
   background-color: transparent;
   border: none;
-  width: 35px;
-  height: 35px;
-
   @include tablet {
     width: 50px;
     height: 50px;
-    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 0;
   }
 }

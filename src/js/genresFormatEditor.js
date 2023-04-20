@@ -11,7 +11,7 @@ function genresGalleryEditor(array) {
   if (!genreResult.length) {
     return 'Unknown genre';
   } else if (genreResult.length > 2) {
-    return `${genreResult[0]}, ${genreResult[1]}...`;
+    return `${genreResult[0]}, ${genreResult[1]}, ...`;
   } else {
     return genreResult.join(', ');
   }
@@ -27,7 +27,7 @@ function genresGalleryEditorUk(array) {
   if (!genreResult.length) {
     return 'Невідомий жанр';
   } else if (genreResult.length > 2) {
-    return `${genreResult[0]}, ${genreResult[1]}...`;
+    return `${genreResult[0]}, ${genreResult[1]}, ...`;
   } else {
     return genreResult.join(', ');
   }

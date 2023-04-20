@@ -51,6 +51,7 @@
             placeholder="Movie Search"
           />
           <button type="submit" class="search__btn">
+            <span class="visually-hidden">Search</span>
             <svg class="search__svg">
               <use
                 class="serch__icon"
@@ -68,20 +69,8 @@
           <h1 class="header__title">Filmoteka</h1>
         </a>
         <div class="theme">
-          <div class="languages">
-            <button class="lang-btn change-lang" id="en" data-lang="uk">
-              <img
-                src="./images/ua.png"
-                alt="Ukrainian"
-                width="50"
-                height="50"
-              />
-            </button>
-            <button class="lang-btn change-lang" id="uk" data-lang="en">
-              <img src="./images/uk.png" alt="English" width="50" height="50" />
-            </button>
-          </div>
           <button type="button" class="filter__btn">
+            <span class="visually-hidden">Filter</span>
             <svg class="filter__svg" width="40" height="40">
               <use
                 class="filter__icon"
@@ -89,7 +78,28 @@
               ></use>
             </svg>
           </button>
+          <div class="languages">
+            <button class="lang-btn change-lang" id="en" data-lang="uk">
+              <span class="visually-hidden">Ukrainian lang</span>
+              <svg class="lang-svg" width="40" height="40">
+                <use
+                  class="ua__icon"
+                  href="/src/images/icons.svg#icon-ua"
+                ></use>
+              </svg>
+            </button>
+            <button class="lang-btn change-lang" id="uk" data-lang="en">
+              <span class="visually-hidden">English lang</span>
+              <svg class="lang-svg" width="40" height="40">
+                <use
+                  class="uk__icon"
+                  href="/src/images/icons.svg#icon-uk"
+                ></use>
+              </svg>
+            </button>
+          </div>
           <button class="theme__button change-theme" data-theme="light">
+            <span class="visually-hidden">Light theme</span>
             <svg class="theme__svg">
               <use
                 class="theme__icon"
@@ -98,6 +108,7 @@
             </svg>
           </button>
           <button class="theme__button change-theme" data-theme="dark">
+            <span class="visually-hidden">Dark theme</span>
             <svg class="theme__svg">
               <use
                 class="theme__icon"
