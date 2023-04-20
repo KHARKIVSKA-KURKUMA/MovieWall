@@ -4,6 +4,7 @@ import { refs } from './refs';
 import { renderPopularMovies } from './renderPopularPoster';
 import { makeTuiPagination } from './pagination';
 import { eventActions, checkResultActions } from './checkFetchResultFun';
+import { topFunction } from './topFunction';
 
 let searchFilm;
 let currentPage = 1;
@@ -28,14 +29,12 @@ let activeLang = localStorage.getItem('lang');
 async function renderMovieByWord(searchFilm, currentPage) {
   await getFilmByKeyWord(searchFilm, currentPage, activeLang).then(data => {
     if (!data.results || data.results.length === 0) {
-      checkResultActions()
+      checkResultActions();
       if (activeLang === 'uk') {
         refs.searchForm.insertAdjacentHTML('beforeend', createNotificationUk());
       } else {
         refs.searchForm.insertAdjacentHTML('beforeend', createNotification());
       }
-      // файл не знайдено
-      // checkResultActions();
     }
 
     refs.homeGalleryList.insertAdjacentHTML(
@@ -65,7 +64,7 @@ function createNotificationUk() {
 export { onSubmit };
 
 function handlePageChange(page) {
-  console.log(page);
+  topFunction();
   refs.homeGalleryList.innerHTML = '';
   renderMovieByWord(searchFilm, page);
 }

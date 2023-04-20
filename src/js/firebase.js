@@ -1,16 +1,13 @@
 import { initializeApp } from 'firebase/app';
-import firebase from 'firebase/app';
-import 'firebase/auth';
+import { headerFunctionality } from './swichBtnOnClick';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { onCloseSignUp, onCloseSign } from './onCloseModal';
 import { refs } from './refs';
-import { GoogleAuthProvider } from 'firebase/auth';
 const provider = new GoogleAuthProvider();
-import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
-import { headerFunctionality } from './swichBtnOnClick';
-
 import {
   getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
@@ -27,7 +24,6 @@ const firebaseConfig = {
   measurementId: 'G-FTSJCJXBR8',
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 
@@ -119,11 +115,8 @@ if (getName === null) {
     refs.openSignInModal.textContent = `SIGN IN`;
   }
 } else {
-  console.log(getName);
-
   refs.openSignInModal.disabled = true;
   refs.openSignInModal.textContent = getName;
-  console.log(refs.openSignInModal.textContent);
 }
 
 function addActiveBtn() {

@@ -1,6 +1,5 @@
 import './js/library';
 import { refs } from './js/refs';
-import { renderPopularMovies } from './js/renderPopularPoster';
 import { onSubmit } from './js/renderFilmByName';
 import { headerFunctionality } from './js/swichBtnOnClick';
 import { OnFormSignIn, OnFormSignUp, onGoogleClick } from './js/firebase';
@@ -26,7 +25,7 @@ import { switcherThemeFunctionality } from './js/changeThemeOnClick';
 import { onUpBtn } from './js/upBtn';
 import { returnHomeOnClickLogo } from './js/returnHomeOnClickLogo';
 import { onCloseFilter, onOpenFilter } from './js/onOpenFilter';
-import { exitOnClickExit } from './js/exitOnClicExit';
+import { exitOnClickExit } from './js/exitOnClickExit';
 
 import { renderTopRatedMovies } from './js/slider';
 import { exitOnClickExit } from './js/exitOnClickExit';

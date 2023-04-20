@@ -1,4 +1,3 @@
-// https://developers.themoviedb.org/3/getting-started/introduction // документація
 import axios from 'axios';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { startLoader, stopLoader } from './loader';
@@ -34,10 +33,10 @@ async function getDetailAboutMovie(id, lang) {
 }
 export { getDetailAboutMovie };
 
-async function getFilmByKeyWord(search, page) {
+async function getFilmByKeyWord(search, page, lang) {
   try {
     startLoader();
-    const url = `${BASE_URL}search/movie?api_key=${API_KEY}&language=en-US&page=${page}&include_adult=false&query=${search}`;
+    const url = `${BASE_URL}search/movie?api_key=${API_KEY}&language=${lang}&page=${page}&include_adult=false&query=${search}`;
     const response = await axios.get(url);
     return await response.data;
   } catch (error) {
@@ -85,10 +84,10 @@ async function getMovieTrailer(id, lang) {
 }
 export { getMovieTrailer };
 
-async function getFilmByGenres(search, lang) {
+async function getFilmByGenres(search, lang, page) {
   try {
     startLoader();
-    const url = `${BASE_URL}discover/movie?api_key=${API_KEY}&sort_by=popularity.desc&language=${lang}&with_genres=${search}`;
+    const url = `${BASE_URL}discover/movie?api_key=${API_KEY}&sort_by=popularity.desc&language=${lang}&with_genres=${search}&page=${page}`;
     const response = await axios.get(url);
     return await response.data;
   } catch (error) {
@@ -99,10 +98,10 @@ async function getFilmByGenres(search, lang) {
 }
 export { getFilmByGenres };
 
-async function getFilmsByLang(lang) {
+async function getFilmsByLang(lang, page) {
   try {
     startLoader();
-    const url = `${BASE_URL}discover/movie?api_key=${API_KEY}&language=${lang}&page=1&with_original_language=${lang}`;
+    const url = `${BASE_URL}discover/movie?api_key=${API_KEY}&language=${lang}&page=1&with_original_language=${lang}&page=${page}`;
     const response = await axios.get(url);
     return await response.data;
   } catch (error) {
