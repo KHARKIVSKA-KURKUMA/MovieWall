@@ -91,7 +91,7 @@ function createPoster() {
       <div>
     <img  src="${noDataPoster}" alt="title"loading="lazy"/>
     <div class="movie-info" >
-      <p class="filmcard-name clear-watched-name" >NOTING!!</p>
+      <p class="filmcard-name clear-watched-name" >NOTHING!!</p>
       <p class="filmcard-genre clear-watched-problems">Your collection list is empty.</p>
     </div>
 </div>

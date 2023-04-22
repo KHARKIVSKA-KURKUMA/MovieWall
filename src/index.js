@@ -2,7 +2,13 @@ import './js/library';
 import { refs } from './js/refs';
 import { onSubmit } from './js/renderFilmByName';
 import { headerFunctionality } from './js/swichBtnOnClick';
-import { OnFormSignIn, OnFormSignUp, onGoogleClick } from './js/firebase';
+import {
+  OnFormSignIn,
+  OnFormSignUp,
+  onGoogleClick,
+  exitOnClickExit,
+  onAnonClick,
+} from './js/firebase';
 import { onLangSelected } from './js/language';
 
 import {
@@ -25,10 +31,9 @@ import { switcherThemeFunctionality } from './js/changeThemeOnClick';
 import { onUpBtn } from './js/upBtn';
 import { returnHomeOnClickLogo } from './js/returnHomeOnClickLogo';
 import { onCloseFilter, onOpenFilter } from './js/onOpenFilter';
-import { exitOnClickExit } from './js/exitOnClickExit';
 
 import { renderTopRatedMovies } from './js/slider';
-import { exitOnClickExit } from './js/exitOnClickExit';
+import { ref } from 'firebase/database';
 
 headerFunctionality();
 switcherThemeFunctionality();
@@ -59,3 +64,4 @@ refs.closeFilter.addEventListener('click', onCloseFilter);
 window.addEventListener('scroll', onUpBtn);
 refs.slider.addEventListener('click', onOpenModal);
 refs.exitBtn.addEventListener('click', exitOnClickExit);
+refs.anonBtn.addEventListener('click', onAnonClick);

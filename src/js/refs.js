@@ -67,4 +67,5 @@ export const refs = {
   swiper: document.querySelector('.swiper'),
   slider: document.querySelector('.swiper-wrapper'),
   exitBtn: document.querySelector('[data-target="logout"]'),
+  anonBtn: document.querySelector('.js-anon'),
 };
