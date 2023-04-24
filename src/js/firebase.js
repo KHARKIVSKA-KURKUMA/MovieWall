@@ -15,7 +15,7 @@ import {
   signInAnonymously,
 } from 'firebase/auth';
 
-import { getDatabase, ref, set, get, remove } from 'firebase/database';
+import { getDatabase, ref, set, get, remove, child } from 'firebase/database';
 
 let activeLang = localStorage.getItem('lang');
 
@@ -34,8 +34,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const database = getDatabase();
-const myDataRef = ref(database, 'Username');
-
+const myDataRef = ref(database, 'User');
+console.log(myDataRef);
 /* ------------------------------- Вхід ------------------------------- */
 export function OnFormSignIn(e) {
   e.preventDefault();
@@ -160,7 +160,7 @@ const getName = get(myDataRef)
     }
   })
   .catch(error => {
-    Notify.failure(`Error getting data: ${error} Please try again`);
+    // Notify.failure(`Error getting data: ${error} Please try again`);
   });
 
 function addActiveBtn() {
