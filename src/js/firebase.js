@@ -35,7 +35,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const database = getDatabase();
 const myDataRef = ref(database, 'User');
-console.log(myDataRef);
 /* ------------------------------- Вхід ------------------------------- */
 export function OnFormSignIn(e) {
   e.preventDefault();

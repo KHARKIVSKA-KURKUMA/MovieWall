@@ -9,21 +9,18 @@ let totalPages = 0;
 let pagination;
 
 function renderPopularMovies(id) {
-  getPopularFilms(id).then(data => {
+  getPopularFilms(id, currentPage).then(data => {
     refs.homeGalleryList.innerHTML = '';
     refs.homeGalleryList.insertAdjacentHTML(
       'beforeend',
       createPopularMovieMarkUp(data.results)
     );
-
     totalPages = data.total_pages;
-
     if (!pagination) {
       pagination = makeTuiPagination(data.total_results, totalPages);
       pagination.on('beforeMove', event => {
         handlePageChange(event.page);
         currentPage = event.page;
-        console.log(`cur: ${currentPage}`);
       });
     }
   });
